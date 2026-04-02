@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'buildings/:slug', to: 'buildings#show', as: :building
 
   get '/booking/confirmation', to: 'bookings#confirmation'
-  get '/booking/final', to: 'bookings#final'
+  get '/booking/final', to: 'bookings#final', as: :booking_final
 
   get '/search', to: 'search#index'
 end
