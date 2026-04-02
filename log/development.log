@@ -981,3 +981,106 @@ Processing by WelcomeController#map as HTML
 Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 45.144.227.12 at 2026-04-02 14:43:37 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-3.4.7/gems/railties-8.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-3.4.7/gems/railties-8.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 14:43:42 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/map"):
+  
+Started GET "/map" for 45.144.227.12 at 2026-04-02 14:43:43 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/map"):
+  
+Started GET "/favicon.ico" for 45.144.227.12 at 2026-04-02 14:43:44 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 45.144.227.12 at 2026-04-02 14:43:49 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-3.4.7/gems/railties-8.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-3.4.7/gems/railties-8.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 45.144.227.12 at 2026-04-02 14:43:59 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-3.4.7/gems/railties-8.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-3.4.7/gems/railties-8.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 14:44:17 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/map"):
+  
+Started GET "/map" for 45.144.227.12 at 2026-04-02 14:44:17 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/map"):
+  
+Started GET "/map" for 45.144.227.12 at 2026-04-02 14:45:36 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/map.html.erb within layouts/application
+  Rendered welcome/map.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | GC: 2.0ms)
+Completed 200 OK in 23ms (Views: 17.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/" for 45.144.227.12 at 2026-04-02 14:45:39 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 45.144.227.12 at 2026-04-02 14:56:40 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 17.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 45.144.227.12 at 2026-04-02 15:02:59 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 23.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 15:03:02 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/map.html.erb within layouts/application
+  Rendered welcome/map.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
