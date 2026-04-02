@@ -1,5 +1,7 @@
 class RegistrationsController < ApplicationController
-  def new; end
+  def new
+    @hide_header = true
+  end
 
   def create
     flash[:notice] = 'Sign up successful'
