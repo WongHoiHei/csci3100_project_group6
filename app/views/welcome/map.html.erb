@@ -1,4 +1,4 @@
-<div id="map" style="width: 50%; height: 900px;"></div>
+<div id="map" style="width: 70%; height: 880px; margin: 0 auto;"></div>
 
 <script>
   function initMap() {
@@ -10,10 +10,10 @@
       keyboardShortcuts: false,
       restriction: {
         latLngBounds: {
-          north: 22.4350,
-          south: 22.4050,
-          west: 114.1950,
-          east: 114.2200,
+          north: 22.427399116455383,
+          south: 22.412482562008687,
+          west: 114.19803399534455,
+          east: 114.21494387024956,
         },
         strictBounds: true,
       },
@@ -21,23 +21,47 @@
 
     // Define your pins here
     const locations = [
-      {
-        lat: 22.4198,
-        lng: 114.2068,
-        title: "University Library",
-        url: "/library"
+{
+        lat: 22.420089834513423,
+        lng: 114.2072099614738,
+        title: "Sir Run Run Shaw Hall",
+        url: "/sirrunrunshawhall",
+        image_url: "<%= asset_path('sir_run_run.jpg') %>"
       },
       {
-        lat: 22.4220,
-        lng: 114.2050,
-        title: "Science Building",
-        url: "/science"
+        lat: 22.42090899131629, 
+        lng: 114.20930435032216,
+        title: "NA Gym",
+        url: "/nagym",
+        image_url: "<%= asset_path('na_gym.jpg') %>"
       },
       {
-        lat: 22.4175,
-        lng: 114.2090,
-        title: "Student Canteen",
-        url: "/canteen"
+        lat: 22.420960312540984, 
+        lng: 114.20567848673426,
+        title: "UC Gym",
+        url: "/ucgym",
+        image_url: "<%= asset_path('uc_gym.jpg') %>"
+      },
+      {
+        lat: 22.41493476795026, 
+        lng: 114.20880499854452,
+        title: "Lingnan Stadium",
+        url: "/lingnanstadium",
+        image_url: "<%= asset_path('lingnan_stadium.jpg') %>"
+      },
+      {
+        lat: 22.418781207707248,
+        lng: 114.21198997917793,
+        title: "University Sports Centre",
+        url: "/usportscentre",
+        image_url: "<%= asset_path('u_sports_centre.jpg') %>"
+      },
+      {
+        lat: 22.422362888628257,
+        lng: 114.2016351058803,
+        title: "Shaw College lecture Theatre",
+        url: "/shawtheatre",
+        image_url: "<%= asset_path('shaw_theatre.jpg') %>"
       },
     ];
 
@@ -54,12 +78,18 @@
 
       // Click marker → show info window with a link
       marker.addListener("click", () => {
-        infoWindow.setContent(`
-          <div style="padding: 5px;">
-            <b>${location.title}</b><br>
-            <a href="${location.url}" style="color: blue;">Go to page →</a>
+        const contentString = `
+          <div style="padding: 5px; width: 200px;">
+            ${location.image_url ? 
+              `<img src="${location.image_url}" style="width:100%; height:auto; border-radius:8px; margin-bottom:8px;">` : 
+              ''
+            }
+            <div style="font-weight: bold; font-size: 14px;">${location.title}</div>
+            <a href="${location.url}" style="color: #4285F4; text-decoration: none; font-size: 12px;">Go to page →</a>
           </div>
-        `);
+        `;
+        
+        infoWindow.setContent(contentString);
         infoWindow.open(map, marker);
       });
     });

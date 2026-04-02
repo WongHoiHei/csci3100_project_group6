@@ -1,0 +1,11 @@
+%h1 Venue Booking
+
+%ul
+  - @rooms.each do |room|
+    %li= room
+
+%ul
+  - @timeslots.each do |slot|
+    %li= slot
+
+= link_to 'Continue', booking_confirmation_path, class: 'btn'
