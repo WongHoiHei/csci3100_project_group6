@@ -3,5 +3,6 @@ class WelcomeController < ApplicationController
   end
 
   def map
+    render layout:false
   end
 end
