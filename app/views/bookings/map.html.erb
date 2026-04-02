@@ -37,10 +37,12 @@
 <div class="full-screen-map-page">
   <div class="map-overlay-header">
     <div style="font-weight: bold; margin-bottom: 5px;">equipment/venue booking system</div>
-    <input type="text" placeholder="Search venue..."> <button>Search</button>
+    <input type="text" id="venue-search" placeholder="Search venue..."> 
+    <button id="search-btn">Search</button>
+
     <div style="margin-top: 10px; border-top: 1px solid #eee; pt: 5px;">
       Demo User<br>
-      <%= link_to "Log out", logout_path, style: "color: red; font-size: 12px;" %>
+      <%= link_to "Log out", welcome_path, style: "color: blue; font-size: 12px;" %>
     </div>
   </div>
 
@@ -68,7 +70,7 @@
 
     // Define your pins here
     const locations = [
-{
+      {
         lat: 22.420089834513423,
         lng: 114.2072099614738,
         title: "Sir Run Run Shaw Hall",
@@ -114,31 +116,62 @@
 
     // Create an info window (shared across all markers)
     const infoWindow = new google.maps.InfoWindow();
+    const markers = [];
 
     // Loop through and create markers
-    locations.forEach(location => {
+locations.forEach(location => {
       const marker = new google.maps.Marker({
         position: { lat: location.lat, lng: location.lng },
         map: map,
         title: location.title,
       });
 
-      // Click marker → show info window with a link
+      // Attach the location data to the marker for easy retrieval
+      marker.customData = location;
+      markers.push(marker);
+
       marker.addListener("click", () => {
-        const contentString = `
-          <div style="padding: 5px; width: 200px;">
-            ${location.image_url ? 
-              `<img src="${location.image_url}" style="width:100%; height:auto; border-radius:8px; margin-bottom:8px;">` : 
-              ''
-            }
-            <div style="font-weight: bold; font-size: 14px;">${location.title}</div>
-            <a href="${location.url}" style="color: #4285F4; text-decoration: none; font-size: 12px;">Go to page →</a>
-          </div>
-        `;
-        
-        infoWindow.setContent(contentString);
-        infoWindow.open(map, marker);
+        openInfoWindow(marker);
       });
+    });
+
+    // Helper function to open window (used by click and search)
+    function openInfoWindow(marker) {
+      const data = marker.customData;
+      const contentString = `
+        <div style="padding: 5px; width: 200px;">
+          ${data.image_url ? `<img src="${data.image_url}" style="width:100%; height:auto; border-radius:8px; margin-bottom:8px;">` : ''}
+          <div style="font-weight: bold; font-size: 14px;">${data.title}</div>
+          <a href="${data.url}" style="color: #4285F4; text-decoration: none; font-size: 12px;">Go to page →</a>
+        </div>
+      `;
+      infoWindow.setContent(contentString);
+      infoWindow.open(map, marker);
+    }
+
+    // --- SEARCH LOGIC ---
+    const searchInput = document.getElementById("venue-search");
+    const searchBtn = document.getElementById("search-btn");
+
+    function performSearch() {
+      const query = searchInput.value.toLowerCase().trim();
+      if (!query) return;
+
+      // Look for a marker that contains the search string
+      const match = markers.find(m => m.title.toLowerCase().includes(query));
+
+      if (match) {
+        map.setZoom(17);
+        map.panTo(match.getPosition());
+        openInfoWindow(match);
+      } else {
+        alert("Venue not found.");
+      }
+    }
+
+    searchBtn.addEventListener("click", performSearch);
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") performSearch();
     });
   }
 </script>

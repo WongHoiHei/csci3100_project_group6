@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'pages#welcome'
-  get "/map", to: "welcome#map"  # or a dedicated controller
+  root 'pages#welcome', as: :welcome
+  get "/map", to: "bookings#map"  # or a dedicated controller
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get '/login', to: 'sessions#new'
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get '/main', to: 'pages#main'
 
-  get '/venue-booking', to: 'bookings#venue'
+  get '/venue-booking', to: 'bookings#map'
   get '/equipment-booking', to: 'bookings#equipment'
 
   get 'buildings/:slug', to: 'buildings#show', as: :building

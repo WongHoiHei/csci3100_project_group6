@@ -5662,3 +5662,572 @@ Processing by WelcomeController#map as HTML
 Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:02:36 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/buildings/ucgym" for 45.144.227.12 at 2026-04-02 18:02:42 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "ucgym"}
+  Rendering buildings/show.html.erb
+  Rendered buildings/show.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:02:50 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:09:26 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:11:50 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:12:45 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/buildings/nagym" for 45.144.227.12 at 2026-04-02 18:13:07 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "nagym"}
+  Rendering buildings/show.html.erb
+  Rendered buildings/show.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:13:09 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/buildings/sirrunrunshawhall" for 45.144.227.12 at 2026-04-02 18:13:11 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "sirrunrunshawhall"}
+  Rendering buildings/show.html.erb
+  Rendered buildings/show.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:13:13 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/buildings/usportscentre" for 45.144.227.12 at 2026-04-02 18:13:15 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "usportscentre"}
+  Rendering buildings/show.html.erb
+  Rendered buildings/show.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:13:29 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/buildings/ucgym" for 45.144.227.12 at 2026-04-02 18:13:34 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "ucgym"}
+  Rendering buildings/show.html.erb
+  Rendered buildings/show.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:13:36 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/buildings/shawtheatre" for 45.144.227.12 at 2026-04-02 18:13:38 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "shawtheatre"}
+  Rendering buildings/show.html.erb
+  Rendered buildings/show.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:13:39 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/logout" for 45.144.227.12 at 2026-04-02 18:13:46 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/" for 45.144.227.12 at 2026-04-02 18:16:08 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 6.5ms | GC: 0.3ms)
+  Rendered shared/_header.html.haml (Duration: 10.1ms | GC: 6.7ms)
+  Rendered layout layouts/application.html.haml (Duration: 49.7ms | GC: 24.9ms)
+Completed 200 OK in 51ms (Views: 50.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 24.9ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:16:12 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 45.144.227.12 at 2026-04-02 18:16:14 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 4.0ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.haml (Duration: 10.0ms | GC: 2.9ms)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.5ms)
+
+
+Started GET "/map" for 45.144.227.12 at 2026-04-02 18:16:18 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 1.0ms | GC: 0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/logout" for 45.144.227.12 at 2026-04-02 18:17:22 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/login" for 45.144.227.12 at 2026-04-02 18:17:28 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 22.1ms | GC: 17.8ms)
+  Rendered layout layouts/application.html.haml (Duration: 35.5ms | GC: 17.8ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 17.8ms)
+
+
+Started GET "/password/edit" for 45.144.227.12 at 2026-04-02 18:17:29 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PasswordsController#edit as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering passwords/edit.html.haml within layouts/application
+  Rendered passwords/edit.html.haml within layouts/application (Duration: 5.6ms | GC: 1.9ms)
+  Rendered shared/_header.html.haml (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 7.1ms | GC: 1.9ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/signup" for 45.144.227.12 at 2026-04-02 18:17:30 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering registrations/new.html.haml within layouts/application
+  Rendered registrations/new.html.haml within layouts/application (Duration: 4.2ms | GC: 0.9ms)
+  Rendered shared/_header.html.haml (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 5.6ms | GC: 0.9ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started POST "/signup" for 45.144.227.12 at 2026-04-02 18:17:33 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]", "commit" => "Sign up"}
+Redirected to https://symmetrical-space-train-g4jgwjqp775r3945r-3000.app.github.dev/login
+↳ app/controllers/registrations_controller.rb:6:in 'RegistrationsController#create'
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 45.144.227.12 at 2026-04-02 18:17:33 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 45.144.227.12 at 2026-04-02 18:17:33 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Log in"}
+Redirected to https://symmetrical-space-train-g4jgwjqp775r3945r-3000.app.github.dev/main
+↳ app/controllers/sessions_controller.rb:5:in 'SessionsController#create'
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 45.144.227.12 at 2026-04-02 18:17:34 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as TURBO_STREAM
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 5.4ms | GC: 0.6ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/equipment-booking" for 45.144.227.12 at 2026-04-02 18:17:34 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#equipment as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 3.8ms | GC: 0.5ms)
+  Rendered shared/_header.html.haml (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 6.2ms | GC: 1.0ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:17:34 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:17:35 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/equipment-booking" for 45.144.227.12 at 2026-04-02 18:17:47 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#equipment as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:17:48 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:17:48 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#map as HTML
+  Rendering welcome/map.html.erb
+  Rendered welcome/map.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:18:24 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/map.html.erb within layouts/application
+  Rendered bookings/map.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 13.8ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 45.144.227.12 at 2026-04-02 18:18:26 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 14.1ms | GC: 10.6ms)
+  Rendered shared/_header.html.haml (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 16.7ms | GC: 11.5ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 11.5ms)
+
+
+Started GET "/equipment-booking" for 45.144.227.12 at 2026-04-02 18:18:27 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#equipment as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 5.4ms | GC: 1.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 8.9ms | GC: 2.0ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:18:28 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/map.html.erb within layouts/application
+  Rendered bookings/map.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 2.7ms | GC: 0.5ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:18:37 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/map.html.erb within layouts/application
+  Rendered bookings/map.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:19:02 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:19:13 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/logout" for 45.144.227.12 at 2026-04-02 18:19:14 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/logout" for 45.144.227.12 at 2026-04-02 18:19:16 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/logout" for 45.144.227.12 at 2026-04-02 18:19:17 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/logout" for 45.144.227.12 at 2026-04-02 18:19:18 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started GET "/main" for 45.144.227.12 at 2026-04-02 18:19:32 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 18.7ms | GC: 3.4ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.4ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:19:33 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:20:08 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'welcome_path' for an instance of #<Class:0x0000718a9e1f23a0>)
+Caused by: NameError (undefined local variable or method 'welcome_path' for an instance of #<Class:0x0000718a9e1f23a0>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'welcome_path' for an instance of #<Class:0x0000718a9e1f23a0>):
+    43:     <div style="margin-top: 10px; border-top: 1px solid #eee; pt: 5px;">
+    44:       Demo User<br>
+    45:       <%= link_to "Log out", welcome_path, style: "color: red; font-size: 12px;" %>
+    46:     </div>
+    47:   </div>
+    48: 
+    49:   <div id="map"></div>
+  
+app/views/bookings/map.html.erb:46
+app/controllers/bookings_controller.rb:24:in 'BookingsController#map'
+
+Information for cause: NameError (undefined local variable or method 'welcome_path' for an instance of #<Class:0x0000718a9e1f23a0>):
+  
+app/views/bookings/map.html.erb:46
+app/controllers/bookings_controller.rb:24:in 'BookingsController#map'
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:21:05 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 45.144.227.12 at 2026-04-02 18:21:07 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 15.4ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:21:08 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:21:37 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 45.144.227.12 at 2026-04-02 18:21:38 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 16.9ms | GC: 1.6ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/venue-booking" for 45.144.227.12 at 2026-04-02 18:21:39 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 45.144.227.12 at 2026-04-02 18:21:40 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 2.4ms | GC: 0.4ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/main" for 45.144.227.12 at 2026-04-02 18:21:42 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 2.3ms | GC: 0.2ms)
+  Rendered shared/_header.html.haml (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 4.6ms | GC: 0.2ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/main" for 45.144.227.12 at 2026-04-02 18:21:47 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 45.144.227.12 at 2026-04-02 18:21:51 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/signup" for 45.144.227.12 at 2026-04-02 18:21:51 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering registrations/new.html.haml within layouts/application
+  Rendered registrations/new.html.haml within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 45.144.227.12 at 2026-04-02 18:21:51 +0000
+Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
