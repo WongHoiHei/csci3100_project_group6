@@ -2,6 +2,9 @@
 <html>
   <head>
     <title><%= content_for(:title) || "Walking Skeleton" %></title>
+    <script>
+    window.GOOGLE_MAPS_API_KEY = "<%= Rails.application.credentials.google_maps_api_key %>";
+    </script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Walking Skeleton">

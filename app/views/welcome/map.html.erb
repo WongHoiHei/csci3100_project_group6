@@ -1,0 +1,72 @@
+<div id="map" style="width: 50%; height: 900px;"></div>
+
+<script>
+  function initMap() {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 22.4198, lng: 114.2068 },
+      zoom: 16,
+      minZoom: 16,
+      gestureHandling: "auto",
+      keyboardShortcuts: false,
+      restriction: {
+        latLngBounds: {
+          north: 22.4350,
+          south: 22.4050,
+          west: 114.1950,
+          east: 114.2200,
+        },
+        strictBounds: true,
+      },
+    });
+
+    // Define your pins here
+    const locations = [
+      {
+        lat: 22.4198,
+        lng: 114.2068,
+        title: "University Library",
+        url: "/library"
+      },
+      {
+        lat: 22.4220,
+        lng: 114.2050,
+        title: "Science Building",
+        url: "/science"
+      },
+      {
+        lat: 22.4175,
+        lng: 114.2090,
+        title: "Student Canteen",
+        url: "/canteen"
+      },
+    ];
+
+    // Create an info window (shared across all markers)
+    const infoWindow = new google.maps.InfoWindow();
+
+    // Loop through and create markers
+    locations.forEach(location => {
+      const marker = new google.maps.Marker({
+        position: { lat: location.lat, lng: location.lng },
+        map: map,
+        title: location.title,
+      });
+
+      // Click marker → show info window with a link
+      marker.addListener("click", () => {
+        infoWindow.setContent(`
+          <div style="padding: 5px;">
+            <b>${location.title}</b><br>
+            <a href="${location.url}" style="color: blue;">Go to page →</a>
+          </div>
+        `);
+        infoWindow.open(map, marker);
+      });
+    });
+  }
+</script>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_maps_api_key %>&callback=initMap"
+  defer>
+</script>
