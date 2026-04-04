@@ -20,13 +20,14 @@ RSpec.describe DashboardStatsService do
 end
 
 describe '#bookings_by_date' do
-  let(:date_range_double) { double('date_range', group(:date).count: { '2026-04-01' => 2, '2026-04-02' => 1 }) }
+  let(:date_range_double) { double('date_range', count: { '2026-04-01' => 2, '2026-04-02' => 1 }) }
 
   before do
-    allow(bookings_double).to receive(:where).with(start_date: anything, end_date: anything).and_return(date_range_double)
+    allow(bookings_double).to receive(:where).and_return(date_range_double)
+    allow(date_range_double).to receive(:group).with(:start_time).and_return(date_range_double)
   end
 
-  it 'returns hash of date to booking counts' do
+  it 'returns date-count hash for Chart.js' do
     result = service.bookings_by_date(1.day.ago, Time.current)
     expect(result).to eq({ '2026-04-01' => 2, '2026-04-02' => 1 })
   end
