@@ -5,30 +5,35 @@ RSpec.describe DashboardStatsService do
 
   let(:department) { double('Department') }
   let(:bookings_double) { double('bookings') }
-  let(:approved_double) { double('approved_scope', count: 3) }
 
   before do
     allow(department).to receive(:bookings).and_return(bookings_double)
-    allow(bookings_double).to receive(:approved).and_return(approved_double)
   end
 
   describe '#usage_rate' do
+    let(:approved_double) { double('approved', count: 3) }
+
+    before do
+      allow(bookings_double).to receive(:approved).and_return(approved_double)
+    end
+
     it 'returns 75.0 for 3/4 booked slots' do
       expect(service.usage_rate).to eq(75.0)
     end
   end
-end
 
-describe '#bookings_by_date' do
-  let(:date_range_double) { double('date_range', count: { '2026-04-01' => 2, '2026-04-02' => 1 }) }
+  describe '#bookings_by_date' do
+    let(:where_double) { double('where_result') }
+    let(:group_double) { double('group_result', count: { '2026-04-01' => 2, '2026-04-02' => 1 }) }
 
-  before do
-    allow(bookings_double).to receive(:where).and_return(date_range_double)
-    allow(date_range_double).to receive(:group).with(:start_time).and_return(date_range_double)
-  end
+    before do
+      allow(bookings_double).to receive(:where).with(anything).and_return(where_double)
+      allow(where_double).to receive(:group).with(:start_time).and_return(group_double)
+    end
 
-  it 'returns date-count hash for Chart.js' do
-    result = service.bookings_by_date(1.day.ago, Time.current)
-    expect(result).to eq({ '2026-04-01' => 2, '2026-04-02' => 1 })
+    it 'returns date-count hash for Chart.js' do
+      result = service.bookings_by_date(1.day.ago, Time.current)
+      expect(result).to eq({ '2026-04-01' => 2, '2026-04-02' => 1 })
+    end
   end
 end
