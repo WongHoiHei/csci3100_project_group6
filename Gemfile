@@ -1,5 +1,4 @@
 source "https://rubygems.org"
-ruby '3.4.7'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.2"
@@ -17,6 +16,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+gem 'haml-rails', '~> 2.0'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -53,12 +53,6 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
-
-  # Unit/integration tests
-  gem "rspec-rails"
-
-  # Test data factories
-  gem "factory_bot_rails"
 end
 
 group :development do
@@ -70,8 +64,10 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  # BDD features
-  gem "cucumber-rails", require: false
-  # Clean test DB
-  gem "database_cleaner-active_record"
+end
+group :test do
+  gem 'rspec-rails'
+  gem 'cucumber-rails', require: false
+  gem 'rails-controller-testing'
+  gem 'database_cleaner-active_record'
 end

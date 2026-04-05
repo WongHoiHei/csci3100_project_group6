@@ -1,0 +1,11 @@
+%h1 Search Results
+
+%p Searching for #{@query || 'nothing'}
+
+%h3 Results:
+- if @results.any?
+  %ul
+    - @results.each do |result|
+      %li= result
+- else
+  %p No results found. Try "projector", "room", or "speaker".
