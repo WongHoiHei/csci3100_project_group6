@@ -7,3 +7,44 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+#add data in tenants (migration)
+engineering = Tenant.create!(name:"Engineering Department")
+lifescience =Tenant.create!(name: "Life Science Department")
+
+#add a Admin
+User.create!(
+    email: "admin@link.cuhk.edu.hk",
+    name: "Admin",
+    role: "admin",
+    tenant: engineering
+)
+
+#add student account
+User.create!(
+    email:"student@link.cuhk.edu.hk",
+    name: "Student",
+    role: "student",
+    tenant: engineering
+)
+
+#add venues
+#fake nowwwww!!! i made them up first
+engineering.venues.create!([
+    {name:"SHB301", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1111,longitude: 11.1111 },
+    {name:"SHB302", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1112,longitude: 11.1112 },
+])
+
+lifescience.venues.create!([
+    {name:"SC101", location: "science centre 1F", capacity: 50, latitude: 21.1111,longitude: 21.1111 },
+    {name:"SC102", location: "science centre 1F", capacity: 50,  latitude: 31.1112,longitude: 31.1112 },
+])
+
+#add equipments
+engineering.equipments.create!([
+    {name: "Projector", description:"4K Projector", total_count: 5, available_count: 5}
+])
+
+lifescience.equipments.create!([
+    {name: "Projector", description:"4K Projector", total_count: 5, available_count: 5}
+])
