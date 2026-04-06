@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   get '/booking/final', to: 'bookings#final'
 
   get '/search', to: 'search#index'
+
+  resources :dashboards, only: [:index]
 end

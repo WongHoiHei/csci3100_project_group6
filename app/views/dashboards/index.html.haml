@@ -1,0 +1,16 @@
+-# The data-dashboard-url-value ensures Stimulus fetches from the right place
+.container.mx-auto.p-6{ data: { controller: "dashboard", dashboard_url_value: dashboards_path(format: :json) } }
+  
+  .flex.justify-between.items-center.mb-6
+    %h1.text-2xl.font-bold Analytics Dashboard
+    = link_to "Back to Main", main_path, class: "text-blue-500 hover:underline"
+
+  .grid.grid-cols-1.md:grid-cols-2.gap-6
+    .card.bg-white.p-6.shadow.rounded
+      %h3.text-gray-500.uppercase.text-xs.font-bold Usage Rate
+      %h2.text-4xl.font-bold{ data: { dashboard_target: "usageRate" } } --%
+
+    .card.bg-white.p-6.shadow.rounded
+      %h3.text-gray-500.uppercase.text-xs.font-bold Booking Trends
+      .chart-container{ style: "position: relative; height:200px;" }
+        %canvas{ data: { dashboard_target: "canvas" } }
