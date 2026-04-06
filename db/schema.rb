@@ -10,5 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_05_170508) do
+  create_table "bookings", force: :cascade do |t|
+    t.integer "bookable_id", null: false
+    t.string "bookable_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "end_time"
+    t.datetime "start_time"
+    t.string "status"
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["bookable_type", "bookable_id"], name: "index_bookings_on_bookable"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.integer "available_count"
+    t.datetime "created_at", null: false
+    t.text "description"
+    t.string "name"
+    t.integer "tenant_id", null: false
+    t.integer "total_count"
+    t.datetime "updated_at", null: false
+    t.index ["tenant_id"], name: "index_equipment_on_tenant_id"
+  end
+
+  create_table "tenants", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "email"
+    t.string "name"
+    t.string "role"
+    t.integer "tenant_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tenant_id"], name: "index_users_on_tenant_id"
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.integer "capacity"
+    t.datetime "created_at", null: false
+    t.float "latitude"
+    t.string "location"
+    t.float "longitude"
+    t.string "name"
+    t.integer "tenant_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tenant_id"], name: "index_venues_on_tenant_id"
+  end
+
+  add_foreign_key "bookings", "users"
+  add_foreign_key "equipment", "tenants"
+  add_foreign_key "users", "tenants"
+  add_foreign_key "venues", "tenants"
 end

@@ -6,6 +6,6 @@
 - if @results.any?
   %ul
     - @results.each do |result|
-      %li= result
+      %li= "#{result.name} - #{result.tenant.name} - #{result.available_count >0 ? 'Available' : 'Unavailable'}"
 - else
-  %p No results found. Try "projector", "room", or "speaker".
+  %p No results found. Try "projector", "microphone", or "speaker".

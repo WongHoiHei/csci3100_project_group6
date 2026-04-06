@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  bookable: one
+  bookable_type: Bookable
+  start_time: 2026-04-05 17:05:08
+  end_time: 2026-04-05 17:05:08
+  status: MyString
+
+two:
+  user: two
+  bookable: two
+  bookable_type: Bookable
+  start_time: 2026-04-05 17:05:08
+  end_time: 2026-04-05 17:05:08
+  status: MyString
