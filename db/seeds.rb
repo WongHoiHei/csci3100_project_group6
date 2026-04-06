@@ -42,7 +42,11 @@ lifescience.venues.create!([
 
 #add equipments
 engineering.equipments.create!([
-    {name: "Projector", description:"4K Projector", total_count: 5, available_count: 5}
+    {name: "ProjectorAA", description:"4K Projector", total_count: 5, available_count: 5},
+    { name: 'Projector', description:"4K Projector",total_count: 5, available_count: 5},
+    { name: 'Speaker',description:"4K Projector", total_count: 5, available_count: 5 },
+    { name: 'Microphone', description:"4K Projector",total_count: 5, available_count: 5}
+
 ])
 
 lifescience.equipments.create!([
