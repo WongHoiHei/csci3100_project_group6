@@ -57,4 +57,8 @@ class BookingsController < ApplicationController
 
 
 
+  
+   def map
+    render layout:false
+  end
 end

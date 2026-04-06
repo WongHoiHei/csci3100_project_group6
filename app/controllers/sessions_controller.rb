@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
-  def new; end
+  def new
+    @hide_header = true  
+  end
 
   def create
     redirect_to main_path
