@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
   def confirmation; end
 
   def finalize  
-    redirect_to '/booking/final'  
+    redirect_to booking_final_path  
   end
 
   def final; end

@@ -8,3 +8,34 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9f5fa 0%, #ce4141 100%);
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.space-y-8 > * + * {
+  margin-top: 2rem;
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0,0, 0.1), 0 10px 10px -5px rgba(0, 0,0, 0.04);
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0,0, 0.25);
+}
+
+.rounded-2xl {
+  border-radius: 1.5rem;
+}
