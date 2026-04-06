@@ -1,15 +1,11 @@
 class BookingsController < ApplicationController
   def venue
-    @rooms = ['Room A']
+    @rooms = Venue.all
     @timeslots = (1..12).map { |i| "Period #{i}" }
   end
 
   def equipment
-    @equipments = [
-      { name: 'Projector', available: true, category: 'Presentation' },
-      { name: 'Speaker', available: true, category: 'Audio' },
-      { name: 'Microphone', available: false, category: 'Audio' }
-    ]
+    @equipments = Equipment.all
   end
 
   def confirmation; end

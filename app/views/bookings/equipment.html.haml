@@ -2,6 +2,6 @@
 
 %ul
   - @equipments.each do |item|
-    %li= "#{item[:name]} - #{item[:category]} - #{item[:available] ? 'Available' : 'Unavailable'}"
+    %li= "#{item.name} - #{item.tenant.name} - #{item.description}- #{item.available_count >0 ? 'Available' : 'Unavailable'}"
 
 = link_to 'Continue', booking_confirmation_path, class: 'btn'
