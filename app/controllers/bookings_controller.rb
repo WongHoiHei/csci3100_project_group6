@@ -48,7 +48,11 @@ class BookingsController < ApplicationController
   def index
     @bookings =current_user.bookings
   end
-
+  
+  def map
+   render layout:false
+ end
+ 
   private
 
   def booking_params
@@ -58,7 +62,4 @@ class BookingsController < ApplicationController
 
 
   
-   def map
-    render layout:false
-  end
 end
