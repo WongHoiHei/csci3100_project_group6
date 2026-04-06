@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  total_count: 1
+  available_count: 1
+  tenant: one
+
+two:
+  name: MyString
+  description: MyText
+  total_count: 1
+  available_count: 1
+  tenant: two
