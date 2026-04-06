@@ -20,4 +20,9 @@ Rails.application.routes.draw do
   get '/booking/final', to: 'bookings#final'
 
   get '/search', to: 'search#index'
+
+  get '/bookings/new', to: 'bookings#new'
+  post '/bookings', to: 'bookings#create'
+  get '/bookings/:id', to: 'bookings#show' #show id booking
+  get '/bookings', to: 'bookings#index' #show all bookings
 end
