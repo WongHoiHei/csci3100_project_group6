@@ -34,7 +34,6 @@ Completed 200 OK in 58ms (Views: 28.3ms | ActiveRecord: 0.0ms (0 queries, 0 cach
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='WalkingSkeleton'*/[0m
   [1m[36mActiveRecord::InternalMetadata Create (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-23 11:38:31.706200', '2026-02-23 11:38:31.706207') RETURNING "key" /*application='WalkingSkeleton'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='WalkingSkeleton'*/[0m
-<<<<<<< HEAD
 Started GET "/" for 45.144.227.17 at 2026-04-01 17:44:24 +0000
 Cannot render console from 45.144.227.17! Allowed networks: 127.0.0.0/127.255.255.255, ::1
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='WalkingSkeleton'*/[0m
@@ -958,8 +957,6 @@ Cannot render console from 45.144.227.17! Allowed networks: 127.0.0.0/127.255.25
   
 ActionController::RoutingError (No route matches [GET] "/science"):
   
-=======
->>>>>>> origin/feature/Map
 Started GET "/" for 45.144.227.12 at 2026-04-02 10:28:31 +0000
 Cannot render console from 45.144.227.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='WalkingSkeleton'*/[0m
@@ -6231,6 +6228,7 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+<<<<<<< HEAD
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
 Migrating to CreateTenants (20260405170448)
@@ -6241,6 +6239,80 @@ Migrating to CreateTenants (20260405170448)
 Migrating to CreateUsers (20260405170452)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
   [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "name" varchar, "role" varchar, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_135c8f54b2"
+=======
+Started GET "/" for 61.93.18.211 at 2026-04-06 15:38:49 +0000
+Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 5 pending migrations:
+
+db/migrate/20260405170448_create_tenants.rb
+db/migrate/20260405170452_create_users.rb
+db/migrate/20260405170457_create_venues.rb
+db/migrate/20260405170504_create_equipment.rb
+db/migrate/20260405170508_create_bookings.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in 'ActiveRecord::Migration.check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in 'block (2 levels) in ActiveRecord::Migration::CheckPending#call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in 'ActiveSupport::FileUpdateChecker#execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in 'block in ActiveRecord::Migration::CheckPending#call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in 'Thread::Mutex#synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+propshaft (1.3.1) lib/propshaft/quiet_assets.rb:11:in 'Propshaft::QuietAssets#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.2.5) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.2.5) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in 'ActiveSupport::Cache::Strategy::LocalCache::Middleware#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+propshaft (1.3.1) lib/propshaft/server.rb:37:in 'Propshaft::Server#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in 'Rack::Sendfile#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.1.3) lib/rails/engine.rb:534:in 'Rails::Engine#call'
+puma (7.2.0) lib/puma/configuration.rb:296:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (7.2.0) lib/puma/request.rb:103:in 'block in Puma::Request#handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in 'Puma::ThreadPool#with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in 'Puma::Request#handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in 'Puma::Server#process_client'
+puma (7.2.0) lib/puma/server.rb:262:in 'block in Puma::Server#run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in 'block in Puma::ThreadPool#spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to CreateTenants (20260405170448)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "tenants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260405170448') RETURNING "version" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+Migrating to CreateUsers (20260405170452)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "name" varchar, "role" varchar, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_135c8f54b2"
+>>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
 FOREIGN KEY ("tenant_id")
   REFERENCES "tenants" ("id")
 ) /*application='BookingSystem'*/[0m
@@ -6249,25 +6321,45 @@ FOREIGN KEY ("tenant_id")
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
 Migrating to CreateVenues (20260405170457)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+<<<<<<< HEAD
   [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_81289cf97c"
+=======
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_81289cf97c"
+>>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
 FOREIGN KEY ("tenant_id")
   REFERENCES "tenants" ("id")
 ) /*application='BookingSystem'*/[0m
   [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+<<<<<<< HEAD
   [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260405170457') RETURNING "version" /*application='BookingSystem'*/[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
 Migrating to CreateEquipment (20260405170504)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
   [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "equipment" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "total_count" integer, "available_count" integer, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_28a546a851"
+=======
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260405170457') RETURNING "version" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+Migrating to CreateEquipment (20260405170504)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "equipment" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "total_count" integer, "available_count" integer, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_28a546a851"
+>>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
 FOREIGN KEY ("tenant_id")
   REFERENCES "tenants" ("id")
 ) /*application='BookingSystem'*/[0m
   [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_equipment_on_tenant_id" ON "equipment" ("tenant_id") /*application='BookingSystem'*/[0m
+<<<<<<< HEAD
   [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260405170504') RETURNING "version" /*application='BookingSystem'*/[0m
   [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
 Migrating to CreateBookings (20260405170508)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
   [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "bookable_type" varchar NOT NULL, "bookable_id" integer NOT NULL, "start_time" datetime(6), "end_time" datetime(6), "status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_ef0571f117"
+=======
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260405170504') RETURNING "version" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+Migrating to CreateBookings (20260405170508)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "bookable_type" varchar NOT NULL, "bookable_id" integer NOT NULL, "start_time" datetime(6), "end_time" datetime(6), "status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_ef0571f117"
+>>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
 FOREIGN KEY ("user_id")
   REFERENCES "users" ("id")
 ) /*application='BookingSystem'*/[0m
@@ -6276,6 +6368,7 @@ FOREIGN KEY ("user_id")
   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260405170508') RETURNING "version" /*application='BookingSystem'*/[0m
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+<<<<<<< HEAD
 Started GET "/" for 61.93.18.211 at 2026-04-06 14:44:24 +0000
 Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255.255, ::1
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
@@ -8224,22 +8317,77 @@ Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
 Started GET "/" for 61.93.18.211 at 2026-04-06 17:02:32 +0000
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTenant Create (1.3ms)[0m  [1m[32mINSERT INTO "tenants" ("name", "created_at", "updated_at") VALUES ('Engineering Department', '2026-04-06 15:39:51.333840', '2026-04-06 15:39:51.333840') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTenant Create (1.2ms)[0m  [1m[32mINSERT INTO "tenants" ("name", "created_at", "updated_at") VALUES ('Life Science Department', '2026-04-06 15:39:51.340747', '2026-04-06 15:39:51.340747') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "role", "tenant_id", "created_at", "updated_at") VALUES ('admin@link.cuhk.edu.hk', 'Admin', 'admin', 1, '2026-04-06 15:39:51.351366', '2026-04-06 15:39:51.351366') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "role", "tenant_id", "created_at", "updated_at") VALUES ('student@link.cuhk.edu.hk', 'Student', 'student', 1, '2026-04-06 15:39:51.354502', '2026-04-06 15:39:51.354502') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mVenue Create (1.4ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "capacity", "latitude", "longitude", "tenant_id", "created_at", "updated_at") VALUES ('SHB301', 'ho sin hang engineering building 3F', 50, 11.1111, 11.1111, 1, '2026-04-06 15:39:51.383566', '2026-04-06 15:39:51.383566') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mVenue Create (1.2ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "capacity", "latitude", "longitude", "tenant_id", "created_at", "updated_at") VALUES ('SHB302', 'ho sin hang engineering building 3F', 50, 11.1112, 11.1112, 1, '2026-04-06 15:39:51.388183', '2026-04-06 15:39:51.388183') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mVenue Create (1.1ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "capacity", "latitude", "longitude", "tenant_id", "created_at", "updated_at") VALUES ('SC101', 'science centre 1F', 50, 21.1111, 21.1111, 2, '2026-04-06 15:39:51.393005', '2026-04-06 15:39:51.393005') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mVenue Create (1.8ms)[0m  [1m[32mINSERT INTO "venues" ("name", "location", "capacity", "latitude", "longitude", "tenant_id", "created_at", "updated_at") VALUES ('SC102', 'science centre 1F', 50, 31.1112, 31.1112, 2, '2026-04-06 15:39:51.396588', '2026-04-06 15:39:51.396588') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mEquipment Create (1.2ms)[0m  [1m[32mINSERT INTO "equipment" ("name", "description", "total_count", "available_count", "tenant_id", "created_at", "updated_at") VALUES ('ProjectorAA', '4K Projector', 5, 5, 1, '2026-04-06 15:39:51.407265', '2026-04-06 15:39:51.407265') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mEquipment Create (1.7ms)[0m  [1m[32mINSERT INTO "equipment" ("name", "description", "total_count", "available_count", "tenant_id", "created_at", "updated_at") VALUES ('Projector', '4K Projector', 5, 5, 1, '2026-04-06 15:39:51.411577', '2026-04-06 15:39:51.411577') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mEquipment Create (1.2ms)[0m  [1m[32mINSERT INTO "equipment" ("name", "description", "total_count", "available_count", "tenant_id", "created_at", "updated_at") VALUES ('Speaker', '4K Projector', 5, 5, 1, '2026-04-06 15:39:51.416029', '2026-04-06 15:39:51.416029') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mEquipment Create (1.2ms)[0m  [1m[32mINSERT INTO "equipment" ("name", "description", "total_count", "available_count", "tenant_id", "created_at", "updated_at") VALUES ('Microphone', '4K Projector', 5, 5, 1, '2026-04-06 15:39:51.419532', '2026-04-06 15:39:51.419532') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mEquipment Create (1.4ms)[0m  [1m[32mINSERT INTO "equipment" ("name", "description", "total_count", "available_count", "tenant_id", "created_at", "updated_at") VALUES ('Projector', '4K Projector', 5, 5, 2, '2026-04-06 15:39:51.423105', '2026-04-06 15:39:51.423105') RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+Started GET "/" for 61.93.18.211 at 2026-04-06 15:40:02 +0000
+>>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
 Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255.255, ::1
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
 Processing by PagesController#welcome as HTML
   Rendering layout layouts/application.html.haml
   Rendering pages/welcome.html.haml within layouts/application
   Rendered pages/welcome.html.haml within layouts/application (Duration: 7.0ms | GC: 0.0ms)
+<<<<<<< HEAD
   Rendered shared/_header.html.haml (Duration: 2.8ms | GC: 0.0ms)
   Rendered layout layouts/application.html.haml (Duration: 32.3ms | GC: 0.0ms)
 Completed 200 OK in 40ms (Views: 35.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
 Started GET "/login" for 61.93.18.211 at 2026-04-06 17:02:33 +0000
+=======
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='welcome',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 22.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 49.9ms | GC: 0.0ms)
+Completed 200 OK in 58ms (Views: 50.8ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 61.93.18.211 at 2026-04-06 15:40:04 +0000
+>>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
 Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255.255, ::1
 Processing by SessionsController#new as HTML
   Rendering layout layouts/application.html.haml
   Rendering sessions/new.html.haml within layouts/application
+<<<<<<< HEAD
   Rendered sessions/new.html.haml within layouts/application (Duration: 4.2ms | GC: 0.0ms)
   Rendered shared/_header.html.haml (Duration: 0.0ms | GC: 0.0ms)
   Rendered layout layouts/application.html.haml (Duration: 5.6ms | GC: 0.0ms)
@@ -8256,10 +8404,31 @@ Completed 302 Found in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0m
 
 
 Started GET "/main" for 61.93.18.211 at 2026-04-06 17:02:34 +0000
+=======
+  Rendered sessions/new.html.haml within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='BookingSystem',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 26.0ms | GC: 23.9ms)
+  Rendered layout layouts/application.html.haml (Duration: 35.4ms | GC: 23.9ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 23.9ms)
+
+
+Started POST "/login" for 61.93.18.211 at 2026-04-06 15:40:05 +0000
+Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Log in"}
+Redirected to https://animated-train-4j5x957rwwqv3q6qj-3000.app.github.dev/main
+↳ app/controllers/sessions_controller.rb:5:in 'SessionsController#create'
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/main" for 61.93.18.211 at 2026-04-06 15:40:05 +0000
+>>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
 Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255.255, ::1
 Processing by PagesController#main as TURBO_STREAM
   Rendering layout layouts/application.html.haml
   Rendering pages/main.html.haml within layouts/application
+<<<<<<< HEAD
   Rendered pages/main.html.haml within layouts/application (Duration: 4.0ms | GC: 0.0ms)
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
   ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
@@ -8348,6 +8517,17 @@ Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 1.1ms (1 query, 0 cached
 
 
 Started GET "/equipment-booking" for 61.93.18.211 at 2026-04-06 17:08:44 +0000
+=======
+  Rendered pages/main.html.haml within layouts/application (Duration: 5.0ms | GC: 0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 9.1ms | GC: 0.8ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/equipment-booking" for 61.93.18.211 at 2026-04-06 15:40:06 +0000
+>>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
 Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255.255, ::1
 Processing by BookingsController#equipment as HTML
   Rendering layout layouts/application.html.haml
@@ -8364,6 +8544,7 @@ Processing by BookingsController#equipment as HTML
   ↳ app/views/bookings/equipment.html.haml:6
   [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
   ↳ app/views/bookings/equipment.html.haml:6
+<<<<<<< HEAD
   Rendered bookings/equipment.html.haml within layouts/application (Duration: 29.4ms | GC: 1.2ms)
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
   ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
@@ -9795,6 +9976,21 @@ Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255
 Processing by BookingsController#new as HTML
   Parameters: {"bookable_id" => "5", "bookable_type" => "Equipment"}
 Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.3ms (0 queries, 0 cached) | GC: 0.2ms)
+=======
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 24.9ms | GC: 1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 28.6ms | GC: 1.3ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 1.0ms (7 queries, 3 cached) | GC: 2.1ms)
+
+
+Started GET "/bookings/new?bookable_id=4&bookable_type=Equipment" for 61.93.18.211 at 2026-04-06 15:40:07 +0000
+Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#new as HTML
+  Parameters: {"bookable_id" => "4", "bookable_type" => "Equipment"}
+Completed 406 Not Acceptable in 22ms (ActiveRecord: 0.4ms (0 queries, 0 cached) | GC: 0.3ms)
+>>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
 
 
   
@@ -9880,6 +10076,7 @@ puma (7.2.0) lib/puma/request.rb:102:in 'Puma::Request#handle_request'
 puma (7.2.0) lib/puma/server.rb:503:in 'Puma::Server#process_client'
 puma (7.2.0) lib/puma/server.rb:262:in 'block in Puma::Server#run'
 puma (7.2.0) lib/puma/thread_pool.rb:182:in 'block in Puma::ThreadPool#spawn_thread'
+<<<<<<< HEAD
 Started GET "/bookings/new?bookable_id=5&bookable_type=Equipment" for 61.93.18.211 at 2026-04-07 00:49:06 +0000
 Cannot render console from 61.93.18.211! Allowed networks: 127.0.0.0/127.255.255.255, ::1
 Processing by BookingsController#new as HTML
@@ -12855,3 +13052,5 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+=======
+>>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
