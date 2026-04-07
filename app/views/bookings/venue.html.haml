@@ -2,7 +2,9 @@
 
 %ul
   - @rooms.each do |room|
-    %li= room.name #change to room.name to display the venue name
+    %li
+      = room.name 
+      =  link_to 'Book',"/bookings/new?bookable_id=#{room.id}&bookable_type=Venue"
 
 %ul
   - @timeslots.each do |slot|

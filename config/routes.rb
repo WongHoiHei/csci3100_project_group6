@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#welcome', as: :welcome
+  root 'pages#welcome'
   get "/map", to: "bookings#map"  # or a dedicated controller
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

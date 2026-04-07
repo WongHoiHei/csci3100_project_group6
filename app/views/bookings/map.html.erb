@@ -40,15 +40,17 @@
     <input type="text" id="venue-search" placeholder="Search venue..."> 
     <button id="search-btn">Search</button>
 
-    <div style="margin-top: 10px; border-top: 1px solid #eee; pt: 5px;">
-      Demo User<br>
-      <%= link_to "Log out", welcome_path, style: "color: blue; font-size: 12px;" %>
+    <div style="margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px;">
+      <% if current_user %>
+        <%# This displays the 'name' column from your Users table %>
+        <strong><%= current_user.name %></strong><br>
+        
+        <%# Use logout_path and :delete method to trigger your sessions#destroy action %>
+        <%= link_to "Log out", root_path, data: { turbo_method: :delete }, style: "color: blue; font-size: 12px;" %>
+      <% end %>
     </div>
   </div>
-
-  <div id="map"></div>
-</div>
-
+<div id="map"></div>
 <script>
   function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
