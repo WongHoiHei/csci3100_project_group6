@@ -37,6 +37,7 @@ class BookingsController < ApplicationController
     if Booking.new_conflict?(@booking.bookable_id, @booking.bookable_type, @booking.start_time, @booking.end_time)
       redirect_to '/bookings/new', alert: "Unavailable time slot"
     elsif @booking.save
+      BookingMailer.confirmation(@booking).deliver_later
       redirect_to "/bookings/#{@booking.id}", notice: "Booking request submitted" #X @booking
     else
       render :new, status: :unprocessable_entity
@@ -51,6 +52,17 @@ class BookingsController < ApplicationController
   #show all booking
   def index
     @bookings =current_user.bookings
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.user == current_user
+      BookingMailer.deletion(@booking).deliver_later
+      @booking.destroy
+      redirect_to bookings_path, notice: "Booking deleted"
+    else
+      redirect_to bookings_path, alert: "Unauthorized"
+    end
   end
 
   private
