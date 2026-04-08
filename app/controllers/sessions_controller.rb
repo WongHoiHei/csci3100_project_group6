@@ -20,6 +20,6 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     @current_user = nil
     flash[:notice] = 'Logged out successfully!'
-    redirect_to root_path
+    redirect_to welcome_path
   end
 end

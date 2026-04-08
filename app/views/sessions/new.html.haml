@@ -6,11 +6,11 @@
 = form_with url: login_path, local: true do |form|
   .field
     = form.label :email
-    = form.email_field_tag :email, params[:email], placeholder: 'Email'
+    = form.email_field :email, value: params[:email], placeholder: 'Email'
   
   .field
     = form.label :password
-    = form.password_field_tag :password, nil, placeholder: 'Password'
+    = form.password_field :password, placeholder: 'Password'
   
   .actions
     = form.submit 'Log in'

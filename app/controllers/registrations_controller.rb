@@ -7,6 +7,7 @@ class RegistrationsController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.tenant ||= Tenant.first
     
     if @user.save
       flash[:notice] = 'Sign up successful! Please log in.'

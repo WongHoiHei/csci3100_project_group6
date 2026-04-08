@@ -3,20 +3,20 @@
 - if flash[:alert]
   .alert= flash[:alert]
 
-= form_with url: password_path, method: :patch, local: true do |form|
+= form_with url: password_path, method: :patch, local: true do
   .field
-    = form.label :password_current, 'Current Password'
-    = form.password_field_tag :password_current, nil, placeholder: 'Current Password'
+    = label_tag :password_current, 'Current Password'
+    = password_field_tag :password_current, nil, placeholder: 'Current Password'
   
   .field
-    = form.label :password, 'New Password'
-    = form.password_field_tag :password, nil, placeholder: 'New Password'
+    = label_tag :password, 'New Password'
+    = password_field_tag :password, nil, placeholder: 'New Password'
   
   .field
-    = form.label :password_confirmation
-    = form.password_field_tag :password_confirmation, nil, placeholder: 'Confirm New Password'
+    = label_tag :password_confirmation, 'Confirm New Password'
+    = password_field_tag :password_confirmation, nil, placeholder: 'Confirm New Password'
   
   .actions
-    = form.submit 'Update Password'
+    = submit_tag 'Update Password'
 
 = link_to 'Back', main_path
