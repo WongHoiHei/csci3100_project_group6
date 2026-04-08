@@ -7,5 +7,10 @@
       = submit_tag 'Search'
   
   .topbar-right
-    %span= current_user.name
-    = button_to 'Log out', logout_path, method: :delete
+    - if logged_in?
+      %span= current_user.name
+      = link_to 'Change Password', password_edit_path
+      = button_to 'Log out', logout_path, method: :delete
+    - else
+      = link_to 'Log in', login_path
+      = link_to 'Sign up', signup_path

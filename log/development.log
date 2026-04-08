@@ -7226,3 +7226,205 @@ Processing by BookingsController#map as HTML
 Completed 200 OK in 14ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2026-04-08 21:22:47 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 30.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='welcome',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 411.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 1040.4ms | GC: 0.0ms)
+Completed 200 OK in 1835ms (Views: 1238.1ms | ActiveRecord: 4.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2026-04-08 21:23:03 +0800
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 22.2ms | GC: 0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='BookingSystem',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 13.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 42.0ms | GC: 0.2ms)
+Completed 200 OK in 86ms (Views: 51.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/password/edit" for 127.0.0.1 at 2026-04-08 21:23:04 +0800
+Processing by PasswordsController#edit as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering passwords/edit.html.haml within layouts/application
+  Rendered passwords/edit.html.haml within layouts/application (Duration: 14.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='BookingSystem',controller='passwords'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 19.5ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 23.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2026-04-08 21:23:09 +0800
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Log in"}
+Redirected to http://127.0.0.1:3000/main
+↳ app/controllers/sessions_controller.rb:5:in 'SessionsController#create'
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 127.0.0.1 at 2026-04-08 21:23:09 +0800
+Processing by PagesController#main as TURBO_STREAM
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 8.2ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 9.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/equipment-booking" for 127.0.0.1 at 2026-04-08 21:23:12 +0800
+Processing by BookingsController#equipment as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  [1m[36mEquipment Load (0.9ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:4
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 246.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 252.6ms | GC: 0.0ms)
+Completed 200 OK in 324ms (Views: 258.4ms | ActiveRecord: 3.0ms (7 queries, 3 cached) | GC: 0.0ms)
+
+
+Started GET "/bookings/new?bookable_id=1&bookable_type=Equipment" for 127.0.0.1 at 2026-04-08 21:23:14 +0800
+Processing by BookingsController#new as HTML
+  Parameters: {"bookable_id" => "1", "bookable_type" => "Equipment"}
+Completed 406 Not Acceptable in 56ms (ActiveRecord: 0.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::MissingExactTemplate (BookingsController#new is missing a template for request formats: text/html):
+  
+actionpack (8.1.3) lib/action_controller/metal/implicit_render.rb:49:in 'ActionController::ImplicitRender#default_render'
+actionpack (8.1.3) lib/action_controller/metal/basic_implicit_render.rb:9:in 'ActionController::BasicImplicitRender#send_action'
+actionpack (8.1.3) lib/abstract_controller/base.rb:221:in 'AbstractController::Base#process_action'
+actionpack (8.1.3) lib/action_controller/metal/rendering.rb:199:in 'ActionController::Rendering#process_action'
+actionpack (8.1.3) lib/abstract_controller/callbacks.rb:267:in 'block in AbstractController::Callbacks#process_action'
+activesupport (8.1.3) lib/active_support/callbacks.rb:121:in 'block in ActiveSupport::Callbacks#run_callbacks'
+turbo-rails (2.0.23) lib/turbo-rails.rb:24:in 'Turbo.with_request_id'
+turbo-rails (2.0.23) app/controllers/concerns/turbo/request_id_tracking.rb:10:in 'Turbo::RequestIdTracking#turbo_tracking_request_id'
+activesupport (8.1.3) lib/active_support/callbacks.rb:130:in 'block in ActiveSupport::Callbacks#run_callbacks'
+actiontext (8.1.3) lib/action_text/rendering.rb:24:in 'ActionText::Rendering::ClassMethods#with_renderer'
+actiontext (8.1.3) lib/action_text/engine.rb:72:in 'block (4 levels) in <class:Engine>'
+activesupport (8.1.3) lib/active_support/callbacks.rb:130:in 'BasicObject#instance_exec'
+activesupport (8.1.3) lib/active_support/callbacks.rb:130:in 'block in ActiveSupport::Callbacks#run_callbacks'
+activesupport (8.1.3) lib/active_support/callbacks.rb:141:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.1.3) lib/abstract_controller/callbacks.rb:266:in 'AbstractController::Callbacks#process_action'
+actionpack (8.1.3) lib/action_controller/metal/rescue.rb:36:in 'ActionController::Rescue#process_action'
+actionpack (8.1.3) lib/action_controller/metal/instrumentation.rb:76:in 'block in ActionController::Instrumentation#process_action'
+activesupport (8.1.3) lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+activesupport (8.1.3) lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+activesupport (8.1.3) lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+actionpack (8.1.3) lib/action_controller/metal/instrumentation.rb:75:in 'ActionController::Instrumentation#process_action'
+actionpack (8.1.3) lib/action_controller/metal/params_wrapper.rb:259:in 'ActionController::ParamsWrapper#process_action'
+activerecord (8.1.3) lib/active_record/railties/controller_runtime.rb:39:in 'ActiveRecord::Railties::ControllerRuntime#process_action'
+actionpack (8.1.3) lib/abstract_controller/base.rb:154:in 'AbstractController::Base#process'
+actionview (8.1.3) lib/action_view/rendering.rb:40:in 'ActionView::Rendering#process'
+actionpack (8.1.3) lib/action_controller/metal.rb:252:in 'ActionController::Metal#dispatch'
+actionpack (8.1.3) lib/action_controller/metal.rb:335:in 'ActionController::Metal.dispatch'
+actionpack (8.1.3) lib/action_dispatch/routing/route_set.rb:65:in 'ActionDispatch::Routing::RouteSet::Dispatcher#dispatch'
+actionpack (8.1.3) lib/action_dispatch/routing/route_set.rb:50:in 'ActionDispatch::Routing::RouteSet::Dispatcher#serve'
+actionpack (8.1.3) lib/action_dispatch/journey/router.rb:35:in 'block in ActionDispatch::Journey::Router#serve'
+actionpack (8.1.3) lib/action_dispatch/journey/router.rb:86:in 'block in ActionDispatch::Journey::Router#recognize'
+actionpack (8.1.3) lib/action_dispatch/journey/router.rb:66:in 'Array#each'
+actionpack (8.1.3) lib/action_dispatch/journey/router.rb:66:in 'ActionDispatch::Journey::Router#recognize'
+actionpack (8.1.3) lib/action_dispatch/journey/router.rb:31:in 'ActionDispatch::Journey::Router#serve'
+actionpack (8.1.3) lib/action_dispatch/routing/route_set.rb:906:in 'ActionDispatch::Routing::RouteSet#call'
+railties (8.1.3) lib/rails/engine/lazy_route_set.rb:60:in 'Rails::Engine::LazyRouteSet#call'
+rack (3.2.5) lib/rack/tempfile_reaper.rb:20:in 'Rack::TempfileReaper#call'
+rack (3.2.5) lib/rack/etag.rb:29:in 'Rack::ETag#call'
+rack (3.2.5) lib/rack/conditional_get.rb:31:in 'Rack::ConditionalGet#call'
+rack (3.2.5) lib/rack/head.rb:15:in 'Rack::Head#call'
+actionpack (8.1.3) lib/action_dispatch/http/content_security_policy.rb:38:in 'ActionDispatch::ContentSecurityPolicy::Middleware#call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in 'Rack::Session::Abstract::Persisted#context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in 'Rack::Session::Abstract::Persisted#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/cookies.rb:708:in 'ActionDispatch::Cookies#call'
+activerecord (8.1.3) lib/active_record/migration.rb:671:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+propshaft (1.3.1) lib/propshaft/quiet_assets.rb:11:in 'Propshaft::QuietAssets#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.2.5) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.2.5) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in 'ActiveSupport::Cache::Strategy::LocalCache::Middleware#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+propshaft (1.3.1) lib/propshaft/server.rb:37:in 'Propshaft::Server#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in 'Rack::Sendfile#call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.1.3) lib/rails/engine.rb:534:in 'Rails::Engine#call'
+puma (7.2.0) lib/puma/configuration.rb:296:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (7.2.0) lib/puma/request.rb:103:in 'block in Puma::Request#handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in 'Puma::ThreadPool#with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in 'Puma::Request#handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in 'Puma::Server#process_client'
+puma (7.2.0) lib/puma/server.rb:262:in 'block in Puma::Server#run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in 'block in Puma::ThreadPool#spawn_thread'
+Started GET "/equipment-booking" for 127.0.0.1 at 2026-04-08 21:27:45 +0800
+Processing by BookingsController#equipment as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:4
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 12.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 19.6ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 19.7ms | ActiveRecord: 0.9ms (7 queries, 3 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to AddPasswordToUsers (20260408000001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260408000001') RETURNING "version" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m

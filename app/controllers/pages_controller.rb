@@ -1,6 +1,12 @@
 class PagesController < ApplicationController
-  def welcome; end
+  skip_before_action :require_login, only: [:welcome]
+
+  def welcome
+    redirect_to main_path if logged_in?
+  end
+
   def main; end
+
   def map
     # This line tells Rails: "Do NOT use application.html.erb for this action"
     render layout: false 

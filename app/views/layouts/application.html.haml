@@ -31,4 +31,9 @@
 
   %body
     = render 'shared/header'
+
+    - flash.each do |type, message|
+      .flash{class: type}
+        = message.html_safe
+
     = yield

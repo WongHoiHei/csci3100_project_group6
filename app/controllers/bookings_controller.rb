@@ -38,7 +38,8 @@ class BookingsController < ApplicationController
       redirect_to '/bookings/new', alert: "Unavailable time slot"
     elsif @booking.save
       BookingMailer.confirmation(@booking).deliver_later
-      redirect_to "/bookings/#{@booking.id}", notice: "Booking request submitted" #X @booking
+      sender_link = view_context.mail_to('from@example.com', 'from@example.com')
+      redirect_to "/bookings/#{@booking.id}", notice: "Booking request submitted. Email sent from #{sender_link}".html_safe
     else
       render :new, status: :unprocessable_entity
     end
@@ -59,7 +60,8 @@ class BookingsController < ApplicationController
     if @booking.user == current_user
       BookingMailer.deletion(@booking).deliver_later
       @booking.destroy
-      redirect_to bookings_path, notice: "Booking deleted"
+      sender_link = view_context.mail_to('from@example.com', 'from@example.com')
+      redirect_to bookings_path, notice: "Booking deleted. Email sent from #{sender_link}".html_safe
     else
       redirect_to bookings_path, alert: "Unauthorized"
     end
