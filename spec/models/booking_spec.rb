@@ -4,17 +4,18 @@ require 'rails_helper'
 
 def test_user
     @test_user ||= User.first || User.create!(
-        email: "test@gmail.com", name: "test user", role:"student", tenant: test_tenant
+        email: "test@gmail.com", name: "test user", role:"student"
     )
 end
 
-def test_tenant
-    @test_tenant ||=Tenant.first || Tenant.create!(name:  "test tenant")
+def test_location
+    @test_location ||=Location.first ||Location.create!(
+        name: "Test Location", latitude: 0, longitude: 0)
 end
 
 def test_venue
     @test_venue ||= Venue.first ||Venue.create!(
-        name: "test venue", tenant: test_tenant
+        name: "test venue", location: test_location
     )
 end
 

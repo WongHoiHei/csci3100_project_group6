@@ -1,3 +1,4 @@
 class Venue < ApplicationRecord
-  belongs_to :tenant
+  
+  belongs_to :location
 end
