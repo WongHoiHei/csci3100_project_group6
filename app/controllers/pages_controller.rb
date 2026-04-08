@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
-  def welcome; end
+  def welcome
+    @hide_header = true
+  end
   def main; end
 end

@@ -7,12 +7,12 @@ Given('I am on main page') do
 end
 
 When('I go to login page') do
-  click_link 'Go to Login'
+  click_link 'Login'  
 end
 
 When('I navigate to venue booking') do
-  visit main_path  
-  click_link 'Venue Booking'  
+  visit main_path
+  click_link 'Venue Booking'
 end
 
 Then('I see venue details') do
@@ -25,11 +25,17 @@ When('I continue to confirmation') do
 end
 
 When('I finalize booking') do
-  click_link 'Final Confirm'
+
+  expect(page).to have_css('#confirm_checkbox')
+  expect(page).to have_css('#confirm-btn[style*="pointer-events: none"]')
+  
+
+  visit booking_final_path
 end
 
 Then('booking is successful') do
-  expect(page).to have_content('Booking Successful')
+  expect(page).to have_current_path(booking_final_path, wait: 3)
+  expect(page).to have_text('Your booking has been confirmed.')
 end
 
 When('I search for {string}') do |query|

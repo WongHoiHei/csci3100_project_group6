@@ -1,0 +1,27 @@
+<div style="padding: 50px; text-align: center; font-family: sans-serif;">
+  <p style="color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0;">Building Details</p>
+  
+  <h1 style="font-size: 2.5rem; margin-top: 10px;"><%= @official_name %></h1>
+  
+  <hr style="width: 50px; border: 2px solid #4285F4; margin: 30px auto;">
+
+  <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+
+
+    <h3 style="margin-top: 30px;">Available Timeslots</h3>
+    <ul>
+      <% @timeslots.each do |slot| %>
+        <li><%= slot %></li>
+      <% end %>
+    </ul>
+
+    <div style="margin-top: 30px; text-align: center;">
+      <%= link_to 'Continue to Confirmation', booking_confirmation_path, class: 'btn', 
+          style: "background: #4285F4; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;" %>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <%= link_to "← Back to Map", "/map", style: "color: #666; text-decoration: none;" %>
+  </div>
+</div>
