@@ -5,7 +5,6 @@
     %li
       = room.name 
       =  link_to 'Book',"/bookings/new?bookable_id=#{room.id}&bookable_type=Venue"
-
 %ul
   - @timeslots.each do |slot|
     %li= slot
