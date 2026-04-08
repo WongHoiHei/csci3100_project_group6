@@ -13054,3 +13054,930 @@ Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached
 
 =======
 >>>>>>> 697f1522e076cbcc5072894131e61c398f93fd26
+Started GET "/" for 137.189.241.35 at 2026-04-08 12:24:55 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 4.2ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.haml (Duration: 57.5ms | GC: 23.9ms)
+Completed 200 OK in 70ms (Views: 60.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 23.9ms)
+
+
+Started GET "/login" for 137.189.241.35 at 2026-04-08 12:24:58 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 8.4ms | GC: 0.5ms)
+  Rendered shared/_header.html.haml (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 9.8ms | GC: 0.5ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/password/edit" for 137.189.241.35 at 2026-04-08 12:25:00 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PasswordsController#edit as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering passwords/edit.html.haml within layouts/application
+  Rendered passwords/edit.html.haml within layouts/application (Duration: 6.1ms | GC: 0.4ms)
+  Rendered shared/_header.html.haml (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 7.9ms | GC: 0.4ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/password/edit" for 137.189.241.35 at 2026-04-08 12:25:00 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PasswordsController#edit as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering passwords/edit.html.haml within layouts/application
+  Rendered passwords/edit.html.haml within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 137.189.241.35 at 2026-04-08 12:25:02 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Log in"}
+Redirected to https://congenial-space-rotary-phone-x57549x75qgwf6765-3000.app.github.dev/main
+↳ app/controllers/sessions_controller.rb:7:in 'SessionsController#create'
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 137.189.241.35 at 2026-04-08 12:25:02 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as TURBO_STREAM
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 60.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 64.1ms | GC: 0.0ms)
+Completed 200 OK in 66ms (Views: 62.7ms | ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 12:25:04 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 12:25:05 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/equipment-booking" for 137.189.241.35 at 2026-04-08 12:25:15 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#equipment as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  [1m[36mEquipment Load (0.2ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:4
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 4 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 39.2ms | GC: 2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 43.7ms | GC: 2.6ms)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 1.3ms (12 queries, 6 cached) | GC: 2.6ms)
+
+
+Started GET "/bookings/new?bookable_id=5&bookable_type=Equipment" for 137.189.241.35 at 2026-04-08 12:25:16 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#new as HTML
+  Parameters: {"bookable_id" => "5", "bookable_type" => "Equipment"}
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/new.html.haml within layouts/application
+  Rendered bookings/new.html.haml within layouts/application (Duration: 22.3ms | GC: 15.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 3.9ms | GC: 2.2ms)
+  Rendered layout layouts/application.html.haml (Duration: 28.1ms | GC: 18.3ms)
+Completed 200 OK in 54ms (Views: 29.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 26.1ms)
+
+
+Started GET "/booking/confirmation" for 137.189.241.35 at 2026-04-08 12:25:17 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#confirmation as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/confirmation.html.haml within layouts/application
+  Rendered bookings/confirmation.html.haml within layouts/application (Duration: 27.4ms | GC: 16.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='confirmation',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 37.5ms | GC: 17.2ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 18.2ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 12:25:21 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 12:25:22 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTenant Load (2.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" /* loading for pp */ LIMIT 11 /*application='BookingSystem'*/[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTenant Update (0.6ms)[0m  [1m[33mUPDATE "tenants" SET "name" = 'CUHK', "updated_at" = '2026-04-08 12:28:40.003053' WHERE "tenants"."id" = 1 /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to CreateLocations (20260408124358)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "latitude" float, "longitude" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260408124358') RETURNING "version" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to RemoveLocationFromVenues (20260408124906)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","location","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","location","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260408124906') RETURNING "version" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+Migrating to AddLocationIdToVenues (20260408124910)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer NOT NULL, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to AddLocationIdToVenues (20260408124910)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer NOT NULL, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to AddLocationIdToVenues (20260408124910)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer NOT NULL, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to AddLocationIdToVenues (20260408124910)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer NOT NULL, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to AddLocationIdToVenues (20260408124910)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer NOT NULL, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mVenue Load (1.7ms)[0m  [1m[34mSELECT "venues".* FROM "venues" /* loading for pp */ LIMIT 11 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to AddLocationIdToVenues (20260408124910)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer NOT NULL, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to AddLocationIdToVenues (20260408124910)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer NOT NULL, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to AddLocationIdToVenues (20260408124910)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "venues" ADD "location_id" integer /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_location_id" ON "venues" ("location_id") /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_location_id" ON "avenues" ("location_id") /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at","location_id")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at","location_id" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+, CONSTRAINT "fk_rails_94538093f5"
+FOREIGN KEY ("location_id")
+  REFERENCES "locations" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_location_id" ON "venues" ("location_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at","location_id")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at","location_id" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260408124910') RETURNING "version" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+Migrating to RemoveLatitudeLongitudeFromVenues (20260408125121)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "latitude" float, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_location_id" ON "avenues" ("location_id") /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at","location_id")
+                     SELECT "id","name","capacity","latitude","longitude","tenant_id","created_at","updated_at","location_id" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer, CONSTRAINT "fk_rails_94538093f5"
+FOREIGN KEY ("location_id")
+  REFERENCES "locations" ("id")
+, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_location_id" ON "venues" ("location_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","longitude","tenant_id","created_at","updated_at","location_id")
+                     SELECT "id","name","capacity","longitude","tenant_id","created_at","updated_at","location_id" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "longitude" float, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_location_id" ON "avenues" ("location_id") /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","longitude","tenant_id","created_at","updated_at","location_id")
+                     SELECT "id","name","capacity","longitude","tenant_id","created_at","updated_at","location_id" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer, CONSTRAINT "fk_rails_81289cf97c"
+FOREIGN KEY ("tenant_id")
+  REFERENCES "tenants" ("id")
+, CONSTRAINT "fk_rails_94538093f5"
+FOREIGN KEY ("location_id")
+  REFERENCES "locations" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_tenant_id" ON "venues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_location_id" ON "venues" ("location_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","tenant_id","created_at","updated_at","location_id")
+                     SELECT "id","name","capacity","tenant_id","created_at","updated_at","location_id" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260408125121') RETURNING "version" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+Migrating to RemoveTenantIdFromVenues (20260408125136)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avenues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_location_id" ON "avenues" ("location_id") /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avenues_on_tenant_id" ON "avenues" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "avenues" ("id","name","capacity","tenant_id","created_at","updated_at","location_id")
+                     SELECT "id","name","capacity","tenant_id","created_at","updated_at","location_id" FROM "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "venues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "capacity" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "location_id" integer, CONSTRAINT "fk_rails_94538093f5"
+FOREIGN KEY ("location_id")
+  REFERENCES "locations" ("id")
+) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_venues_on_location_id" ON "venues" ("location_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "venues" ("id","name","capacity","created_at","updated_at","location_id")
+                     SELECT "id","name","capacity","created_at","updated_at","location_id" FROM "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "avenues" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260408125136') RETURNING "version" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Started GET "/" for 137.189.241.35 at 2026-04-08 13:11:39 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 28.0ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 137.189.241.35 at 2026-04-08 13:11:43 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 137.189.241.35 at 2026-04-08 13:11:45 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Log in"}
+Redirected to https://congenial-space-rotary-phone-x57549x75qgwf6765-3000.app.github.dev/main
+↳ app/controllers/sessions_controller.rb:7:in 'SessionsController#create'
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 137.189.241.35 at 2026-04-08 13:11:45 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as TURBO_STREAM
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 41.8ms | GC: 22.7ms)
+  Rendered layout layouts/application.html.haml (Duration: 49.2ms | GC: 22.7ms)
+Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 22.7ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 13:11:47 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 5.4ms | GC: 0.9ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/equipment-booking" for 137.189.241.35 at 2026-04-08 13:11:47 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#equipment as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  [1m[36mEquipment Load (0.2ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:4
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 4 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 47.3ms | GC: 3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 52.5ms | GC: 3.0ms)
+Completed 200 OK in 58ms (Views: 53.0ms | ActiveRecord: 1.4ms (12 queries, 6 cached) | GC: 3.0ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 13:11:47 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 13:11:48 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 1.9ms | GC: 0.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/main" for 137.189.241.35 at 2026-04-08 13:11:59 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 4.9ms | GC: 2.9ms)
+  Rendered layout layouts/application.html.haml (Duration: 6.5ms | GC: 2.9ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 3.0ms)
+
+
+Started GET "/equipment-booking" for 137.189.241.35 at 2026-04-08 13:11:59 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#equipment as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  [1m[36mEquipment Load (0.9ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:4
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 4 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 29.5ms | GC: 15.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 3.3ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.haml (Duration: 37.6ms | GC: 18.4ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 2.1ms (12 queries, 6 cached) | GC: 18.4ms)
+
+
+Started GET "/bookings/new?bookable_id=2&bookable_type=Equipment" for 137.189.241.35 at 2026-04-08 13:12:02 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#new as HTML
+  Parameters: {"bookable_id" => "2", "bookable_type" => "Equipment"}
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/new.html.haml within layouts/application
+  Rendered bookings/new.html.haml within layouts/application (Duration: 13.8ms | GC: 7.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 17.9ms | GC: 8.2ms)
+Completed 200 OK in 38ms (Views: 19.5ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 20.0ms)
+
+
+Started POST "/bookings" for 137.189.241.35 at 2026-04-08 13:12:04 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "booking" => {"start_time" => "", "end_time" => "", "bookable_id" => "2", "bookable_type" => "Equipment"}, "commit" => "Submit Booking"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  [1m[36mBooking Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."bookable_id" = 2 AND "bookings"."bookable_type" = 'Equipment' AND "bookings"."status" = 'approved' AND (start_time <NULL AND end_time >NULL) LIMIT 1 /*action='create',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/models/booking.rb:12:in 'Booking.new_conflict?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/bookings_controller.rb:39:in 'BookingsController#create'
+  [1m[36mEquipment Load (1.2ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."id" = 2 LIMIT 1 /*action='create',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/bookings_controller.rb:39:in 'BookingsController#create'
+  [1m[36mBooking Create (0.1ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "bookable_type", "bookable_id", "start_time", "end_time", "status", "created_at", "updated_at") VALUES (1, 'Equipment', 2, NULL, NULL, 'pending', '2026-04-08 13:12:04.774909', '2026-04-08 13:12:04.774909') RETURNING "id" /*action='create',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/bookings_controller.rb:39:in 'BookingsController#create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/bookings_controller.rb:39:in 'BookingsController#create'
+Redirected to https://congenial-space-rotary-phone-x57549x75qgwf6765-3000.app.github.dev/bookings/1
+↳ app/controllers/bookings_controller.rb:40:in 'BookingsController#create'
+Completed 302 Found in 23ms (ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/bookings/1" for 137.189.241.35 at 2026-04-08 13:12:04 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#show as TURBO_STREAM
+  Parameters: {"id" => "1"}
+  [1m[36mBooking Load (0.2ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."id" = 1 LIMIT 1 /*action='show',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/bookings_controller.rb:48:in 'BookingsController#show'
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/show.html.haml within layouts/application
+  Rendered bookings/show.html.haml within layouts/application (Duration: 6.0ms | GC: 0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 9.9ms | GC: 0.7ms)
+Completed 200 OK in 26ms (Views: 10.4ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/bookings/new?bookable_id=2&bookable_type=Equipment" for 137.189.241.35 at 2026-04-08 13:12:07 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#new as HTML
+  Parameters: {"bookable_id" => "2", "bookable_type" => "Equipment"}
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/new.html.haml within layouts/application
+  Rendered bookings/new.html.haml within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/equipment-booking" for 137.189.241.35 at 2026-04-08 13:12:08 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#equipment as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:4
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 3 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 4 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 12.9ms | GC: 0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 3.2ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.haml (Duration: 17.8ms | GC: 1.3ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.6ms (12 queries, 6 cached) | GC: 1.3ms)
+
+
+Started GET "/main" for 137.189.241.35 at 2026-04-08 13:12:09 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Migrating to RemoveTenantIdFromUsers (20260408131742)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "name" varchar, "role" varchar, "tenant_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_ausers_on_tenant_id" ON "ausers" ("tenant_id") /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","name","role","tenant_id","created_at","updated_at")
+                     SELECT "id","email","name","role","tenant_id","created_at","updated_at" FROM "users" /*application='BookingSystem'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "users" /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "name" varchar, "role" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='BookingSystem'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","email","name","role","created_at","updated_at")
+                     SELECT "id","email","name","role","created_at","updated_at" FROM "ausers" /*application='BookingSystem'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ausers" /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='BookingSystem'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260408131742') RETURNING "version" /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Started HEAD "/" for 127.0.0.1 at 2026-04-08 13:20:31 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 3.7ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.haml (Duration: 15.7ms | GC: 1.2ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 13:26:47 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 9.3ms | GC: 1.0ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 13:26:47 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/buildings/ucgym" for 137.189.241.35 at 2026-04-08 13:26:55 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "ucgym"}
+  Rendering buildings/show.html.erb
+  Rendered buildings/show.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/booking/confirmation" for 137.189.241.35 at 2026-04-08 13:27:00 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#confirmation as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/confirmation.html.haml within layouts/application
+  Rendered bookings/confirmation.html.haml within layouts/application (Duration: 9.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='confirmation',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 16.0ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/booking/final" for 137.189.241.35 at 2026-04-08 13:27:04 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#final as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/final.html.haml within layouts/application
+  Rendered bookings/final.html.haml within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='final',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 137.189.241.35 at 2026-04-08 13:27:05 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 10.0ms | GC: 0.8ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 13:27:07 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 13:27:08 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 13:27:08 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/buildings/nagym" for 137.189.241.35 at 2026-04-08 13:27:20 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "nagym"}
+  Rendering buildings/show.html.erb
+  Rendered buildings/show.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 13:28:00 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 137.189.241.35 at 2026-04-08 13:28:01 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BookingsController#map as HTML
+  Rendering bookings/map.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered bookings/map.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/buildings/sirrunrunshawhall%20%E7%9C%8B%E5%88%B0" for 137.189.241.35 at 2026-04-08 13:28:31 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "sirrunrunshawhall 看到"}
+  Rendering buildings/show.html.erb
+  Rendered buildings/show.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/buildings/sirrunrunshawhall%20%E7%9C%8B%E5%88%B0" for 137.189.241.35 at 2026-04-08 13:29:46 +0000
+Cannot render console from 137.189.241.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "sirrunrunshawhall 看到"}
+  Rendering buildings/show.html.erb
+  Rendered buildings/show.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
