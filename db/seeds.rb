@@ -9,11 +9,11 @@
 #   end
 
 #add data in tenants (migration)
-engineering = Tenant.create!(name:"Engineering Department")
-lifescience =Tenant.create!(name: "Life Science Department")
+engineering = Tenant.find_or_create_by!(name:"Engineering Department")
+lifescience =Tenant.find_or_create_by!(name: "Life Science Department")
 
 #add a Admin
-User.create!(
+User.find_or_create_by!(
     email: "admin@link.cuhk.edu.hk",
     name: "Admin",
     role: "admin",
@@ -21,7 +21,7 @@ User.create!(
 )
 
 #add student account
-User.create!(
+User.find_or_create_by!(
     email:"student@link.cuhk.edu.hk",
     name: "Student",
     role: "student",
@@ -30,18 +30,18 @@ User.create!(
 
 #add venues
 #fake nowwwww!!! i made them up first
-engineering.venues.create!([
+engineering.venues.find_or_create_by!([
     {name:"SHB301", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1111,longitude: 11.1111 },
     {name:"SHB302", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1112,longitude: 11.1112 },
 ])
 
-lifescience.venues.create!([
+lifescience.venues.find_or_create_by!([
     {name:"SC101", location: "science centre 1F", capacity: 50, latitude: 21.1111,longitude: 21.1111 },
     {name:"SC102", location: "science centre 1F", capacity: 50,  latitude: 31.1112,longitude: 31.1112 },
 ])
 
 #add equipments
-engineering.equipments.create!([
+engineering.equipments.find_or_create_by!([
     {name: "ProjectorAA", description:"4K Projector", total_count: 5, available_count: 5},
     { name: 'Projector', description:"4K Projector",total_count: 5, available_count: 5},
     { name: 'Speaker',description:"4K Projector", total_count: 5, available_count: 5 },
@@ -49,6 +49,6 @@ engineering.equipments.create!([
 
 ])
 
-lifescience.equipments.create!([
+lifescience.equipments.find_or_create_by!([
     {name: "Projector", description:"4K Projector", total_count: 5, available_count: 5}
 ])

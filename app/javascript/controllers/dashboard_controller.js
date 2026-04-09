@@ -1,90 +1,49 @@
 import { Controller } from "@hotwired/stimulus"
-import { Chart, registerables } from 'chart.js';
-
-// Register Chart.js components
-Chart.register(...registerables);
 
 export default class extends Controller {
-  // These targets correspond to 'data-dashboard-target' in your HAML
-  static targets = ["canvas", "usageRate"]
-  
-  // This value corresponds to 'data-dashboard-url-value' in your HAML
+  static targets = ["venueList", "equipmentList"]
   static values = { url: String }
+  
+  // Store the data so we can re-sort it without hitting the server again
+  rawData = { venues: [], equipments: [] }
 
   connect() {
-    // This runs as soon as the element appears on the page
-    this.loadData()
+    this.update()
   }
 
-  // The main data-fetching logic
-  async loadData() {
-    try {
-      const response = await fetch(this.urlValue)
-      if (!response.ok) throw new Error("Network response was not ok")
-      
-      const data = await response.json()
-      
-      // 1. Update the UI Text
-      this.updateUsageRate(data.usage_rate)
-      
-      // 2. Render the Graph
-      this.renderChart(data.bookings_data)
-    } catch (error) {
-      console.error("Dashboard Load Error:", error)
-      this.usageRateTarget.textContent = "Error loading data"
-    }
+  async update() {
+    const tid = this.element.querySelector('[name="tenant_id"]').value
+    const response = await fetch(`${this.urlValue}.json?tenant_id=${tid}`)
+    this.rawData = await response.json()
+    this.applyFilters()
   }
 
-  // Helper to update the percentage text
-  updateUsageRate(rate) {
-    this.usageRateTarget.textContent = `${rate}%`
-  }
+  applyFilters() {
+    const query = this.element.querySelector('[name="query"]').value.toLowerCase()
+    const sortMode = this.element.querySelector('[name="sort"]').value
 
-  // Logic to build/re-build the chart
-  renderChart(bookingsData) {
-    // If a chart already exists (e.g. from a previous refresh), destroy it
-    // to prevent memory leaks and "hover flickering"
-    if (this.chart) {
-      this.chart.destroy()
+    const processList = (list) => {
+      // 1. Filter
+      let filtered = list.filter(item => item.name.toLowerCase().includes(query))
+      
+      // 2. Sort
+      return filtered.sort((a, b) => {
+        if (sortMode === "usage_desc") return b.usage_count - a.usage_count
+        if (sortMode === "usage_asc") return a.usage_count - b.usage_count
+        return a.name.localeCompare(b.name) // name_asc default
+      })
     }
 
-    const labels = Object.keys(bookingsData)
-    const values = Object.values(bookingsData)
-
-    this.chart = new Chart(this.canvasTarget, {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Bookings per Day',
-          data: values,
-          borderColor: '#2563eb', // Blue-600
-          backgroundColor: 'rgba(37, 99, 235, 0.1)',
-          fill: true,
-          tension: 0.4, // Smoothing the line
-          pointRadius: 4
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            ticks: { stepSize: 1 }
-          }
-        }
-      }
-    })
+    this.renderRows(this.venueListTarget, processList(this.rawData.venues))
+    this.renderRows(this.equipmentListTarget, processList(this.rawData.equipments))
   }
 
-  // This can be triggered by a "Refresh" button in HAML: 
-  // data-action="click->dashboard#refresh"
-  refresh(event) {
-    event.preventDefault()
-    this.loadData()
+  renderRows(target, items) {
+    target.innerHTML = items.map(item => `
+      <tr class="border-b last:border-0">
+        <td class="py-3 font-medium">${item.name}</td>
+        <td class="py-3 text-right font-bold text-gray-700">${item.usage_count}</td>
+      </tr>
+    `).join('')
   }
 }

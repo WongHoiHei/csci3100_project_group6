@@ -1,16 +1,47 @@
--# The data-dashboard-url-value ensures Stimulus fetches from the right place
-.container.mx-auto.p-6{ data: { controller: "dashboard", dashboard_url_value: dashboards_path(format: :json) } }
-  
-  .flex.justify-between.items-center.mb-6
-    %h1.text-2xl.font-bold Analytics Dashboard
-    = link_to "Back to Main", main_path, class: "text-blue-500 hover:underline"
+.container.mx-auto.p-8{ data: { controller: "dashboard", dashboard_url_value: dashboards_path } }
+  .flex.justify-between.items-center.mb-10
+    %h1.text-4xl.font-extrabold.text-slate-900 Resource Usage Dashboard
+    
+    .flex.items-center.gap-3
+      %label.font-bold.text-slate-500 Department:
+      %select.rounded-lg.border-slate-300.shadow-sm{ data: { action: "change->dashboard#update" }, name: "tenant_id" }
+        - @tenants.each do |t|
+          %option{ value: t.id, selected: (t == @selected_tenant) }= t.name
 
-  .grid.grid-cols-1.md:grid-cols-2.gap-6
-    .card.bg-white.p-6.shadow.rounded
-      %h3.text-gray-500.uppercase.text-xs.font-bold Usage Rate
-      %h2.text-4xl.font-bold{ data: { dashboard_target: "usageRate" } } --%
+  -# Controls Row: Search and Sort
+  .flex.flex-wrap.gap-4.mb-6.p-4.bg-gray-50.rounded-xl.border
+    .flex-1
+      %label.text-xs.font-bold.uppercase.text-gray-500 Filter by Name
+      %input.w-full.border.rounded-lg.p-2{ type: "text", placeholder: "Search...", data: { action: "input->dashboard#applyFilters" }, name: "query" }
+    
+    .w-48
+      %label.text-xs.font-bold.uppercase.text-gray-500 Sort By
+      %select.w-full.border.rounded-lg.p-2{ data: { action: "change->dashboard#applyFilters" }, name: "sort" }
+        %option{ value: "name_asc" } Name (A-Z)
+        %option{ value: "usage_desc" } Most Used
+        %option{ value: "usage_asc" } Least Used
 
-    .card.bg-white.p-6.shadow.rounded
-      %h3.text-gray-500.uppercase.text-xs.font-bold Booking Trends
-      .chart-container{ style: "position: relative; height:200px;" }
-        %canvas{ data: { dashboard_target: "canvas" } }
+  .grid.grid-cols-1.lg:grid-cols-2.gap-10
+    -# Venues List
+    .bg-white.p-8.rounded-3xl.shadow-sm.border.border-slate-100
+      .flex.items-center.gap-2.mb-6
+        .w-3.h-3.bg-blue-500.rounded-full
+        %h2.text-xl.font-bold.text-slate-800 Venues
+      %table.w-full
+        %thead.text-left.text-slate-400.text-sm.uppercase.tracking-tighter
+          %tr
+            %th.pb-4 Name
+            %th.pb-4.text-right Total Bookings
+        %tbody{ data: { dashboard_target: "venueList" } }
+
+    -# Equipment List
+    .bg-white.p-8.rounded-3xl.shadow-sm.border.border-slate-100
+      .flex.items-center.gap-2.mb-6
+        .w-3.h-3.bg-emerald-500.rounded-full
+        %h2.text-xl.font-bold.text-slate-800 Equipment
+      %table.w-full
+        %thead.text-left.text-slate-400.text-sm.uppercase.tracking-tighter
+          %tr
+            %th.pb-4 Name
+            %th.pb-4.text-right Total Usage
+        %tbody{ data: { dashboard_target: "equipmentList" } }
