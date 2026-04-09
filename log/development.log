@@ -16787,3 +16787,259 @@ Processing by PagesController#main as TURBO_STREAM
 Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2026-04-09 15:43:20 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by PagesController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='welcome',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 60.0ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 11.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 436.2ms | GC: 0.0ms)
+Completed 200 OK in 1772ms (Views: 586.3ms | ActiveRecord: 9.4ms (2 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2026-04-09 15:43:26 +0800
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering registrations/new.html.haml within layouts/application
+  Rendered registrations/new.html.haml within layouts/application (Duration: 496.9ms | GC: 0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='new',application='BookingSystem',controller='registrations'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 21.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 528.4ms | GC: 0.3ms)
+Completed 200 OK in 610ms (Views: 544.1ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2026-04-09 15:43:27 +0800
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 18.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='new',application='BookingSystem',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 31.5ms | GC: 0.0ms)
+Completed 200 OK in 85ms (Views: 41.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2026-04-09 15:43:28 +0800
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering registrations/new.html.haml within layouts/application
+  Rendered registrations/new.html.haml within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='new',application='BookingSystem',controller='registrations'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 13.9ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 18.5ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2026-04-09 15:43:41 +0800
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = '1155213294@link.cuhk.edu.hk' LIMIT 1 /*action='create',application='BookingSystem',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:7:in 'SessionsController#create'
+Redirected to http://127.0.0.1:3000/main
+↳ app/controllers/sessions_controller.rb:12:in 'SessionsController#create'
+Completed 302 Found in 572ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 127.0.0.1 at 2026-04-09 15:43:42 +0800
+Processing by PagesController#main as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 6.7ms | GC: 0.2ms)
+  Rendered shared/_header.html.haml (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 13.9ms | GC: 0.2ms)
+Completed 200 OK in 48ms (Views: 21.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/password/edit" for 127.0.0.1 at 2026-04-09 15:43:45 +0800
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='edit',application='BookingSystem',controller='passwords'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering passwords/edit.html.haml within layouts/application
+  Rendered passwords/edit.html.haml within layouts/application (Duration: 10.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 16.1ms | GC: 0.0ms)
+Completed 200 OK in 60ms (Views: 26.0ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/password" for 127.0.0.1 at 2026-04-09 15:43:55 +0800
+Processing by PasswordsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "password_current" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]", "commit" => "Update Password"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='update',application='BookingSystem',controller='passwords'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='BookingSystem',controller='passwords'*/[0m
+  ↳ app/controllers/passwords_controller.rb:10:in 'PasswordsController#update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = '1155213294@link.cuhk.edu.hk' AND "users"."id" != 3 LIMIT 1 /*action='update',application='BookingSystem',controller='passwords'*/[0m
+  ↳ app/controllers/passwords_controller.rb:10:in 'PasswordsController#update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = '2026-04-09 07:43:56.962359', "password_digest" = '$2a$12$ep1kpIp3DzfWuuCcRM4LaePASQUMSGfkZ68uOHh0Tz8kuXJHytruK' WHERE "users"."id" = 3 /*action='update',application='BookingSystem',controller='passwords'*/[0m
+  ↳ app/controllers/passwords_controller.rb:10:in 'PasswordsController#update'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='BookingSystem',controller='passwords'*/[0m
+  ↳ app/controllers/passwords_controller.rb:10:in 'PasswordsController#update'
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/password_changed.html.haml within layouts/mailer
+  Rendered user_mailer/password_changed.html.haml within layouts/mailer (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layout layouts/mailer.html.erb (Duration: 7.9ms | GC: 0.0ms)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/password_changed.text.haml within layouts/mailer
+  Rendered user_mailer/password_changed.text.haml within layouts/mailer (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/mailer.text.erb (Duration: 8.7ms | GC: 0.0ms)
+UserMailer#password_changed: processed outbound mail in 624.5ms
+Delivered mail 69d758bfd07db_6a5c320848f@Chloe.mail (4821.3ms)
+Date: Thu, 09 Apr 2026 15:43:59 +0800
+From: example@booking.com
+To: 1155213294@link.cuhk.edu.hk
+Message-ID: <69d758bfd07db_6a5c320848f@Chloe.mail>
+Subject: Your password has been changed
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_69d758bf87c25_6a5c3208476a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_69d758bf87c25_6a5c3208476a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Password Changed
+===========
+Hello HO Chi Tung,
+Your password was changed successfully.
+Your new password is:
+222222
+If you did not request this change, please contact support immediately.
+
+
+----==_mimepart_69d758bf87c25_6a5c3208476a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!-- BEGIN app/views/layouts/mailer.html.erb
+--><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/user_mailer/password_changed.html.haml --><h1>Password Changed</h1>
+<p>Hello HO Chi Tung,</p>
+<p>Your password was changed successfully.</p>
+<p>Your new password is:</p>
+<pre>222222</pre>
+<p>If you did not request this change, please contact support immediately.</p>
+<!-- END app/views/user_mailer/password_changed.html.haml -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->
+----==_mimepart_69d758bf87c25_6a5c3208476a--
+
+Redirected to http://127.0.0.1:3000/main
+↳ app/controllers/passwords_controller.rb:20:in 'PasswordsController#update'
+Completed 302 Found in 8525ms (ActiveRecord: 14.0ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/main" for 127.0.0.1 at 2026-04-09 15:44:04 +0800
+Processing by PagesController#main as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 8.5ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 10.4ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/equipment-booking" for 127.0.0.1 at 2026-04-09 15:44:27 +0800
+Started GET "/venue-booking" for 127.0.0.1 at 2026-04-09 15:44:27 +0800
+Processing by BookingsController#equipment as HTML
+Processing by BookingsController#map as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  [1m[36mUser Load (53.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 14.7ms | GC: 0.0ms)
+Completed 200 OK in 260ms (Views: 141.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  [1m[36mEquipment Load (0.6ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:4
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mTenant Load (0.3ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  [1m[36mCACHE Tenant Load (0.0ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1[0m
+  ↳ app/views/bookings/equipment.html.haml:6
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 445.8ms | GC: 0.2ms)
+  Rendered shared/_header.html.haml (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 451.0ms | GC: 0.2ms)
+Completed 200 OK in 737ms (Views: 464.7ms | ActiveRecord: 56.5ms (17 queries, 13 cached) | GC: 0.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2026-04-09 15:44:35 +0800
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='destroy',application='BookingSystem',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/sessions_controller.rb:23:in 'SessionsController#destroy'
+Completed 302 Found in 42ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2026-04-09 15:44:35 +0800
+Processing by PagesController#welcome as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='welcome',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 11.2ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 13.0ms | ActiveRecord: 0.4ms (2 queries, 1 cached) | GC: 0.0ms)
+
+
