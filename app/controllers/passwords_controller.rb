@@ -1,7 +1,10 @@
 class PasswordsController < ApplicationController
   before_action :require_login
 
-  def edit; end
+  
+  def edit
+    @hide_header = true
+  end
 
   def update
     @user = current_user

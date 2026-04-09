@@ -8,71 +8,71 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-#add data in tenants (migration)
+# Departments / owners for equipment
 engineering = Tenant.find_or_create_by!(name: "Engineering Department")
 lifescience = Tenant.find_or_create_by!(name: "Life Science Department")
 
-#add an admin
+# Users
 admin = User.find_or_initialize_by(email: "admin@link.cuhk.edu.hk")
-admin.assign_attributes(
-  name: "Admin",
-  role: "admin",
-  tenant: engineering
-)
+admin.assign_attributes(name: "Admin", role: "admin")
 if admin.new_record? || admin.password_digest.blank?
   admin.password = "123456"
   admin.password_confirmation = "123456"
 end
 admin.save!
 
-#add student account
 student = User.find_or_initialize_by(email: "student@link.cuhk.edu.hk")
-student.assign_attributes(
-  name: "Student",
-  role: "student",
-  tenant: engineering
-)
+student.assign_attributes(name: "Student", role: "student")
 if student.new_record? || student.password_digest.blank?
   student.password = "123456"
   student.password_confirmation = "123456"
 end
 student.save!
 
-#add venues
-#fake nowwwww!!! i made them up first
-engineering.venues.create!([
-    {name:"SHB301", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1111,longitude: 11.1111 },
-    {name:"SHB302", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1112,longitude: 11.1112 },
-])
+# Locations
+locations = [
+  ["Sir Run Run Shaw Hall", 22.420089834513423, 114.2072099614738],
+  ["NA Gym", 22.42090899131629, 114.20930435032216],
+  ["UC Gym", 22.420960312540984, 114.20567848673426],
+  ["Lingnan Stadium", 22.41493476795026, 114.20880499854452],
+  ["University Sports Centre", 22.418781207707248, 114.21198997917793],
+  ["Shaw College lecture Theatre", 22.422362888628257, 114.2016351058803]
+]
 
-lifescience.venues.create!([
-    {name:"SC101", location: "science centre 1F", capacity: 50, latitude: 21.1111,longitude: 21.1111 },
-    {name:"SC102", location: "science centre 1F", capacity: 50,  latitude: 31.1112,longitude: 31.1112 },
-])
+locations.each do |name, latitude, longitude|
+  Location.find_or_create_by!(name: name) do |location|
+    location.latitude = latitude
+    location.longitude = longitude
+  end
+end
 
-#add equipments
-engineering.equipments.create!([
-    {name: "ProjectorAA", description:"4K Projector", total_count: 5, available_count: 5},
-    { name: 'Projector', description:"4K Projector",total_count: 5, available_count: 5},
-    { name: 'Speaker',description:"4K Projector", total_count: 5, available_count: 5 },
-    { name: 'Microphone', description:"4K Projector",total_count: 5, available_count: 5}
+# Venues
+uc_gym = Location.find_by(name: "UC Gym")
+Venue.find_or_create_by!(name: "Basketball Court", location: uc_gym) do |venue|
+  venue.capacity = 100
+end
+Venue.find_or_create_by!(name: "Badminton Court", location: uc_gym) do |venue|
+  venue.capacity = 50
+end
 
-])
+# Equipment
+equipment_items = [
+  ["ProjectorAA", "4K Projector", 5],
+  ["Projector", "4K Projector", 5],
+  ["Speaker", "Audio Speaker", 5],
+  ["Microphone", "Wireless Microphone", 5]
+]
 
-lifescience.equipments.create!([
-    {name: "Projector", description:"4K Projector", total_count: 5, available_count: 5}
-])
+equipment_items.each do |name, description, count|
+  Equipment.find_or_create_by!(name: name, tenant_id: engineering.id) do |equipment|
+    equipment.description = description
+    equipment.total_count = count
+    equipment.available_count = count
+  end
+end
 
-#location = [{location_id: 1, name: "University Library", latitude: 22.28108, longitude: 114.13967},
-#            {location_id: 2, name: "Chung Chi College Library", latitude: 22.41653566823139, longitude: 114.20866370201111}
-#            {location_id: 3, name: "New Asia College Library", latitude: 22.42143017542914, longitude: 114.20852690935135}
-#            {location_id: 4, name: "United College Wu Chung Library", latitude: 22.42090453246833, longitude: 114.20480400323868}
-#            {location_id: 5, name: "Architecture Library", latitude: 22.41624556284591, longitude:  114.2116329073906}
-#            {location_id: 6, name: "Medical Library", latitude: 22.379129394962067, longitude: 114.20096576213837}
-#            {location_id: 7, name: "Law Library", latitude: 22.419483798848937, longitude: 114.2045545578003}
-#            {location_id: 8, name: "Learning Common (Wu Ho Man Yuen Building)", latitude: 22.41658525883494, longitude: 114.21148538589478}]
-#            
-#location.each do |location|
-#  Location.create!(location)
-#end
-
+Equipment.find_or_create_by!(name: "Projector", tenant_id: lifescience.id) do |equipment|
+  equipment.description = "4K Projector"
+  equipment.total_count = 5
+  equipment.available_count = 5
+end

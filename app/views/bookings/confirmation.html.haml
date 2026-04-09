@@ -1,5 +1,34 @@
 %h1 Confirmation
 %p Review your selected booking details.
 
-= check_box_tag :confirm
-= link_to 'Final Confirm', booking_final_path, class: 'btn'
+.field
+  %label{:for => "confirm_checkbox"}
+    %input{:type => "checkbox", :id => "confirm_checkbox", :required => true}
+    |  I confirm the booking details are correct
+
+.btn-container
+  %a{:id => "confirm-btn", 
+     :href => booking_final_path, 
+     :class => "btn", 
+     :style => "opacity: 0.5; cursor: not-allowed; pointer-events: none;"} 
+    Please tick to confirm first
+
+:javascript
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('confirm_checkbox');
+    const button = document.getElementById('confirm-btn');
+    
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+        button.style.opacity = '1';
+        button.style.cursor = 'pointer';
+        button.style.pointerEvents = 'auto';
+        button.textContent = 'Final Confirm ✓';
+      } else {
+        button.style.opacity = '0.5';
+        button.style.cursor = 'not-allowed';
+        button.style.pointerEvents = 'none';
+        button.textContent = 'Please tick to confirm first';
+      }
+    });
+  });

@@ -1,7 +1,10 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
-  def new; end
+  
+  def new
+    @hide_header = true  
+  end
 
   def create
     @user = User.find_by(email: params[:email])
@@ -20,6 +23,6 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     @current_user = nil
     flash[:notice] = 'Logged out successfully!'
-    redirect_to welcome_path
+    redirect_to root_path
   end
 end

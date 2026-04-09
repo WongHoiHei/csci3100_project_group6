@@ -3,11 +3,11 @@ class RegistrationsController < ApplicationController
 
   def new
     @user = User.new
+    @hide_header = true
   end
 
   def create
     @user = User.new(user_params)
-    @user.tenant ||= Tenant.first
     
     if @user.save
       flash[:notice] = 'Sign up successful! Please log in.'
@@ -21,6 +21,6 @@ class RegistrationsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :name, :password, :password_confirmation, :tenant_id)
+    params.require(:user).permit(:email, :name, :password, :password_confirmation)
   end
 end
