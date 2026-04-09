@@ -39,43 +39,24 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
 
-  # Configure mail delivery in development. Replace these values with your SMTP provider settings.
-  # For Gmail, use an app password and allow SMTP access:
-  #   SMTP_ADDRESS=smtp.gmail.com
-  #   SMTP_PORT=587
-  #   SMTP_DOMAIN=gmail.com
-  #   SMTP_USERNAME=your@gmail.com
-  #   SMTP_PASSWORD=your-app-password
-  #   SMTP_AUTHENTICATION=plain
-  # For Outlook / Office 365:
-  #   SMTP_ADDRESS=smtp.office365.com
-  #   SMTP_PORT=587
-  #   SMTP_DOMAIN=outlook.com
-  #   SMTP_USERNAME=your@outlook.com
-  #   SMTP_PASSWORD=your-password
-  #   SMTP_AUTHENTICATION=login
+  # Configure mail delivery in development using Gmail SMTP.
   config.action_mailer.delivery_method = :smtp
-
-  smtp_settings = {
-    address: ENV.fetch("SMTP_ADDRESS", "smtp.gmail.com"),
-    port: ENV.fetch("SMTP_PORT", 587).to_i,
-    domain: ENV.fetch("SMTP_DOMAIN", "gmail.com"),
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "gmail.com",
+    user_name: "hochitung0627@gmail.com",
+    password: "iesvbfmxcmtyvkmd",
+    authentication: :plain,
     enable_starttls_auto: true
   }
-
-  if ENV["SMTP_USERNAME"].present?
-    smtp_settings[:user_name] = ENV["SMTP_USERNAME"]
-    smtp_settings[:password] = ENV["SMTP_PASSWORD"]
-    smtp_settings[:authentication] = ENV.fetch("SMTP_AUTHENTICATION", "plain").to_sym
-  end
-
-  config.action_mailer.smtp_settings = smtp_settings
 
   # Make template changes take effect immediately.
   config.action_mailer.perform_caching = false
 
   # Set localhost to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  # config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  config.action_mailer.default_url_options = { host: "supreme-space-pancake-g4j9r566v574cww69-3000.app.github.dev" }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

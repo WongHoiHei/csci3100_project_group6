@@ -67,12 +67,12 @@ Rails.application.configure do
   # Configure outgoing SMTP server via environment variables.
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: ENV.fetch("SMTP_ADDRESS", "smtp.gmail.com"),
-    port: ENV.fetch("SMTP_PORT", 587).to_i,
-    domain: ENV.fetch("SMTP_DOMAIN", "gmail.com"),
-    user_name: ENV["SMTP_USERNAME"],
-    password: ENV["SMTP_PASSWORD"],
-    authentication: ENV.fetch("SMTP_AUTHENTICATION", "plain").to_sym,
+    address: "smtp.gmail.com", #ENV.fetch("SMTP_ADDRESS", "smtp.gmail.com"),
+    port: 587, #ENV.fetch("SMTP_PORT", 587).to_i,
+    domain: "supreme-space-pancake-g4j9r566v574cww69-3000.app.github.dev", #ENV.fetch("SMTP_DOMAIN", "gmail.com"),
+    user_name: "hochitung0627@gmail.com", # ENV["SMTP_USERNAME"],
+    password: "iesvbfmxcmtyvkmd", # ENV["SMTP_PASSWORD"],
+    authentication: "plain", # ENV.fetch("SMTP_AUTHENTICATION", "plain").to_sym,
     enable_starttls_auto: true
   }
 
