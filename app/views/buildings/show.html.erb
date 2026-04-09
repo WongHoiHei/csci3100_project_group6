@@ -7,25 +7,20 @@
 
   <div style="max-width: 600px; margin: 0 auto; text-align: left;">
 
-    <!--booking button-->
-    <h3>Venues in this Building</h3>
-    <ul>
-      <% @venues.each do |venue| %>
-        <li>
-          <%=venue.name %>
-          <%= link_to 'Book', "/bookings/new?boolable_id=#{venue.id}&bookable_type=Venue", style: "margin-top: 10px;" %>
-          <!--new_booking_path error in unknown resean-->       
-          </li>
-      <%end%>
-    </ul>
 
-
+    <!--read Available timeslots from time_slots-->
     <h3 style="margin-top: 30px;">Available Timeslots</h3>
-    <ul>
-      <% @timeslots.each do |slot| %>
-        <li><%= slot %></li>
-      <% end %>
-    </ul>
+    <% @venues.each do |venue| %>
+      <h4> <%=venue.name %></h4>
+      <ul>
+        <% venue.time_slots.each do |slot| %>
+          <li>
+            <%= slot.start_time.strftime("%H:%M") %> - <%= slot.end_time.strftime("%H:%M")%>
+            <%= link_to 'Book', "/bookings/new?bookable_id=#{venue.id}&bookable_type=Venue&time_slot_id=#{slot.id}",  style: "margin-top: 10px;" %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
 
     <div style="margin-top: 30px; text-align: center;">
       <%= link_to 'Continue to Confirmation', booking_confirmation_path, class: 'btn', 

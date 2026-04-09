@@ -25,6 +25,7 @@ class BookingsController < ApplicationController
     @booking =Booking.new #create a new booking form named booking
     @bookable_id =params[:bookable_id] #input id
     @bookable_type=params[:bookable_type] #inpur type 
+    @time_slot_id = params[:time_slot_id]
   end
 
   #save booking
@@ -60,7 +61,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:bookable_id, :bookable_type, :start_time, :end_time)
+    params.require(:booking).permit(:bookable_id, :bookable_type, :time_slot_id)
   end
 
 
