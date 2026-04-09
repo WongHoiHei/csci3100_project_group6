@@ -18,10 +18,10 @@ Rails.application.routes.draw do
   get '/venue-booking', to: 'bookings#map'
   get '/equipment-booking', to: 'bookings#equipment'
 
-  get 'buildings/:slug', to: 'buildings#show', as: :building
+  get 'buildings/:slug', to: 'buildings#show'
 
   get '/booking/confirmation', to: 'bookings#confirmation'
-  get '/booking/final', to: 'bookings#final', as: :booking_final
+  get '/booking/final', to: 'bookings#final'
 
   get '/search', to: 'search#index'
 
