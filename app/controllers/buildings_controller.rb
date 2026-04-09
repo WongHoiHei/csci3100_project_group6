@@ -17,7 +17,6 @@ class BuildingsController < ApplicationController
     # If the slug isn't found, default to "Unknown Building"
     @official_name = building_names[@slug] || "Unknown Building"
     @timeslots = (1..12).map { |i| "Period #{i}" }
-    render layout: false
   end
   
 end

@@ -16,7 +16,7 @@ class SearchController < ApplicationController
 
     
     if @query.present?   #if user enter search
-      @results =Equipment.where(name: @query.downcase)
+      @results =Equipment.where("name LIKE ?", @query.downcase)
     else
       @results =[]
     end
