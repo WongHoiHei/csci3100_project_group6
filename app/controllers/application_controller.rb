@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    OpenStruct.new(name: 'Demo User', email: 'demo@example.com')
+    @current_user  ||=User.first #test (User.find_by(id:session[:user_id]))
   end
 
   def logged_in?
