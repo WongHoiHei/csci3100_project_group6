@@ -7,6 +7,18 @@
 
   <div style="max-width: 600px; margin: 0 auto; text-align: left;">
 
+    <!--booking button-->
+    <h3>Venues in this Building</h3>
+    <ul>
+      <% @venues.each do |venue| %>
+        <li>
+          <%=venue.name %>
+          <%= link_to 'Book', "/bookings/new?boolable_id=#{venue.id}&bookable_type=Venue", style: "margin-top: 10px;" %>
+          <!--new_booking_path error in unknown resean-->       
+          </li>
+      <%end%>
+    </ul>
+
 
     <h3 style="margin-top: 30px;">Available Timeslots</h3>
     <ul>

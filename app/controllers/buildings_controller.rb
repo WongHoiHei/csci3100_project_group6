@@ -18,8 +18,10 @@ class BuildingsController < ApplicationController
     @official_name = building_names[@slug] || "Unknown Building"
 
     #find the venue under this building
-@venues=Venue.joins(:location).where(locations: {name: @official_name})
-
+    @venues=Venue.joins(:location).where(locations: {name: @official_name})
+    puts "DEBUG: @official_name = #{@official_name}"
+    puts "DEBUG: @venues count = #{@venues.count}"
+    
     @timeslots = (1..12).map { |i| "Period #{i}" }
     render layout: false
   end
