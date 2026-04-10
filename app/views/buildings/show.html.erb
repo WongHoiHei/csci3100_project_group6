@@ -13,7 +13,7 @@
     <% @venues.each do |venue| %>
       <h4> <%=venue.name %></h4>
       <ul>
-        <% venue.time_slots.each do |slot| %>
+        <% TimeSlot.all.each do |slot| %>
           <li>
             <%= slot.start_time.strftime("%H:%M") %> - <%= slot.end_time.strftime("%H:%M")%>
             <%= link_to 'Book', "/bookings/new?bookable_id=#{venue.id}&bookable_type=Venue&time_slot_id=#{slot.id}",  style: "margin-top: 10px;" %>

@@ -6,8 +6,8 @@ class BuildingsController < ApplicationController
     # Create a mapping of slugs to official names
     building_names = {
       "sirrunrunshawhall" => "Sir Run Run Shaw Hall",
-      "nagym"             => "New Asia College Gymnasium",
-      "ucgym"            => "United College Gymnasium",
+      "nagym"             => "NA Gym",
+      "ucgym"            => "UC Gym",
       "lingnanstadium"    => "Lingnan Stadium",
       "usportscentre"     => "University Sports Centre",
       "shawtheatre"       => "Shaw College Lecture Theatre"
