@@ -22,6 +22,9 @@ end
 admin.save!
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/feature/booking-system-functions
 
 #add equipments
 [
@@ -96,8 +99,11 @@ end
 
 
 #sample bookinｇ data
+<<<<<<< HEAD
 =======
 lifescience.equipments.create!([
     {name: "Projector", description:"4K Projector", total_count: 5, available_count: 5, usage_count: 14}
 ])
 >>>>>>> origin/feature/add-dashboard
+=======
+>>>>>>> origin/feature/booking-system-functions

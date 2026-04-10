@@ -1,3 +1,11 @@
-%h1 Welcome
-%p Please log in to continue.
-= link_to 'Go to Login', login_path, class: 'btn'
+.hero-section
+  .container
+    .max-w-4xl
+      %h1
+        Welcome to Venue / Equipment Booking System
+      
+      %p
+        Please log in to continue.
+        
+      .login-container
+        = link_to 'LOG IN', login_path, class: 'login-button'
