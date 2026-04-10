@@ -45,13 +45,16 @@ export default class extends Controller {
     if (window.tailwind) delete window.tailwind
   }
 
-  async update() {
+async update() {
     const tenantSelect = this.element.querySelector('[name="tenant_id"]')
     if (!tenantSelect) return
 
     const tid = tenantSelect.value
+    // Fetch fresh data for the new tenant
     const response = await fetch(`${this.urlValue}.json?tenant_id=${tid}`)
     this.rawData = await response.json()
+    
+    // Once data is fetched, apply whatever filters (search/sort) are currently set
     this.applyFilters()
   }
 
