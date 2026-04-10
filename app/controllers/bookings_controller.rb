@@ -5,8 +5,17 @@ class BookingsController < ApplicationController
   end
 
   def equipment
-    @equipments = Equipment.all
+    @selected_date = parse_booking_date(params[:booking_date]) || Date.current
+    @search_query = params[:q]
+    
+    @equipments = Equipment.all.distinct
+    
+    if @search_query.present?
+      @equipments = @equipments.where("LOWER(name) LIKE ?", "%#{@search_query.downcase}%")
+    end
+    
     @time_slots = TimeSlot.order(:start_time)
+    @remaining_quantity_by_equipment_and_slot = build_remaining_quantity_map(@selected_date)
   end
 
   def confirmation; end
@@ -26,6 +35,7 @@ class BookingsController < ApplicationController
     @bookable_id = params[:bookable_id]
     @bookable_type = params[:bookable_type]
     @time_slot_id = params[:time_slot_id]
+    @booking_date = params[:booking_date]
     @time_slot = TimeSlot.find_by(id: @time_slot_id)
 
     return unless requires_time_slot?(@bookable_type)
@@ -40,7 +50,9 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     assign_booking_times_from_time_slot(@booking)
 
-    if Booking.new_conflict?(@booking.bookable_id, @booking.bookable_type, @booking.start_time, @booking.end_time)
+    if equipment_unavailable_for_selected_slot?(@booking)
+      redirect_to equipment_booking_path(booking_date: extracted_booking_date(@booking)), alert: "This equipment is fully booked for the selected date and time slot."
+    elsif Booking.new_conflict?(@booking.bookable_id, @booking.bookable_type, @booking.start_time, @booking.end_time)
       redirect_to "/bookings/new", alert: "Unavailable time slot"
     elsif @booking.save
       BookingMailer.confirmation(@booking).deliver_now
@@ -104,7 +116,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:bookable_id, :bookable_type, :time_slot_id)
+    params.require(:booking).permit(:bookable_id, :bookable_type, :time_slot_id, :booking_date)
   end
 
   def assign_booking_times_from_time_slot(booking)
@@ -113,7 +125,82 @@ class BookingsController < ApplicationController
     time_slot = TimeSlot.find_by(id: booking.time_slot_id)
     return if time_slot.blank?
 
-    booking.start_time = time_slot.start_time
-    booking.end_time = time_slot.end_time
+    booking_date = parse_booking_date(booking.booking_date)
+    if booking_date.present?
+      booking.start_time = combine_date_and_time(booking_date, time_slot.start_time)
+      booking.end_time = combine_date_and_time(booking_date, time_slot.end_time)
+    else
+      booking.start_time = time_slot.start_time
+      booking.end_time = time_slot.end_time
+    end
+  end
+
+  def equipment_unavailable_for_selected_slot?(booking)
+    return false unless booking.bookable_type == "Equipment"
+
+    booking_date = extracted_booking_date(booking)
+    return false if booking_date.blank?
+
+    capacity = equipment_capacity_for(booking.bookable_id)
+    return true if capacity <= 0
+
+    booked_count = Booking.where(bookable_type: "Equipment", bookable_id: booking.bookable_id, time_slot_id: booking.time_slot_id)
+                        .where(start_time: booking_date.beginning_of_day..booking_date.end_of_day)
+                        .where.not(status: "rejected")
+                        .count
+
+    booked_count >= capacity
+  end
+
+  def build_remaining_quantity_map(selected_date)
+    counts = Booking.where(bookable_type: "Equipment", time_slot_id: @time_slots.pluck(:id))
+                    .where(start_time: selected_date.beginning_of_day..selected_date.end_of_day)
+                    .where.not(status: "rejected")
+                    .group(:bookable_id, :time_slot_id)
+                    .count
+
+    result = {}
+    @equipments.each do |equipment|
+      capacity = equipment_capacity_for(equipment)
+      @time_slots.each do |slot|
+        booked_count = counts.fetch([equipment.id, slot.id], 0)
+        result[[equipment.id, slot.id]] = [capacity - booked_count, 0].max
+      end
+    end
+
+    result
+  end
+
+  def equipment_capacity_for(equipment_or_id)
+    equipment = equipment_or_id.is_a?(Equipment) ? equipment_or_id : Equipment.find_by(id: equipment_or_id)
+    return 0 if equipment.blank?
+
+    capacity = equipment.available_count.nil? ? equipment.total_count : equipment.available_count
+    capacity.to_i
+  end
+
+  def extracted_booking_date(booking)
+    return booking.start_time.to_date if booking.start_time.present?
+
+    parse_booking_date(booking.booking_date)
+  end
+
+  def combine_date_and_time(date_value, time_value)
+    Time.zone.local(
+      date_value.year,
+      date_value.month,
+      date_value.day,
+      time_value.hour,
+      time_value.min,
+      time_value.sec
+    )
+  end
+
+  def parse_booking_date(value)
+    return if value.blank?
+
+    Date.parse(value.to_s)
+  rescue ArgumentError
+    nil
   end
 end

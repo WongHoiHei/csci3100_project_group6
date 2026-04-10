@@ -311,6 +311,115 @@ body {
   font-size: 0.9rem;
 }
 
+.equipment-page-header {
+  margin-bottom: 1.5rem;
+}
+
+.equipment-back-link {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: #5b7598;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.equipment-back-link:hover {
+  color: #14532d;
+}
+
+.equipment-date-form {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  max-width: 520px;
+}
+
+.equipment-date-form label {
+  font-weight: 700;
+  color: #14532d;
+}
+
+.equipment-date-form input[type="date"] {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #b9d6af;
+  border-radius: 0.6rem;
+}
+
+.equipment-date-form input[type="submit"] {
+  padding: 0.65rem 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: #166534;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.selected-booking-date {
+  margin: 0 0 1rem;
+  color: #374151;
+}
+
+.equipment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.equipment-item {
+  background: #ffffff;
+  border: 1px solid #d9e7d0;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.equipment-slot-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.equipment-slot-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #eef4ea;
+}
+
+.equipment-slot-item:last-child {
+  border-bottom: none;
+}
+
+.remaining-quantity {
+  color: #166534;
+  font-weight: 600;
+}
+
+.time-slot-book-btn.disabled {
+  background: #9ca3af;
+  color: white;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.search-info {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin: 1rem 0 1rem;
+  padding: 0.8rem 1rem;
+  background: #f9fafb;
+  border-left: 3px solid #166534;
+  border-radius: 0.4rem;
+}
+
+.search-info strong {
+  color: #166534;
+  font-weight: 600;
+}
+
 .booking-history-list {
   display: grid;
   gap: 1rem;
