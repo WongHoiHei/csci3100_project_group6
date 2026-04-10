@@ -45,7 +45,7 @@ class BookingsController < ApplicationController
     elsif @booking.save
       BookingMailer.confirmation(@booking).deliver_later
       sender_link = view_context.mail_to("venueandequipmentbooking@gmail.com", "venueandequipmentbooking@gmail.com")
-      redirect_to equipment_booking_path, notice: "Booking request submitted. Email sent from #{sender_link}".html_safe
+      redirect_to "/bookings/#{@booking.id}", notice: "Booking request submitted. Email sent from #{sender_link}".html_safe
     else
       render :new, status: :unprocessable_entity
     end
