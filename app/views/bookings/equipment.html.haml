@@ -2,12 +2,16 @@
 
 %ul
   - @equipments.each do |item|
-    %h3= item.name
-    -item.time_slots.each do |slot|
-      %li
-        = "#{slot.start_time.strftime("%H:%M")} - #{slot.end_time.strftime("%H:%M")}"
-
-        =  link_to 'Book',"/bookings/new?bookable_id=#{item.id}&bookable_type=Equipment&time_slot_id=#{slot.id}"
+    %li
+      %h3= item.name
+      - if @time_slots.any?
+        %ul
+          - @time_slots.each do |slot|
+            %li
+              = "#{slot.start_time.strftime("%H:%M")} - #{slot.end_time.strftime("%H:%M")}" 
+              = link_to 'Book', "/bookings/new?bookable_id=#{item.id}&bookable_type=Equipment&time_slot_id=#{slot.id}"
+      - else
+        %p No time slots available.
     
 
 = link_to 'Continue', booking_confirmation_path, class: 'btn'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_09_144144) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_10_120000) do
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "message_checksum", null: false
@@ -68,6 +68,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_09_144144) do
     t.datetime "created_at", null: false
     t.text "description"
     t.string "name"
+    t.integer "number_of_past_booking", default: 0, null: false
     t.integer "tenant_id", null: false
     t.integer "total_count"
     t.datetime "updated_at", null: false
@@ -111,6 +112,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_09_144144) do
     t.datetime "created_at", null: false
     t.integer "location_id"
     t.string "name"
+    t.integer "number_of_past_booking", default: 0, null: false
     t.datetime "updated_at", null: false
     t.index ["location_id"], name: "index_venues_on_location_id"
   end

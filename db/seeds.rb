@@ -21,63 +21,6 @@ if admin.new_record? || admin.password_digest.blank?
 end
 admin.save!
 
-<<<<<<< HEAD
-student = User.find_or_initialize_by(email: "student@link.cuhk.edu.hk")
-student.assign_attributes(name: "Student", role: "student")
-if student.new_record? || student.password_digest.blank?
-  student.password = "123456"
-  student.password_confirmation = "123456"
-end
-student.save!
-
-# Locations
-locations = [
-  ["Sir Run Run Shaw Hall", 22.420089834513423, 114.2072099614738],
-  ["NA Gym", 22.42090899131629, 114.20930435032216],
-  ["UC Gym", 22.420960312540984, 114.20567848673426],
-  ["Lingnan Stadium", 22.41493476795026, 114.20880499854452],
-  ["University Sports Centre", 22.418781207707248, 114.21198997917793],
-  ["Shaw College lecture Theatre", 22.422362888628257, 114.2016351058803]
-]
-
-locations.each do |name, latitude, longitude|
-  Location.find_or_create_by!(name: name) do |location|
-    location.latitude = latitude
-    location.longitude = longitude
-  end
-end
-
-# Venues
-uc_gym = Location.find_by(name: "UC Gym")
-Venue.find_or_create_by!(name: "Basketball Court", location: uc_gym) do |venue|
-  venue.capacity = 100
-end
-Venue.find_or_create_by!(name: "Badminton Court", location: uc_gym) do |venue|
-  venue.capacity = 50
-end
-
-# Equipment
-equipment_items = [
-  ["ProjectorAA", "4K Projector", 5],
-  ["Projector", "4K Projector", 5],
-  ["Speaker", "Audio Speaker", 5],
-  ["Microphone", "Wireless Microphone", 5]
-]
-
-equipment_items.each do |name, description, count|
-  Equipment.find_or_create_by!(name: name, tenant_id: engineering.id) do |equipment|
-    equipment.description = description
-    equipment.total_count = count
-    equipment.available_count = count
-  end
-end
-
-Equipment.find_or_create_by!(name: "Projector", tenant_id: lifescience.id) do |equipment|
-  equipment.description = "4K Projector"
-  equipment.total_count = 5
-  equipment.available_count = 5
-end
-=======
 
 #add equipments
 [
@@ -86,16 +29,10 @@ end
     { name: 'Microphone', total_count: 5, available_count: 5}
 
 ].each do |item|
-  equip = Equipment.find_or_create_by!(name: item[:name]) do |e|
+  Equipment.find_or_create_by!(name: item[:name]) do |e|
+    e.tenant = engineering
     e.total_count = item[:total_count]
     e.available_count = item[:available_count]
-  end
- 
-  if equip.time_slots.count == 0
-    ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"].each do |start|
-      hour = start.split(":").first.to_i
-      equip.time_slots.create!(start_time: start, end_time: "#{hour + 1}:00")
-    end
   end
 end
 
@@ -110,9 +47,22 @@ Location.find_or_create_by!(name: "Shaw College lecture Theatre", latitude: 22.4
 
 #Venue of UC Gym
 uc_gym = Location.find_by(name: "UC Gym")
-uc_gym.venues.create!(name: "Basketball Court", capacity: 100)
-uc_gym.venues.create!(name: "Badminton Court", capacity: 50)
+basketball_court = Venue.find_or_create_by!(name: "Basketball Court", location: uc_gym) do |v|
+  v.capacity = 100
+end
+
+badminton_court = Venue.find_or_create_by!(name: "Badminton Court", location: uc_gym) do |v|
+  v.capacity = 50
+end
+
+[basketball_court, badminton_court].each do |venue|
+  next if venue.time_slots.exists?
+
+  ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"].each do |start|
+    hour = start.split(":").first.to_i
+    venue.time_slots.create!(start_time: start, end_time: "#{hour + 1}:00")
+  end
+end
 
 
 #sample bookinｇ data
->>>>>>> origin/booking
