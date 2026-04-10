@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#welcome', as: :welcome
+  root 'pages#welcome'
   get "/map", to: "bookings#map"  # or a dedicated controller
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'buildings/:slug', to: 'buildings#show', as: :building
 
   get '/booking/confirmation', to: 'bookings#confirmation'
-  get '/booking/final', to: 'bookings#final'
+  get '/booking/final', to: 'bookings#final', as: :booking_final
 
   get '/search', to: 'search#index'
 
@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   post '/bookings', to: 'bookings#create'
   get '/bookings/:id', to: 'bookings#show' #show id booking
   get '/bookings', to: 'bookings#index' #show all bookings
+  delete '/bookings/:id', to: 'bookings#destroy'
 end

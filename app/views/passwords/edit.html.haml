@@ -1,6 +1,22 @@
 %h1 Change Password
+
+- if flash[:alert]
+  .alert= flash[:alert]
+
 = form_with url: password_path, method: :patch, local: true do
-  = password_field_tag :old_password, nil, placeholder: 'Old Password'
-  = password_field_tag :password, nil, placeholder: 'New Password'
-  = password_field_tag :password_confirmation, nil, placeholder: 'Confirm Password'
-  = submit_tag 'Update Password'
+  .field
+    = label_tag :password_current, 'Current Password'
+    = password_field_tag :password_current, nil, placeholder: 'Current Password'
+  
+  .field
+    = label_tag :password, 'New Password'
+    = password_field_tag :password, nil, placeholder: 'New Password'
+  
+  .field
+    = label_tag :password_confirmation, 'Confirm New Password'
+    = password_field_tag :password_confirmation, nil, placeholder: 'Confirm New Password'
+  
+  .actions
+    = submit_tag 'Update Password'
+
+= link_to 'Back', main_path
