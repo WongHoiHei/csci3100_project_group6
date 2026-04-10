@@ -29,11 +29,11 @@
     
     .flash-messages
       - if flash[:alert]
-        .alert-warning
+        .alert-warning{ data: { flash_message: true } }
           = flash[:alert]
 
       - if flash[:notice]
-        .alert-notice
+        .alert-notice{ data: { flash_message: true } }
           = flash[:notice]
 
     = yield

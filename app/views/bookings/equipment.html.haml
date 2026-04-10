@@ -1,5 +1,9 @@
 %h1 Equipment Booking
 
+= form_with url: search_path, method: :get, local: true, class: 'equipment-search-form' do
+  = text_field_tag :q, params[:q], placeholder: 'Search equipment...'
+  = submit_tag 'Search'
+
 %ul
   - @equipments.each do |item|
     %li

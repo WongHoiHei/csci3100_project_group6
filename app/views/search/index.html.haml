@@ -1,11 +1,60 @@
-%h1 Search Results
+.search-results
+  %h1 Search Results
 
-%p Searching for #{@query || 'nothing'}
+  - if @query.present?
+    %p.search-query
+      Showing results for: 
+      %strong= @query
 
-%h3 Results:
-- if @results.any?
-  %ul
-    - @results.each do |result|
-      %li= "#{result.name} - #{result.tenant.name} - #{result.available_count >0 ? 'Available' : 'Unavailable'}"
-- else
-  %p No results found. Try "projector", "microphone", or "speaker".
+    - if @equipment_results.any?
+      .results-section
+        %h2 Equipment
+        .equipment-results-list
+          - @equipment_results.each do |equipment|
+            .result-card.equipment-card
+              %h3= equipment.name
+              %p
+                %strong Description:
+                = equipment.description || "No description"
+              %p
+                %strong Total Count:
+                = equipment.total_count
+              %p
+                %strong Available Count:
+                = equipment.available_count
+              
+              - if @time_slots.any?
+                .time-slots-section
+                  %strong Select Time Slot:
+                  %ul.time-slots-list
+                    - @time_slots.each do |slot|
+                      %li.time-slot-item
+                        %span.time-slot-text
+                          = "#{slot.start_time.strftime("%H:%M")} - #{slot.end_time.strftime("%H:%M")}"
+                        = link_to 'Book', "/bookings/new?bookable_id=#{equipment.id}&bookable_type=Equipment&time_slot_id=#{slot.id}", class: 'time-slot-book-btn'
+              - else
+                %p.no-slots No time slots available.
+
+    - if @venue_results.any?
+      .results-section
+        %h2 Venues
+        .venue-results-list
+          - @venue_results.each do |venue|
+            .result-card.venue-card
+              %h3= venue.name
+              %p
+                %strong Capacity:
+                = venue.capacity
+              %p
+                %strong Location:
+                = venue.location&.name || "No location"
+              %p
+                %strong Past Bookings:
+                = venue.number_of_past_booking || 0
+              
+              = link_to 'Book', "/bookings/new?bookable_id=#{venue.id}&bookable_type=Venue", class: 'venue-book-btn'
+
+    - if @equipment_results.empty? && @venue_results.empty?
+      %p No results found for "#{@query}"
+  - else
+    %p Please enter a search query.
