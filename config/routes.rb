@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/password/edit', to: 'passwords#edit'
   patch '/password', to: 'passwords#update'
 
-  get '/main', to: 'pages#main'
+  get '/main', to: 'pages#main' 
 
   get '/venue-booking', to: 'bookings#map'
   get '/equipment-booking', to: 'bookings#equipment'
@@ -25,9 +25,15 @@ Rails.application.routes.draw do
 
   get '/search', to: 'search#index'
 
+  resources :dashboards, only: [:index]
+  
   get '/bookings/new', to: 'bookings#new'
   post '/bookings', to: 'bookings#create'
   get '/bookings/:id', to: 'bookings#show' #show id booking
   get '/bookings', to: 'bookings#index' #show all bookings
+<<<<<<< HEAD
   delete '/bookings/:id', to: 'bookings#destroy'
 end
+=======
+end
+>>>>>>> origin/feature/add-dashboard

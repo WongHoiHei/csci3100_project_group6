@@ -1,0 +1,68 @@
+- content_for :head do
+  -# This is the "Nuclear Option" to stop the Tailwind leak on undo/back
+  %meta{ name: "turbo-cache-control", content: "no-cache" }
+
+.min-h-screen.bg-slate-50.p-8{ data: { controller: "dashboard", dashboard_url_value: dashboards_path } }
+  .max-w-7xl.mx-auto
+    
+    -# Back Button pointing directly to the /main string
+    .mb-8
+      = link_to "/main", class: "group inline-flex items-center text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors" do
+        %svg.w-5.h-5.mr-2.transition-transform.group-hover:-translate-x-1{ fill: "none", stroke: "currentColor", viewBox: "0 0 24 24" }
+          %path{ d: "M10 19l-7-7m0 0l7-7m-7 7h18", "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": "2" }
+        Back to Main Page
+        
+    -# Header
+    .flex.justify-between.items-center.mb-10
+      %div
+        %h1.text-4xl.font-black.text-slate-900 Booking Data
+        %p.text-slate-500.mt-1 Data-driven dashboard for venues and equipment
+      
+      .flex.items-center.gap-4.bg-white.p-2.rounded-xl.shadow-sm.border.border-slate-200
+        %label.font-bold.text-slate-600.ml-2 Dept:
+        %select.border-none.focus:ring-0.font-medium.text-blue-600.bg-transparent{ data: { action: "change->dashboard#update" }, name: "tenant_id" }
+          - @tenants.each do |t|
+            %option{ value: t.id, selected: (t.id == @selected_tenant.id) }= t.name
+
+    -# Search & Sort
+    .grid.grid-cols-1.md:grid-cols-3.gap-4.mb-10
+      .md:col-span-2.relative
+        .absolute.inset-y-0.left-0.pl-3.flex.items-center.pointer-events-none
+          %svg.h-5.w-5.text-slate-400{ fill: "none", stroke: "currentColor", viewBox: "0 0 24 24" }
+            %path{ d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z", "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": "2" }
+        %input.w-full.border-slate-200.rounded-xl.p-3.pl-10.shadow-sm.focus:ring-2.focus:ring-blue-500{ type: "text", placeholder: "Search resources...", data: { action: "input->dashboard#applyFilters" }, name: "query" }
+      
+      %select.w-full.border-slate-200.rounded-xl.p-3.shadow-sm.bg-white{ data: { action: "change->dashboard#applyFilters" }, name: "sort" }
+        %option{ value: "usage_desc" } Most Used
+        %option{ value: "usage_asc" } Least Used
+        %option{ value: "name_asc" } Name (A-Z)
+
+    -# Charts Row
+    .grid.grid-cols-1.lg:grid-cols-2.gap-8.mb-10
+      .bg-white.p-6.rounded-2xl.shadow-sm.border.border-slate-200
+        %h2.text-lg.font-bold.mb-4 Venues (Total Bookings)
+        %canvas{ data: { dashboard_target: "venueChart" } }
+      
+      .bg-white.p-6.rounded-2xl.shadow-sm.border.border-slate-200
+        %h2.text-lg.font-bold.mb-4 Equipment (Total Usage)
+        %canvas{ data: { dashboard_target: "equipmentChart" } }
+
+    -# Tables Row
+    .grid.grid-cols-1.lg:grid-cols-2.gap-8
+      -# Venues Table
+      .bg-white.rounded-2xl.shadow-sm.border.overflow-hidden
+        %table.w-full
+          %thead.bg-slate-50
+            %tr
+              %th.p-4.text-left.text-xs.font-bold.uppercase.tracking-wider.text-slate-500 Venue
+              %th.p-4.text-right.text-xs.font-bold.uppercase.tracking-wider.text-slate-500 Bookings
+          %tbody.divide-y.divide-slate-100{ data: { dashboard_target: "venueList" } }
+      
+      -# Equipment Table
+      .bg-white.rounded-2xl.shadow-sm.border.overflow-hidden
+        %table.w-full
+          %thead.bg-slate-50
+            %tr
+              %th.p-4.text-left.text-xs.font-bold.uppercase.tracking-wider.text-slate-500 Equipment
+              %th.p-4.text-right.text-xs.font-bold.uppercase.tracking-wider.text-slate-500 Usage
+          %tbody.divide-y.divide-slate-100{ data: { dashboard_target: "equipmentList" } }

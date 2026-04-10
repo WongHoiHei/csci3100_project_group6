@@ -7,7 +7,7 @@ class CreateVenues < ActiveRecord::Migration[8.1]
       t.float :latitude
       t.float :longitude
       t.references :tenant, null: false, foreign_key: true
-
+      
       t.timestamps
     end
   end

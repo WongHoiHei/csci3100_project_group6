@@ -21,12 +21,41 @@ if admin.new_record? || admin.password_digest.blank?
 end
 admin.save!
 
+<<<<<<< HEAD
 
 #add equipments
 [
     { name: 'Projector', total_count: 5, available_count: 5},
     { name: 'Speaker', total_count: 5, available_count: 5 },
     { name: 'Microphone', total_count: 5, available_count: 5}
+=======
+#add student account
+User.create!(
+    email:"student@link.cuhk.edu.hk",
+    name: "Student",
+    role: "student",
+    tenant: engineering
+)
+
+#add venues
+#fake nowwwww!!! i made them up first
+engineering.venues.create!([
+    {name:"SHB301", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1111,longitude: 11.1111, booking_count: 10 },
+    {name:"SHB302", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1112,longitude: 11.1112, booking_count: 8 },
+])
+
+lifescience.venues.create!([
+    {name:"SC101", location: "science centre 1F", capacity: 50, latitude: 21.1111,longitude: 21.1111, booking_count: 8 },
+    {name:"SC102", location: "science centre 1F", capacity: 50,  latitude: 31.1112,longitude: 31.1112, booking_count: 3 },
+])
+
+#add equipments
+engineering.equipments.create!([
+    {name: "ProjectorAA", description:"4K Projector", total_count: 5, available_count: 5, usage_count: 10},
+    { name: 'Projector', description:"4K Projector",total_count: 5, available_count: 5, usage_count: 15},
+    { name: 'Speaker',description:"4K Projector", total_count: 5, available_count: 5, usage_count: 20 },
+    { name: 'Microphone', description:"4K Projector",total_count: 5, available_count: 5, usage_count: 13}
+>>>>>>> origin/feature/add-dashboard
 
 ].each do |item|
   Equipment.find_or_create_by!(name: item[:name]) do |e|
@@ -36,6 +65,7 @@ admin.save!
   end
 end
 
+<<<<<<< HEAD
 
 #Location （test)
 Location.find_or_create_by!(name: "Sir Run Run Shaw Hall", latitude: 22.420089834513423, longitude: 114.2072099614738)
@@ -66,3 +96,8 @@ end
 
 
 #sample bookinｇ data
+=======
+lifescience.equipments.create!([
+    {name: "Projector", description:"4K Projector", total_count: 5, available_count: 5, usage_count: 14}
+])
+>>>>>>> origin/feature/add-dashboard

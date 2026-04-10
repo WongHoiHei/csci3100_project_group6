@@ -20,9 +20,13 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+<<<<<<< HEAD
     session[:user_id] = nil
     @current_user = nil
     flash[:notice] = 'Logged out successfully!'
     redirect_to root_path
+=======
+    redirect_to welcome_path
+>>>>>>> origin/feature/add-dashboard
   end
 end

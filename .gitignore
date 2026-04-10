@@ -33,4 +33,10 @@
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 
+<<<<<<< HEAD
 /tmp
+=======
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
+>>>>>>> origin/feature/add-dashboard
