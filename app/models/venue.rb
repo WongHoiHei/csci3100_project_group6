@@ -1,3 +1,5 @@
 class Venue < ApplicationRecord
-  belongs_to :tenant
+  
+  belongs_to :location
+  has_many :time_slots, as: :bookable
 end

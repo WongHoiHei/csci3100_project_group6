@@ -1,10 +1,26 @@
 class RegistrationsController < ApplicationController
+  skip_before_action :require_login, only: [:new, :create]
+
   def new
+    @user = User.new
     @hide_header = true
   end
 
   def create
-    flash[:notice] = 'Sign up successful'
-    redirect_to login_path
+    @user = User.new(user_params)
+    
+    if @user.save
+      flash[:notice] = 'Sign up successful! Please log in.'
+      redirect_to login_path
+    else
+      flash[:alert] = @user.errors.full_messages.join(', ')
+      render :new
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :name, :password, :password_confirmation)
   end
 end

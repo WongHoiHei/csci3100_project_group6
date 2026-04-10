@@ -5,7 +5,30 @@
   
   <hr style="width: 50px; border: 2px solid #4285F4; margin: 30px auto;">
 
+  <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+
+
+    <!--read Available timeslots from time_slots-->
+    <h3 style="margin-top: 30px;">Available Timeslots</h3>
+    <% @venues.each do |venue| %>
+      <h4> <%=venue.name %></h4>
+      <ul>
+        <% venue.time_slots.each do |slot| %>
+          <li>
+            <%= slot.start_time.strftime("%H:%M") %> - <%= slot.end_time.strftime("%H:%M")%>
+            <%= link_to 'Book', "/bookings/new?bookable_id=#{venue.id}&bookable_type=Venue&time_slot_id=#{slot.id}",  style: "margin-top: 10px;" %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div style="margin-top: 30px; text-align: center;">
+      <%= link_to 'Continue to Confirmation', booking_confirmation_path, class: 'btn', 
+          style: "background: #4285F4; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;" %>
+    </div>
+  </div>
+
   <div style="margin-top: 40px;">
-    <%= link_to "← Back to Map", "/map", style: "your-styles-here" %>
+    <%= link_to "← Back to Map", "/map", style: "color: #666; text-decoration: none;" %>
   </div>
 </div>

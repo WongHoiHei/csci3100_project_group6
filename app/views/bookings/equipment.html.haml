@@ -2,10 +2,12 @@
 
 %ul
   - @equipments.each do |item|
-    %li
-      = "#{item.name} - #{item.tenant.name} - #{item.description}- #{item.available_count >0 ? 'Available' : 'Unavailable'}"
+    %h3= item.name
+    -item.time_slots.each do |slot|
+      %li
+        = "#{slot.start_time.strftime("%H:%M")} - #{slot.end_time.strftime("%H:%M")}"
 
-      =  link_to 'Book',"/bookings/new?bookable_id=#{item.id}&bookable_type=Equipment"
-   
+        =  link_to 'Book',"/bookings/new?bookable_id=#{item.id}&bookable_type=Equipment&time_slot_id=#{slot.id}"
+    
 
 = link_to 'Continue', booking_confirmation_path, class: 'btn'

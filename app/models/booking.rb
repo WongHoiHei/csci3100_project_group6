@@ -1,5 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
+  belongs_to :time_slot
   belongs_to :bookable, polymorphic: true
 
   # #define status
