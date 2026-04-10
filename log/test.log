@@ -503,3 +503,436 @@ Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.1ms (3 queries, 0 cached
   [1m[36mBooking Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."bookable_id" = ? AND "bookings"."status" = ?[0m  [["bookable_type", "Venue"], ["bookable_id", 1], ["status", "approved"]]
   [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.8ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:51:35.323093"], ["name", "Engineering"], ["updated_at", "2026-04-10 07:51:35.323093"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "role", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:51:35.331455"], ["email", "[FILTERED]"], ["name", "Test Student"], ["role", "student"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:51:35.331455"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.5ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-10 07:51:35.345368"], ["latitude", nil], ["location", "Building A"], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:51:35.345368"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-10 07:51:35.355134"], ["end_time", "2026-04-10 08:51:35.347552"], ["start_time", "2026-04-10 07:51:35.347530"], ["status", "approved"], ["updated_at", "2026-04-10 07:51:35.355134"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-10 07:51:35.357247"], ["end_time", "2026-04-10 10:51:35.356813"], ["start_time", "2026-04-10 09:51:35.356750"], ["status", "approved"], ["updated_at", "2026-04-10 07:51:35.357247"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:52:55.269379"], ["name", "Engineering"], ["updated_at", "2026-04-10 07:52:55.269379"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:52:55.292938"], ["name", "Engineering"], ["updated_at", "2026-04-10 07:52:55.292938"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (1.1ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:52:55.295295"], ["name", "Engineering"], ["updated_at", "2026-04-10 07:52:55.295295"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:53:52.446409"], ["name", "Engineering"], ["updated_at", "2026-04-10 07:53:52.446409"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 2], ["capacity", nil], ["created_at", "2026-04-10 07:53:52.461450"], ["latitude", nil], ["location", "Building A"], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:53:52.461450"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.3ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 07:53:52.467700"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 07:53:52.467700"], ["usage_count", 15]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:53:52.481466"], ["name", "Engineering"], ["updated_at", "2026-04-10 07:53:52.481466"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 2], ["capacity", nil], ["created_at", "2026-04-10 07:53:52.482774"], ["latitude", nil], ["location", "Building A"], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:53:52.482774"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.2ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 07:53:52.484121"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 07:53:52.484121"], ["usage_count", 15]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:53:52.486973"], ["name", "Engineering"], ["updated_at", "2026-04-10 07:53:52.486973"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 2], ["capacity", nil], ["created_at", "2026-04-10 07:53:52.488244"], ["latitude", nil], ["location", "Building A"], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:53:52.488244"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.2ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 07:53:52.489806"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 07:53:52.489806"], ["usage_count", 15]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.7ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", nil], ["capacity", nil], ["created_at", "2026-04-10 07:53:52.491165"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "Empty Room"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:53:52.491165"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.5ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:55:15.288408"], ["name", "Engineering"], ["updated_at", "2026-04-10 07:55:15.288408"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.5ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 2], ["capacity", nil], ["created_at", "2026-04-10 07:55:15.308172"], ["latitude", nil], ["location", "Building A"], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:55:15.308172"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.5ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 07:55:15.317166"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 07:55:15.317166"], ["usage_count", 15]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:55:15.336164"], ["name", "Engineering"], ["updated_at", "2026-04-10 07:55:15.336164"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 2], ["capacity", nil], ["created_at", "2026-04-10 07:55:15.338370"], ["latitude", nil], ["location", "Building A"], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:55:15.338370"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.3ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 07:55:15.340311"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 07:55:15.340311"], ["usage_count", 15]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:55:15.344311"], ["name", "Engineering"], ["updated_at", "2026-04-10 07:55:15.344311"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 2], ["capacity", nil], ["created_at", "2026-04-10 07:55:15.346136"], ["latitude", nil], ["location", "Building A"], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:55:15.346136"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.2ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 07:55:15.347562"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 07:55:15.347562"], ["usage_count", 15]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 0], ["capacity", nil], ["created_at", "2026-04-10 07:55:15.348739"], ["latitude", nil], ["location", "Building B"], ["longitude", nil], ["name", "Empty Room"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:55:15.348739"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.5ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:57:41.874451"], ["name", "Engineering Department"], ["updated_at", "2026-04-10 07:57:41.874451"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:57:41.877061"], ["name", "Life Science Department"], ["updated_at", "2026-04-10 07:57:41.877061"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "role", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 07:57:41.884136"], ["email", "[FILTERED]"], ["name", "Student"], ["role", "student"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:57:41.884136"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.5ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 0], ["capacity", nil], ["created_at", "2026-04-10 07:57:41.896274"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 07:57:41.896274"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-10 07:57:41.906695"], ["end_time", "2026-04-10 08:57:41.899508"], ["start_time", "2026-04-10 07:57:41.899486"], ["status", "approved"], ["updated_at", "2026-04-10 07:57:41.906695"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dashboards.json?tenant_id=1" for 127.0.0.1 at 2026-04-10 07:57:41 +0000
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "1"}
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.6ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 08:00:51.567319"], ["name", "Engineering Department"], ["updated_at", "2026-04-10 08:00:51.567319"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 08:00:51.571502"], ["name", "Life Science Department"], ["updated_at", "2026-04-10 08:00:51.571502"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.5ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 5], ["capacity", nil], ["created_at", "2026-04-10 08:00:51.588477"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 08:00:51.588477"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.5ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 08:00:51.600184"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 08:00:51.600184"], ["usage_count", 12]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dashboards.json?tenant_id=1" for 127.0.0.1 at 2026-04-10 08:00:51 +0000
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "1"}
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.0ms)
+Started GET "/dashboards.json?tenant_id=2" for 127.0.0.1 at 2026-04-10 08:00:51 +0000
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "2"}
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 2]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 2]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.6ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:01:43.428844"], ["name", "Engineering"], ["updated_at", "2026-04-10 09:01:43.428844"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.4ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 2], ["capacity", nil], ["created_at", "2026-04-10 09:01:43.450800"], ["latitude", nil], ["location", "Building A"], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:01:43.450800"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.4ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 09:01:43.461148"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 09:01:43.461148"], ["usage_count", 15]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.5ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:01:43.485568"], ["name", "Engineering"], ["updated_at", "2026-04-10 09:01:43.485568"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.7ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 2], ["capacity", nil], ["created_at", "2026-04-10 09:01:43.488409"], ["latitude", nil], ["location", "Building A"], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:01:43.488409"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.3ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 09:01:43.491432"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 09:01:43.491432"], ["usage_count", 15]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:01:43.495697"], ["name", "Engineering"], ["updated_at", "2026-04-10 09:01:43.495697"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 2], ["capacity", nil], ["created_at", "2026-04-10 09:01:43.497321"], ["latitude", nil], ["location", "Building A"], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:01:43.497321"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.5ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 09:01:43.499131"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 09:01:43.499131"], ["usage_count", 15]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 0], ["capacity", nil], ["created_at", "2026-04-10 09:01:43.500801"], ["latitude", nil], ["location", "Building B"], ["longitude", nil], ["name", "Empty Room"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:01:43.500801"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.5ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:02:12.307835"], ["name", "Engineering Department"], ["updated_at", "2026-04-10 09:02:12.307835"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:02:12.311626"], ["name", "Life Science Department"], ["updated_at", "2026-04-10 09:02:12.311626"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 5], ["capacity", nil], ["created_at", "2026-04-10 09:02:12.325505"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:02:12.325505"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.3ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "tenant_id", "total_count", "updated_at", "usage_count") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-10 09:02:12.333436"], ["description", nil], ["name", "Projector"], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-10 09:02:12.333436"], ["usage_count", 12]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dashboards.json?tenant_id=1" for 127.0.0.1 at 2026-04-10 09:02:12 +0000
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "1"}
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 1]]
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+Started GET "/dashboards.json?tenant_id=2" for 127.0.0.1 at 2026-04-10 09:02:12 +0000
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "2"}
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.0ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = ?[0m  [["tenant_id", 2]]
+  [1m[36mEquipment Load (0.0ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 2]]
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.1ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/main" for 127.0.0.1 at 2026-04-10 09:05:36 +0000
+Processing by PagesController#main as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered shared/_header.html.haml (Duration: 56.5ms | GC: 37.5ms)
+  Rendered layout layouts/application.html.haml (Duration: 93.6ms | GC: 54.1ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 55.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:05:36.353016"], ["name", "Engineering Department"], ["updated_at", "2026-04-10 09:05:36.353016"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Life Science Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:05:36.355619"], ["name", "Life Science Department"], ["updated_at", "2026-04-10 09:05:36.355619"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 0], ["capacity", nil], ["created_at", "2026-04-10 09:05:36.366243"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:05:36.366243"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:05:36.380800"], ["name", "Engineering Department"], ["updated_at", "2026-04-10 09:05:36.380800"]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Life Science Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:05:36.390562"], ["name", "Life Science Department"], ["updated_at", "2026-04-10 09:05:36.390562"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 0], ["capacity", nil], ["created_at", "2026-04-10 09:05:36.392228"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:05:36.392228"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mTRUNCATE TABLE "venues"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM "venues"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'venues';[0m
+  [1m[35m (0.2ms)[0m  [1m[35mTRUNCATE TABLE "equipment"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM "equipment"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'equipment';[0m
+  [1m[35m (0.2ms)[0m  [1m[35mTRUNCATE TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'users';[0m
+  [1m[35m (0.2ms)[0m  [1m[35mTRUNCATE TABLE "tenants"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM "tenants"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'tenants';[0m
+  [1m[35m (0.2ms)[0m  [1m[35mTRUNCATE TABLE "bookings"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM "bookings"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'bookings';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:06:32.664238"], ["name", "Engineering Department"], ["updated_at", "2026-04-10 09:06:32.664238"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Life Science Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:06:32.666586"], ["name", "Life Science Department"], ["updated_at", "2026-04-10 09:06:32.666586"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 0], ["capacity", nil], ["created_at", "2026-04-10 09:06:32.679940"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:06:32.679940"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:06:32.697505"], ["name", "Engineering Department"], ["updated_at", "2026-04-10 09:06:32.697505"]]
+  [1m[36mTRANSACTION (25.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Life Science Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTenant Create (0.5ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:06:32.725155"], ["name", "Life Science Department"], ["updated_at", "2026-04-10 09:06:32.725155"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mVenue Create (0.4ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 0], ["capacity", nil], ["created_at", "2026-04-10 09:06:32.727832"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:06:32.727832"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mTRUNCATE TABLE "venues"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "venues"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'venues';[0m
+  [1m[35m (0.3ms)[0m  [1m[35mTRUNCATE TABLE "equipment"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "equipment"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'equipment';[0m
+  [1m[35m (0.3ms)[0m  [1m[35mTRUNCATE TABLE "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'users';[0m
+  [1m[35m (0.3ms)[0m  [1m[35mTRUNCATE TABLE "tenants"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM "tenants"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'tenants';[0m
+  [1m[35m (0.4ms)[0m  [1m[35mTRUNCATE TABLE "bookings"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM "bookings"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'bookings';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:09:34.483071"], ["name", "Engineering Department"], ["updated_at", "2026-04-10 09:09:34.483071"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Life Science Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:09:34.485110"], ["name", "Life Science Department"], ["updated_at", "2026-04-10 09:09:34.485110"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.4ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 0], ["capacity", nil], ["created_at", "2026-04-10 09:09:34.497181"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:09:34.497181"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:09:34.515152"], ["name", "Engineering Department"], ["updated_at", "2026-04-10 09:09:34.515152"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Life Science Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:09:34.521537"], ["name", "Life Science Department"], ["updated_at", "2026-04-10 09:09:34.521537"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 0], ["capacity", nil], ["created_at", "2026-04-10 09:09:34.523448"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:09:34.523448"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mTRUNCATE TABLE "venues"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM "venues"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'venues';[0m
+  [1m[35m (0.3ms)[0m  [1m[35mTRUNCATE TABLE "equipment"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM "equipment"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'equipment';[0m
+  [1m[35m (0.3ms)[0m  [1m[35mTRUNCATE TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'users';[0m
+  [1m[35m (0.2ms)[0m  [1m[35mTRUNCATE TABLE "tenants"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM "tenants"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'tenants';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mTRUNCATE TABLE "bookings"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM "bookings"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'bookings';[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:11:19.131164"], ["name", "Engineering Department"], ["updated_at", "2026-04-10 09:11:19.131164"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Life Science Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-10 09:11:19.134310"], ["name", "Life Science Department"], ["updated_at", "2026-04-10 09:11:19.134310"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."name" = ? LIMIT ?[0m  [["name", "Engineering Department"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.5ms)[0m  [1m[32mINSERT INTO "venues" ("booking_count", "capacity", "created_at", "latitude", "location", "longitude", "name", "tenant_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["booking_count", 0], ["capacity", nil], ["created_at", "2026-04-10 09:11:19.150449"], ["latitude", nil], ["location", nil], ["longitude", nil], ["name", "SHB301"], ["tenant_id", 1], ["updated_at", "2026-04-10 09:11:19.150449"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

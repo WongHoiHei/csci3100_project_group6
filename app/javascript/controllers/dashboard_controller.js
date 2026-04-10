@@ -2,28 +2,65 @@ import { Controller } from "@hotwired/stimulus"
 import Chart from "chart.js/auto"
 
 export default class extends Controller {
-  // Added the chart targets here
   static targets = ["venueList", "equipmentList", "venueChart", "equipmentChart"]
   static values = { url: String }
   
-  // Store chart instances so we can destroy them on update
   charts = {}
   rawData = { venues: [], equipments: [] }
 
   connect() {
+    // 1. Inject Tailwind as soon as we arrive
+    this.injectTailwind()
     this.update()
   }
 
+  disconnect() {
+    this.removeTailwind()
+    // Destroy charts to prevent memory bloat
+    Object.values(this.charts).forEach(chart => chart.destroy())
+  }
+
+  injectTailwind() {
+    if (document.getElementById("tailwind-cdn")) return
+
+    const script = document.createElement("script")
+    script.id = "tailwind-cdn"
+    script.src = "https://cdn.tailwindcss.com"
+    document.head.appendChild(script)
+  }
+
+  removeTailwind() {
+    const script = document.getElementById("tailwind-cdn")
+    if (script) script.remove()
+
+    // Find and remove the style blocks Tailwind creates
+    document.querySelectorAll('style').forEach(style => {
+      // Tailwind CDN usually leaves markers like --tw- or identifies as 'tailwind'
+      if (style.textContent.includes('--tw-') || style.textContent.includes('tailwind')) {
+        style.remove()
+      }
+    })
+
+    // Delete the tailwind object from the window
+    if (window.tailwind) delete window.tailwind
+  }
+
   async update() {
-    const tid = this.element.querySelector('[name="tenant_id"]').value
+    const tenantSelect = this.element.querySelector('[name="tenant_id"]')
+    if (!tenantSelect) return
+
+    const tid = tenantSelect.value
     const response = await fetch(`${this.urlValue}.json?tenant_id=${tid}`)
     this.rawData = await response.json()
     this.applyFilters()
   }
 
   applyFilters() {
-    const query = this.element.querySelector('[name="query"]').value.toLowerCase()
-    const sortMode = this.element.querySelector('[name="sort"]').value
+    const queryInput = this.element.querySelector('[name="query"]')
+    const sortInput = this.element.querySelector('[name="sort"]')
+    
+    const query = queryInput ? queryInput.value.toLowerCase() : ""
+    const sortMode = sortInput ? sortInput.value : "usage_desc"
 
     const processList = (list) => {
       let filtered = list.filter(item => item.name.toLowerCase().includes(query))
@@ -38,13 +75,11 @@ export default class extends Controller {
     const filteredVenues = processList(this.rawData.venues)
     const filteredEquipments = processList(this.rawData.equipments)
 
-    // 1. Render the Tables (with Tailwind classes)
     this.renderRows(this.venueListTarget, filteredVenues)
     this.renderRows(this.equipmentListTarget, filteredEquipments)
 
-    // 2. Render the Charts
-    this.renderChart(this.venueChartTarget, "Venues", filteredVenues, "#3b82f6") // Blue
-    this.renderChart(this.equipmentChartTarget, "Equipment", filteredEquipments, "#10b981") // Emerald
+    this.renderChart(this.venueChartTarget, "Venues", filteredVenues, "#3b82f6")
+    this.renderChart(this.equipmentChartTarget, "Equipment", filteredEquipments, "#10b981")
   }
 
   renderRows(target, items) {
@@ -67,11 +102,7 @@ export default class extends Controller {
 
   renderChart(canvasElement, label, items, color) {
     const chartId = canvasElement.dataset.dashboardTarget
-    
-    // Crucial: Destroy the old chart instance if it exists
-    if (this.charts[chartId]) {
-      this.charts[chartId].destroy()
-    }
+    if (this.charts[chartId]) this.charts[chartId].destroy()
 
     this.charts[chartId] = new Chart(canvasElement, {
       type: 'bar',
@@ -86,12 +117,8 @@ export default class extends Controller {
       },
       options: {
         responsive: true,
-        plugins: {
-          legend: { display: false }
-        },
-        scales: {
-          y: { beginAtZero: true, ticks: { precision: 0 } }
-        }
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { precision: 0 } } }
       }
     })
   }

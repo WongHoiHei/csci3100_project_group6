@@ -5,20 +5,8 @@ class DashboardStatsService
 
   def resource_usage_data
     {
-      venues: format_usage(@tenant.venues),
-      equipments: format_usage(@tenant.equipments)
+      venues: @tenant.venues.map { |v| { name: v.name, usage_count: v.booking_count || 0 } },
+      equipments: @tenant.equipments.map { |e| { name: e.name, usage_count: e.usage_count || 0 } }
     }
-  end
-
-  private
-
-  def format_usage(collection)
-    collection.map do |item|
-      {
-        name: item.name,
-        # Polymorphic count through the bookings table
-        usage_count: Booking.where(bookable: item, status: "approved").count
-      }
-    end
   end
 end
