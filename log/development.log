@@ -29326,3 +29326,14 @@ Processing by PagesController#main as HTML
 Completed 200 OK in 15ms (Views: 2.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='BookingSystem'*/[0m
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" ORDER BY "locations"."id" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."id" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mTimeSlot Load (0.1ms)[0m  [1m[34mSELECT "time_slots".* FROM "time_slots" ORDER BY "time_slots"."id" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" ORDER BY "equipment"."id" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."id" = 1 LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("user_id", "bookable_type", "bookable_id", "start_time", "end_time", "status", "created_at", "updated_at", "time_slot_id") VALUES (1, 'Equipment', 1, '2026-04-10 08:28:43.868217', '2026-04-10 09:28:43.868290', 'pending', '2026-04-10 08:28:43.891960', '2026-04-10 08:28:43.891960', 1) RETURNING "id" /*application='BookingSystem'*/[0m
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."id" = 1 LIMIT 1 /*application='BookingSystem'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='BookingSystem'*/[0m
