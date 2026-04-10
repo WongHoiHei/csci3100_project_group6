@@ -8,7 +8,6 @@
       = submit_tag 'Search'
 
   .topbar-right
-<<<<<<< HEAD
     - if logged_in?
       %span= current_user.name
       = link_to 'Change Password', password_edit_path
@@ -16,7 +15,3 @@
     - else
       = link_to 'Log in', login_path
       = link_to 'Sign up', signup_path
-=======
-    %span= current_user.name
-    = button_to 'Log out', welcome_path, method: :delete
->>>>>>> origin/feature/add-dashboard

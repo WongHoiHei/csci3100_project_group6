@@ -22,7 +22,7 @@
         %label.font-bold.text-slate-600.ml-2 Dept:
         %select.border-none.focus:ring-0.font-medium.text-blue-600.bg-transparent{ data: { action: "change->dashboard#update" }, name: "tenant_id" }
           - @tenants.each do |t|
-            %option{ value: t.id, selected: (t.id == @selected_tenant.id) }= t.name
+            %option{ value: t.id, selected: (t.id == @selected_tenant&.id) }= t.name
 
     -# Search & Sort
     .grid.grid-cols-1.md:grid-cols-3.gap-4.mb-10

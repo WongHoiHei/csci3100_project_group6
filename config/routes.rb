@@ -31,9 +31,5 @@ Rails.application.routes.draw do
   post '/bookings', to: 'bookings#create'
   get '/bookings/:id', to: 'bookings#show' #show id booking
   get '/bookings', to: 'bookings#index' #show all bookings
-<<<<<<< HEAD
   delete '/bookings/:id', to: 'bookings#destroy'
 end
-=======
-end
->>>>>>> origin/feature/add-dashboard
