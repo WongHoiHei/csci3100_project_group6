@@ -22,26 +22,27 @@ User.create!(
     role: "student"
 )
 
-#add venues
-#fake nowwwww!!! i made them up first
-# engineering.venues.create!([
-#     {name:"SHB301", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1111,longitude: 11.1111 },
-#     {name:"SHB302", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1112,longitude: 11.1112 },
-# ])
-
-# lifescience.venues.create!([
-#     {name:"SC101", location: "science centre 1F", capacity: 50, latitude: 21.1111,longitude: 21.1111 },
-#     {name:"SC102", location: "science centre 1F", capacity: 50,  latitude: 31.1112,longitude: 31.1112 },
-# ])
 
 #add equipments
-Equipment.create!([
-    {name: "ProjectorAA", total_count: 5, available_count: 5},
+[
     { name: 'Projector', total_count: 5, available_count: 5},
     { name: 'Speaker', total_count: 5, available_count: 5 },
     { name: 'Microphone', total_count: 5, available_count: 5}
 
-])
+].each do |item|
+  equip = Equipment.find_or_create_by!(name: item[:name]) do |e|
+    e.total_count = item[:total_count]
+    e.available_count = item[:available_count]
+  end
+ 
+  if equip.time_slots.count == 0
+    ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"].each do |start|
+      hour = start.split(":").first.to_i
+      equip.time_slots.create!(start_time: start, end_time: "#{hour + 1}:00")
+    end
+  end
+end
+
 
 #Location （test)
 Location.find_or_create_by!(name: "Sir Run Run Shaw Hall", latitude: 22.420089834513423, longitude: 114.2072099614738)
@@ -55,3 +56,6 @@ Location.find_or_create_by!(name: "Shaw College lecture Theatre", latitude: 22.4
 uc_gym = Location.find_by(name: "UC Gym")
 uc_gym.venues.create!(name: "Basketball Court", capacity: 100)
 uc_gym.venues.create!(name: "Badminton Court", capacity: 50)
+
+
+#sample bookinｇ data
