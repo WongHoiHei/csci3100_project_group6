@@ -3,7 +3,7 @@
 %ul
   - @equipments.each do |item|
     %li
-      = "#{item.name} - #{item.tenant.name} - #{item.description}- #{item.available_count >0 ? 'Available' : 'Unavailable'}"
+      = "#{item.name} - #{item.available_count >0 ? 'Available' : 'Unavailable'}"
 
       =  link_to 'Book',"/bookings/new?bookable_id=#{item.id}&bookable_type=Equipment"
    
