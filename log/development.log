@@ -26778,3 +26778,243 @@ Processing by BookingsController#confirmation as HTML
 Completed 200 OK in 37ms (Views: 6.5ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2026-04-10 15:04:59 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by PagesController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='welcome',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+Redirected to http://127.0.0.1:3000/main
+↳ app/controllers/pages_controller.rb:5:in 'PagesController#welcome'
+Completed 302 Found in 398ms (ActiveRecord: 9.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 127.0.0.1 at 2026-04-10 15:05:01 +0800
+Processing by PagesController#main as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 28.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 10.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 273.9ms | GC: 0.0ms)
+Completed 200 OK in 524ms (Views: 350.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 127.0.0.1 at 2026-04-10 15:05:02 +0800
+Processing by BookingsController#map as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 104.5ms | GC: 0.0ms)
+Completed 200 OK in 135ms (Views: 112.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 127.0.0.1 at 2026-04-10 15:05:03 +0800
+Processing by BookingsController#map as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 2.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2026-04-10 15:18:01 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by PagesController#welcome as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='welcome',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+Redirected to http://127.0.0.1:3000/main
+↳ app/controllers/pages_controller.rb:5:in 'PagesController#welcome'
+Completed 302 Found in 123ms (ActiveRecord: 10.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 127.0.0.1 at 2026-04-10 15:18:01 +0800
+Processing by PagesController#main as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 19.0ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 8.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 104.2ms | GC: 0.0ms)
+Completed 200 OK in 194ms (Views: 131.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/equipment-booking" for 127.0.0.1 at 2026-04-10 15:18:02 +0800
+Processing by BookingsController#equipment as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:4
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 19.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 23.8ms | GC: 0.0ms)
+Completed 200 OK in 156ms (Views: 30.3ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/equipment-booking" for 127.0.0.1 at 2026-04-10 15:18:02 +0800
+Processing by BookingsController#equipment as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:4
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 11.0ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 12.9ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 127.0.0.1 at 2026-04-10 15:18:03 +0800
+Processing by BookingsController#map as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 9.1ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 14.7ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2026-04-10 15:18:03 +0800
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='destroy',application='BookingSystem',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/sessions_controller.rb:26:in 'SessionsController#destroy'
+Completed 302 Found in 32ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2026-04-10 15:18:04 +0800
+Processing by PagesController#welcome as TURBO_STREAM
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='welcome',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 12.2ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 14.1ms | ActiveRecord: 2.2ms (2 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2026-04-10 15:18:05 +0800
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 82.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='new',application='BookingSystem',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 11.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 103.4ms | GC: 0.0ms)
+Completed 200 OK in 141ms (Views: 115.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2026-04-10 15:18:08 +0800
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = '1155213294@link.cuhk.edu.hk' LIMIT 1 /*action='create',application='BookingSystem',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:10:in 'SessionsController#create'
+Redirected to http://127.0.0.1:3000/main
+↳ app/controllers/sessions_controller.rb:15:in 'SessionsController#create'
+Completed 302 Found in 580ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 127.0.0.1 at 2026-04-10 15:18:09 +0800
+Processing by PagesController#main as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 9.7ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 11.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 127.0.0.1 at 2026-04-10 15:18:10 +0800
+Processing by BookingsController#map as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 3.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 127.0.0.1 at 2026-04-10 15:18:10 +0800
+Processing by BookingsController#map as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 2.8ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/equipment-booking" for 127.0.0.1 at 2026-04-10 15:18:12 +0800
+Processing by BookingsController#equipment as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering bookings/equipment.html.haml within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" /*action='equipment',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/views/bookings/equipment.html.haml:4
+  Rendered bookings/equipment.html.haml within layouts/application (Duration: 7.1ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 11.1ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 12.3ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/bookings/new?bookable_id=2&bookable_type=Equipment" for 127.0.0.1 at 2026-04-10 15:18:13 +0800
+Processing by BookingsController#new as HTML
+  Parameters: {"bookable_id" => "2", "bookable_type" => "Equipment"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='new',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  [1m[36mTimeSlot Load (0.2ms)[0m  [1m[34mSELECT "time_slots".* FROM "time_slots" WHERE "time_slots"."id" IS NULL LIMIT 1 /*action='new',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/bookings_controller.rb:28:in 'BookingsController#new'
+Redirected to http://127.0.0.1:3000/venue-booking
+↳ app/controllers/bookings_controller.rb:32:in 'BookingsController#new'
+Completed 302 Found in 138ms (ActiveRecord: 2.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 127.0.0.1 at 2026-04-10 15:18:13 +0800
+Processing by BookingsController#map as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 2.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/bookings/new?bookable_id=1&bookable_type=Equipment" for 127.0.0.1 at 2026-04-10 15:18:13 +0800
+Processing by BookingsController#new as HTML
+  Parameters: {"bookable_id" => "1", "bookable_type" => "Equipment"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='new',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  [1m[36mTimeSlot Load (0.2ms)[0m  [1m[34mSELECT "time_slots".* FROM "time_slots" WHERE "time_slots"."id" IS NULL LIMIT 1 /*action='new',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/bookings_controller.rb:28:in 'BookingsController#new'
+Redirected to http://127.0.0.1:3000/venue-booking
+↳ app/controllers/bookings_controller.rb:32:in 'BookingsController#new'
+Completed 302 Found in 24ms (ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 127.0.0.1 at 2026-04-10 15:18:13 +0800
+Processing by BookingsController#map as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 11.8ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/venue-booking" for 127.0.0.1 at 2026-04-10 15:18:14 +0800
+Processing by BookingsController#map as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='map',application='BookingSystem',controller='bookings'*/[0m
+  ↳ app/controllers/application_controller.rb:11:in 'ApplicationController#current_user'
+  Rendering bookings/map.html.erb
+  Rendered bookings/map.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 2.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+

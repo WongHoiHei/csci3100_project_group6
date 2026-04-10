@@ -21,6 +21,7 @@ if admin.new_record? || admin.password_digest.blank?
 end
 admin.save!
 
+<<<<<<< HEAD
 student = User.find_or_initialize_by(email: "student@link.cuhk.edu.hk")
 student.assign_attributes(name: "Student", role: "student")
 if student.new_record? || student.password_digest.blank?
@@ -76,3 +77,42 @@ Equipment.find_or_create_by!(name: "Projector", tenant_id: lifescience.id) do |e
   equipment.total_count = 5
   equipment.available_count = 5
 end
+=======
+
+#add equipments
+[
+    { name: 'Projector', total_count: 5, available_count: 5},
+    { name: 'Speaker', total_count: 5, available_count: 5 },
+    { name: 'Microphone', total_count: 5, available_count: 5}
+
+].each do |item|
+  equip = Equipment.find_or_create_by!(name: item[:name]) do |e|
+    e.total_count = item[:total_count]
+    e.available_count = item[:available_count]
+  end
+ 
+  if equip.time_slots.count == 0
+    ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"].each do |start|
+      hour = start.split(":").first.to_i
+      equip.time_slots.create!(start_time: start, end_time: "#{hour + 1}:00")
+    end
+  end
+end
+
+
+#Location （test)
+Location.find_or_create_by!(name: "Sir Run Run Shaw Hall", latitude: 22.420089834513423, longitude: 114.2072099614738)
+Location.find_or_create_by!(name: "NA Gym", latitude: 22.42090899131629, longitude: 114.20930435032216)
+Location.find_or_create_by!(name: "UC Gym", latitude: 22.420960312540984, longitude: 114.20567848673426)
+Location.find_or_create_by!(name: "Lingnan Stadium", latitude: 22.41493476795026, longitude: 114.20880499854452)
+Location.find_or_create_by!(name: "University Sports Centre", latitude: 22.418781207707248, longitude: 114.21198997917793)
+Location.find_or_create_by!(name: "Shaw College lecture Theatre", latitude: 22.422362888628257, longitude: 114.2016351058803)
+
+#Venue of UC Gym
+uc_gym = Location.find_by(name: "UC Gym")
+uc_gym.venues.create!(name: "Basketball Court", capacity: 100)
+uc_gym.venues.create!(name: "Badminton Court", capacity: 50)
+
+
+#sample bookinｇ data
+>>>>>>> origin/booking
