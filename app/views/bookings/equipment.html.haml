@@ -26,9 +26,6 @@
     - @equipments.each do |item|
       %li.equipment-item
         %h3= item.name
-        %p
-          %strong Description:
-          = item.description || "No description"
         - if @time_slots.any?
           %ul.equipment-slot-list
             - @time_slots.each do |slot|
