@@ -13,8 +13,8 @@ class RegistrationsController < ApplicationController
       flash[:notice] = 'Sign up successful! Please log in.'
       redirect_to login_path
     else
-      flash[:alert] = @user.errors.full_messages.join(', ')
-      render :new
+      flash.now[:alert] = @user.errors.full_messages.join(', ')
+      render :new, status: :unprocessable_entity
     end
   end
 

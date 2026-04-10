@@ -1,41 +1,116 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+/*welcome*/
 .hero-section {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f9f5fa 0%, #ce4141 100%);
+  background: linear-gradient(135deg, #87cc67 0%, #7c433f 100%);
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .container {
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.max-w-md {
-  max-width: 28rem;
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 2rem;
 }
 
-.space-y-8 > * + * {
-  margin-top: 2rem;
+.hero-section p {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 3.5rem;
+  opacity: 0.9;
 }
 
-.shadow-xl {
-  box-shadow: 0 20px 25px -5px rgba(0, 0,0, 0.1), 0 10px 10px -5px rgba(0, 0,0, 0.04);
+.hero-section .login-button {
+  display: inline-block;
+  background-color: white;
+  color: #581d60;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 1.25rem 3.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+/*login page*/
+.signup-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #71247d 0%, #581d60 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
-.shadow-2xl {
-  box-shadow: 0 25px 50px -12px rgba(0, 0,0, 0.25);
+.signup-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  color: #333;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
 }
 
-.rounded-2xl {
-  border-radius: 1.5rem;
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.actions input {
+  width: 100%;
+  background: #71247d;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+/*alerts*/
+.alert-warning, .alert-notice {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  min-width: 350px;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.alert-warning {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.alert-notice {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
 }

@@ -1,9 +1,8 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
-  
   def new
-    @hide_header = true  
+    @hide_header = true 
   end
 
   def create
@@ -14,8 +13,9 @@ class SessionsController < ApplicationController
       flash[:notice] = 'Logged in successfully!'
       redirect_to main_path
     else
-      flash[:alert] = 'Invalid email or password'
-      render :new
+      flash.now[:alert] = 'Incorrect password / email not registered'
+      @hide_header = true
+      render :new, status: :unprocessable_entity
     end
   end
 
