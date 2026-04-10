@@ -9,11 +9,11 @@
 #   end
 
 #add data in tenants (migration)
-engineering = Tenant.find_or_create_by!(name:"Engineering Department")
-lifescience =Tenant.find_or_create_by!(name: "Life Science Department")
+engineering = Tenant.create!(name:"Engineering Department")
+lifescience =Tenant.create!(name: "Life Science Department")
 
 #add a Admin
-User.find_or_create_by!(
+User.create!(
     email: "admin@link.cuhk.edu.hk",
     name: "Admin",
     role: "admin",
@@ -21,7 +21,7 @@ User.find_or_create_by!(
 )
 
 #add student account
-User.find_or_create_by!(
+User.create!(
     email:"student@link.cuhk.edu.hk",
     name: "Student",
     role: "student",
@@ -30,25 +30,25 @@ User.find_or_create_by!(
 
 #add venues
 #fake nowwwww!!! i made them up first
-engineering.venues.find_or_create_by!([
-    {name:"SHB301", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1111,longitude: 11.1111 },
-    {name:"SHB302", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1112,longitude: 11.1112 },
+engineering.venues.create!([
+    {name:"SHB301", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1111,longitude: 11.1111, booking_count: 10 },
+    {name:"SHB302", location: "ho sin hang engineering building 3F", capacity: 50, latitude: 11.1112,longitude: 11.1112, booking_count: 8 },
 ])
 
-lifescience.venues.find_or_create_by!([
-    {name:"SC101", location: "science centre 1F", capacity: 50, latitude: 21.1111,longitude: 21.1111 },
-    {name:"SC102", location: "science centre 1F", capacity: 50,  latitude: 31.1112,longitude: 31.1112 },
+lifescience.venues.create!([
+    {name:"SC101", location: "science centre 1F", capacity: 50, latitude: 21.1111,longitude: 21.1111, booking_count: 8 },
+    {name:"SC102", location: "science centre 1F", capacity: 50,  latitude: 31.1112,longitude: 31.1112, booking_count: 3 },
 ])
 
 #add equipments
-engineering.equipments.find_or_create_by!([
-    {name: "ProjectorAA", description:"4K Projector", total_count: 5, available_count: 5},
-    { name: 'Projector', description:"4K Projector",total_count: 5, available_count: 5},
-    { name: 'Speaker',description:"4K Projector", total_count: 5, available_count: 5 },
-    { name: 'Microphone', description:"4K Projector",total_count: 5, available_count: 5}
+engineering.equipments.create!([
+    {name: "ProjectorAA", description:"4K Projector", total_count: 5, available_count: 5, usage_count: 10},
+    { name: 'Projector', description:"4K Projector",total_count: 5, available_count: 5, usage_count: 15},
+    { name: 'Speaker',description:"4K Projector", total_count: 5, available_count: 5, usage_count: 20 },
+    { name: 'Microphone', description:"4K Projector",total_count: 5, available_count: 5, usage_count: 13}
 
 ])
 
-lifescience.equipments.find_or_create_by!([
-    {name: "Projector", description:"4K Projector", total_count: 5, available_count: 5}
+lifescience.equipments.create!([
+    {name: "Projector", description:"4K Projector", total_count: 5, available_count: 5, usage_count: 14}
 ])
