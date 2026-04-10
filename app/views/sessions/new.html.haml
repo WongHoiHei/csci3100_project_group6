@@ -1,8 +1,5 @@
 %h1 Login
 
-- if flash[:alert]
-  .alert= flash[:alert]
-
 = form_with url: login_path, local: true do |form|
   .field
     = form.label :email

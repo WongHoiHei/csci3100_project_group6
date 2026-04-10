@@ -72,6 +72,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_10_120000) do
     t.integer "tenant_id", null: false
     t.integer "total_count"
     t.datetime "updated_at", null: false
+    t.integer "usage_count", default: 0, null: false
     t.index ["tenant_id"], name: "index_equipment_on_tenant_id"
   end
 
@@ -108,6 +109,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_10_120000) do
   end
 
   create_table "venues", force: :cascade do |t|
+    t.integer "booking_count", default: 0, null: false
     t.integer "capacity"
     t.datetime "created_at", null: false
     t.integer "location_id"

@@ -7,8 +7,12 @@
 -else
   %p Time Slot: Please select a time slot
 
+- if @booking_date.present?
+  %p Booking Date: #{@booking_date}
+
 = form_with model: @booking do |f|
   = f.hidden_field :bookable_id, value: @bookable_id
   = f.hidden_field :bookable_type, value: @bookable_type
   = f.hidden_field :time_slot_id, value: @time_slot_id
+  = f.hidden_field :booking_date, value: @booking_date
   = f.submit 'Confirm Booking'

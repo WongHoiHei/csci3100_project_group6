@@ -1,4 +1,6 @@
 class Booking < ApplicationRecord
+  attr_accessor :booking_date
+
   belongs_to :user
   belongs_to :time_slot
   belongs_to :bookable, polymorphic: true
