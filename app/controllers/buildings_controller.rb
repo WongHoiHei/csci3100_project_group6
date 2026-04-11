@@ -23,7 +23,6 @@ class BuildingsController < ApplicationController
     puts "DEBUG: @venues count = #{@venues.count}"
     
     @timeslots = (1..12).map { |i| "Period #{i}" }
-    render layout: false
   end
   
 end

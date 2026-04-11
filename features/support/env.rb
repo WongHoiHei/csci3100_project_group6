@@ -6,7 +6,8 @@
 
 
 require 'cucumber/rails'
-
+require 'capybara/cucumber'
+require 'selenium-webdriver'
 # By default, any exception happening in your Rails application will bubble up
 # to Cucumber so that your scenario will fail. This is a different from how
 # your application behaves in the production environment, where an error page will
@@ -22,6 +23,22 @@ require 'cucumber/rails'
 # 2) Set the value below to true. Beware that doing this globally is not
 # recommended as it will mask a lot of errors for you!
 #
+
+
+Capybara.register_driver :selenium_chrome_headless do |app|
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('--headless=new')
+  options.add_argument('--no-sandbox')
+  options.add_argument('--disable-dev-shm-usage')
+  options.add_argument('--disable-gpu')  
+  options.add_argument('--window-size=1400,1400')
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+end
+
+Capybara.javascript_driver = :selenium_chrome_headless
+Capybara.default_driver = :rack_test # 只有標註 @javascript 的測試才會用 Chrome
+
 ActionController::Base.allow_rescue = false
 
 # Remove/comment out the lines below if your app doesn't have a database.
