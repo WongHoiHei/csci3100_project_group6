@@ -32,7 +32,6 @@ RSpec.describe "Dashboards", type: :request do
     before do
       # MANUAL AUTHENTICATION STEP
       # This simulates a user filling out the login form.
-      # Adjust 'login_path' and parameter keys (e.g., :session) to match your routes/controller.
       post "/login", params: { email: user.email, password: "password123" }
       
       # Verify the login worked before proceeding

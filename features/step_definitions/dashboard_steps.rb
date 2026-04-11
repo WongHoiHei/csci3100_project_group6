@@ -1,5 +1,3 @@
-# --- Setup Steps ---
-
 Given("a tenant exists named {string}") do |name|
   @tenant = Tenant.create!(name: name)
 end
@@ -10,7 +8,6 @@ end
 
 Given("a venue exists named {string} in {string}") do |venue_name, location_name|
   loc = Location.find_by(name: location_name)
-  # Linking venue to location as per your model requirements
   Venue.create!(name: venue_name, location: loc)
 end
 
@@ -27,7 +24,6 @@ Given("I am logged in as a {string}") do |name|
     password_confirmation: "password123"
   )
   
-  # Manual Auth: Adjust this path/params to match your custom login logic
   visit "/login"
   fill_in "email", with: @user.email
   fill_in "password", with: "password123"
@@ -46,7 +42,6 @@ Given("a time slot exists for {string} from {string} to {string}") do |venue_nam
 end
 
 Given("a booking exists for {string} with status {string}") do |resource_name, status|
-  # Polymorphic lookup
   resource = Venue.find_by(name: resource_name) || Equipment.find_by(name: resource_name)
   
   Booking.create!(
@@ -62,14 +57,10 @@ end
 # --- Navigation & Verification ---
 
 When("I visit the dashboard page") do
-  # Using the pluralized path found in your dashboards_spec.rb
   visit dashboards_path
 end
 
 Then("I should see {string} usage counts for {string}") do |count, resource_name|
-  # We target the specific tbody rows. 
-  # This works whether you pre-render server-side 
-  # or use a JS-enabled driver with a small wait.
   
   find('tr', text: resource_name, wait: 5).then do |row|
     expect(row).to have_content(count)

@@ -13,12 +13,10 @@ RSpec.describe DashboardStatsService, type: :service do
     )
   end
 
-  # Order matters: Create the Venue first...
   let!(:venue_a) { Venue.create!(name: "Lab A", location: location) }
   let!(:venue_b) { Venue.create!(name: "Lab B", location: location) }
   let!(:equipment_a) { Equipment.create!(name: "Oscilloscope", tenant: tenant) }
 
-  # ...then create the TimeSlot linked to that Venue
   let!(:time_slot) do
     TimeSlot.create!(
       venue: venue_a,
@@ -29,7 +27,6 @@ RSpec.describe DashboardStatsService, type: :service do
 
   describe "#resource_usage_data" do
     before do
-      # 2 Valid Bookings
       2.times do 
         Booking.create!(
           bookable: venue_a, 
@@ -41,7 +38,6 @@ RSpec.describe DashboardStatsService, type: :service do
         )
       end
 
-      # 1 Rejected Booking (Ignored)
       Booking.create!(
         bookable: venue_a, 
         user: user, 
@@ -51,7 +47,6 @@ RSpec.describe DashboardStatsService, type: :service do
         end_time: 1.hour.from_now
       )
 
-      # 1 Valid Equipment Booking
       Booking.create!(
         bookable: equipment_a, 
         user: user, 

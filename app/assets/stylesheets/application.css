@@ -1,6 +1,13 @@
 body {
   margin: 0;
   padding-top: 78px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 .topbar {
@@ -700,6 +707,59 @@ body {
     top: 138px;
     min-width: auto;
     width: calc(100% - 2rem);
+  }
+}
+
+/*Main Page*/
+.main-menu-container h1 {
+  text-align: center;
+  color: #14532d;
+  font-size: 2.8rem;
+  margin-top: 4vh;
+  font-weight: 800;
+}
+
+.main-menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+.btn-menu {
+  width: 100%;
+  max-width: 600px;
+  padding: 3rem 2rem;
+  font-size: 1.8rem;
+  text-align: center;
+  background: #166534;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 30px rgba(22, 101, 52, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-menu:hover {
+  background: #14532d;
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(22, 101, 52, 0.3);
+}
+
+@media (max-width: 768px) {
+  .main-menu-container {
+    gap: 2rem;
+    min-height: 70vh;
+  }
+  
+  .btn-menu {
+    padding: 2rem 1.5rem;
+    font-size: 1.4rem;
+    max-width: 90%;
   }
 }
 

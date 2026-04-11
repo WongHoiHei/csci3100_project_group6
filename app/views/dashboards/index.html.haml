@@ -3,21 +3,17 @@
 
 .min-h-screen.bg-slate-50.p-8{ data: { controller: "dashboard", dashboard_url_value: dashboards_path } }
   .max-w-7xl.mx-auto
-    
-    -# Navigation
     .mb-8
       = link_to "/main", data: { turbo: false }, class: "group inline-flex items-center text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors" do
         %svg.w-5.h-5.mr-2.transition-transform.group-hover:-translate-x-1{ fill: "none", stroke: "currentColor", viewBox: "0 0 24 24" }
           %path{ d: "M10 19l-7-7m0 0l7-7m-7 7h18", "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": "2" }
         Back to Main Page
-        
-    -# Header
+
     .flex.justify-between.items-center.mb-10
-      %div
+      %divrail
         %h1.text-4xl.font-black.text-slate-900 Booking Data
         %p.text-slate-500.mt-1 Data-driven dashboard for venues and equipment
 
-    -# Search & Sort
     .grid.grid-cols-1.md:grid-cols-3.gap-4.mb-10
       .md:col-span-2.relative
         .absolute.inset-y-0.left-0.pl-3.flex.items-center.pointer-events-none
@@ -30,7 +26,6 @@
         %option{ value: "usage_asc" } Least Used
         %option{ value: "name_asc" } Name (A-Z)
 
-    -# Charts Row
     .grid.grid-cols-1.lg:grid-cols-2.gap-8.mb-10
       .bg-white.p-6.rounded-2xl.shadow-sm.border.border-slate-200
         %h2.text-lg.font-bold.mb-4 Venues (Total Bookings)
@@ -40,9 +35,7 @@
         %h2.text-lg.font-bold.mb-4 Equipment (Total Usage)
         %canvas{ data: { dashboard_target: "equipmentChart" } }
 
-    -# Tables Row - The #resource-stats ID is required for the Cucumber steps
-    .grid.grid-cols-1.lg:grid-cols-2.gap-8#resource-stats
-      -# Venues Table
+    .grid.grid-cols-1.lg:grid-cols-2.gap-8
       .bg-white.rounded-2xl.shadow-sm.border.overflow-hidden
         %table.w-full
           %thead.bg-slate-50
@@ -55,7 +48,6 @@
                 %td.p-4.text-sm.text-slate-700= venue[:name]
                 %td.p-4.text-right.text-sm.font-semibold.text-slate-900= venue[:usage_count]
       
-      -# Equipment Table
       .bg-white.rounded-2xl.shadow-sm.border.overflow-hidden
         %table.w-full
           %thead.bg-slate-50
