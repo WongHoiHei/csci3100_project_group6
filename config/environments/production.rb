@@ -61,18 +61,20 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   # Set host to be used by links generated in mailer templates.
-  #config.action_mailer.default_url_options = { host: ENV.fetch("APP_HOST", "example.com") }
-  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  config.action_mailer.default_url_options = {
+    host: ENV.fetch("APP_HOST", "localhost"),
+    protocol: ENV.fetch("APP_PROTOCOL", "https")
+  }
 
   # Configure outgoing SMTP server via environment variables.
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com', #ENV.fetch("SMTP_ADDRESS", "smtp.gmail.com"),
-    port: 587, #ENV.fetch("SMTP_PORT", 587).to_i,
-    domain: 'supreme-space-pancake-g4j9r566v574cww69-3000.app.github.dev', #ENV.fetch("SMTP_DOMAIN", "gmail.com"),
-    user_name: 'venueandequipmentbooking@gmail.com', # ENV["SMTP_USERNAME"],
-    password: 'rufkadzhmxctyfdr', # ENV["SMTP_PASSWORD"],
-    authentication: 'plain', # ENV.fetch("SMTP_AUTHENTICATION", "plain").to_sym,
+    address: ENV.fetch("SMTP_ADDRESS", "smtp.gmail.com"),
+    port: ENV.fetch("SMTP_PORT", 587).to_i,
+    domain: ENV.fetch("SMTP_DOMAIN", "gmail.com"),
+    user_name: ENV["SMTP_USERNAME"],
+    password: ENV["SMTP_PASSWORD"],
+    authentication: ENV.fetch("SMTP_AUTHENTICATION", "plain").to_sym,
     enable_starttls_auto: true
   }
 
