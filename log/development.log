@@ -17885,3 +17885,354 @@ Processing by PagesController#main as HTML
 Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 59.188.65.223 at 2026-04-10 16:29:03 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 6.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='welcome',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 19.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 50.4ms | GC: 0.0ms)
+Completed 200 OK in 58ms (Views: 51.2ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 59.188.65.223 at 2026-04-10 16:29:04 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 25.4ms | GC: 21.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='BookingSystem',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 28.2ms | GC: 21.1ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 21.1ms)
+
+
+Started POST "/login" for 59.188.65.223 at 2026-04-10 16:29:05 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Log in"}
+Redirected to https://jubilant-space-disco-wrqrxxwpj5jq29wpp-3000.app.github.dev/main
+↳ app/controllers/sessions_controller.rb:5:in 'SessionsController#create'
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 59.188.65.223 at 2026-04-10 16:29:06 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as TURBO_STREAM
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 3.2ms | GC: 0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 7.5ms | GC: 1.9ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/dashboards" for 59.188.65.223 at 2026-04-10 16:29:06 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as HTML
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+  Rendering layout layouts/application.html.haml
+  Rendering dashboards/index.html.haml within layouts/application
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/views/dashboards/index.html.haml:24
+  Rendered dashboards/index.html.haml within layouts/application (Duration: 48.1ms | GC: 31.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 3.2ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.haml (Duration: 53.3ms | GC: 33.4ms)
+Completed 200 OK in 84ms (Views: 53.8ms | ActiveRecord: 1.7ms (5 queries, 0 cached) | GC: 35.4ms)
+
+
+Started GET "/dashboards.json?tenant_id=1" for 59.188.65.223 at 2026-04-10 16:29:06 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "1"}
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 4.4ms)
+
+
+Started GET "/dashboards.json?tenant_id=2" for 59.188.65.223 at 2026-04-10 16:30:26 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "2"}
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 2 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 2 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboards.json?tenant_id=1" for 59.188.65.223 at 2026-04-10 16:30:29 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "1"}
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 59.188.65.223 at 2026-04-10 16:31:10 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboards" for 59.188.65.223 at 2026-04-10 16:31:11 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as HTML
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+  Rendering layout layouts/application.html.haml
+  Rendering dashboards/index.html.haml within layouts/application
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/views/dashboards/index.html.haml:24
+  Rendered dashboards/index.html.haml within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 5.5ms | ActiveRecord: 0.5ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboards.json?tenant_id=1" for 59.188.65.223 at 2026-04-10 16:31:11 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "1"}
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboards.json?tenant_id=2" for 59.188.65.223 at 2026-04-10 16:31:25 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "2"}
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 2 LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 2 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 2 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 59.188.65.223 at 2026-04-11 14:13:11 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BookingSystem'*/[0m
+Processing by PagesController#welcome as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/welcome.html.haml within layouts/application
+  Rendered pages/welcome.html.haml within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='welcome',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 23.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 103.4ms | GC: 0.0ms)
+Completed 200 OK in 152ms (Views: 105.2ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 59.188.65.223 at 2026-04-11 14:13:13 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (Duration: 30.5ms | GC: 23.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='BookingSystem',controller='sessions'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 33.5ms | GC: 23.0ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 23.0ms)
+
+
+Started POST "/login" for 59.188.65.223 at 2026-04-11 14:13:14 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Log in"}
+Redirected to https://jubilant-space-disco-wrqrxxwpj5jq29wpp-3000.app.github.dev/main
+↳ app/controllers/sessions_controller.rb:5:in 'SessionsController#create'
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 59.188.65.223 at 2026-04-11 14:13:14 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as TURBO_STREAM
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 4.7ms | GC: 0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 9.8ms | GC: 0.9ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/dashboards" for 59.188.65.223 at 2026-04-11 14:13:15 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as HTML
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+  Rendering layout layouts/application.html.haml
+  Rendering dashboards/index.html.haml within layouts/application
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/views/dashboards/index.html.haml:24
+  Rendered dashboards/index.html.haml within layouts/application (Duration: 59.6ms | GC: 37.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 3.0ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.haml (Duration: 64.8ms | GC: 39.5ms)
+Completed 200 OK in 99ms (Views: 65.2ms | ActiveRecord: 1.7ms (5 queries, 0 cached) | GC: 40.8ms)
+
+
+Started GET "/dashboards.json?tenant_id=1" for 59.188.65.223 at 2026-04-11 14:13:15 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "1"}
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 3.8ms)
+
+
+Started DELETE "/" for 59.188.65.223 at 2026-04-11 14:13:16 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+Started GET "/dashboards" for 59.188.65.223 at 2026-04-11 14:13:17 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as HTML
+  [1m[36mTenant Load (0.7ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+  Rendering layout layouts/application.html.haml
+  Rendering dashboards/index.html.haml within layouts/application
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/views/dashboards/index.html.haml:24
+  Rendered dashboards/index.html.haml within layouts/application (Duration: 2.5ms | GC: 1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 5.9ms | GC: 1.0ms)
+Completed 200 OK in 14ms (Views: 6.3ms | ActiveRecord: 1.1ms (5 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/dashboards.json?tenant_id=1" for 59.188.65.223 at 2026-04-11 14:13:17 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "1"}
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/main" for 59.188.65.223 at 2026-04-11 14:13:19 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboards" for 59.188.65.223 at 2026-04-11 14:13:20 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as HTML
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" ORDER BY "tenants"."id" ASC LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+  Rendering layout layouts/application.html.haml
+  Rendering dashboards/index.html.haml within layouts/application
+  [1m[36mTenant Load (0.1ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/views/dashboards/index.html.haml:24
+  Rendered dashboards/index.html.haml within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.2ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.haml (Duration: 5.1ms | GC: 0.6ms)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 0.5ms (5 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/dashboards.json?tenant_id=1" for 59.188.65.223 at 2026-04-11 14:13:20 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardsController#index as JSON
+  Parameters: {"tenant_id" => "1"}
+  [1m[36mTenant Load (0.2ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants" WHERE "tenants"."id" = 1 LIMIT 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/controllers/dashboards_controller.rb:5:in 'DashboardsController#index'
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" WHERE "venues"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:8:in 'Enumerable#map'
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = 1 /*action='index',application='BookingSystem',controller='dashboards'*/[0m
+  ↳ app/services/dashboard_stats_service.rb:9:in 'Enumerable#map'
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/main" for 59.188.65.223 at 2026-04-11 14:13:22 +0000
+Cannot render console from 59.188.65.223! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#main as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='main',application='BookingSystem',controller='pages'*/[0m
+  ↳ app/controllers/application_controller.rb:9:in 'ApplicationController#current_user'
+  Rendered shared/_header.html.haml (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 6.7ms | GC: 2.2ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 2.2ms)
+
+
