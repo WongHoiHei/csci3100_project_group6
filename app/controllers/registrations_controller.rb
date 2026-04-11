@@ -2,8 +2,8 @@ class RegistrationsController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
-    @user = User.new
     @hide_header = true
+    @user = User.new
   end
 
   def create
@@ -14,6 +14,7 @@ class RegistrationsController < ApplicationController
       redirect_to login_path
     else
       flash.now[:alert] = @user.errors.full_messages.join(', ')
+      @hide_header = true
       render :new, status: :unprocessable_entity
     end
   end

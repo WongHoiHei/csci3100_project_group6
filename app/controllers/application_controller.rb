@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless logged_in?
-      flash[:alert] = 'Please log in first'
+      flash[:alert] = 'Please log in first.'
       redirect_to login_path
     end
   end

@@ -3,7 +3,6 @@ class PasswordsController < ApplicationController
 
   
   def edit
-    @hide_header = true
   end
 
   def update
@@ -22,12 +21,12 @@ class PasswordsController < ApplicationController
         end
         redirect_to main_path
       else
-        flash[:alert] = @user.errors.full_messages.join(', ')
-        render :edit
+        flash.now[:alert] = @user.errors.full_messages.join(', ')
+        render :edit, status: :unprocessable_entity
       end
     else
-      flash[:alert] = 'Current password is incorrect'
-      render :edit
+      flash.now[:alert] = 'Current password is incorrect'
+      render :edit, status: :unprocessable_entity
     end
   end
 end

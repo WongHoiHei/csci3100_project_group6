@@ -41,6 +41,9 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 /*login page*/
+* {
+  box-sizing: border-box;
+}
 .signup-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #71247d 0%, #581d60 100%);
@@ -72,6 +75,7 @@
 
 .field input {
   width: 100%;
+  display: block;
   padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
@@ -79,6 +83,7 @@
 
 .actions input {
   width: 100%;
+  display: block;
   background: #71247d;
   color: white;
   padding: 0.75rem;
@@ -113,4 +118,98 @@
   background-color: #dcfce7;
   color: #15803d;
   border: 1px solid #bbf7d0;
+}
+/* Header Background and Layout */
+.main-header {
+  background-color: #4b2e83;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Title */
+.brand a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+/* Search Bar Styling */
+.search-area {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-form input[type="text"] {
+  flex-grow: 1;
+  padding: 8px 15px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  outline: none;
+}
+
+.search-btn {
+  background-color: #ffd700; 
+  color: #333;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* User Controls */
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+  white-space: nowrap;
+}
+
+.user-name {
+  font-size: 1.1rem; 
+  font-weight: 600;
+}
+
+.nav-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+  background: white;
+  color: #4b2e83;
 }

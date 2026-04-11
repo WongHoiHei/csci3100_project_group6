@@ -2,11 +2,6 @@
 
 %p You are booking: #{@bookable_type} - #{@bookable_id}
 
-<<<<<<< HEAD
-%p
-  Time Slot:
-  = "#{@time_slot.start_time.strftime("%H:%M")} - #{@time_slot.end_time.strftime("%H:%M")}"
-=======
 %p Time Slot: git status
 -if @time_slot_id.present?
   -time_slot =TimeSlot.find(@time_slot_id)
@@ -14,7 +9,6 @@
 -else
   %p Time Slot: Please select a time slot
   
->>>>>>> origin/booking
 
 = form_with model: @booking do |f|
   = f.hidden_field :bookable_id, value: @bookable_id

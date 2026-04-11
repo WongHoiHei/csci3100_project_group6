@@ -26,7 +26,8 @@
     = javascript_importmap_tags
 
   %body
-    = render 'shared/header'
+    - unless @hide_header
+      = render 'shared/header'
     
     .flash-messages
       - if flash[:alert]

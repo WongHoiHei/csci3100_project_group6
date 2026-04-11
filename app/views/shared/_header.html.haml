@@ -1,17 +1,18 @@
-%header.topbar
-  .topbar-left
-    Equipment / Venue Booking System
+%header.main-header
+  .header-container
+    .brand
+      = link_to "Equipment / Venue Booking System", root_path
 
-  .topbar-center
-    = form_with url: search_path, method: :get, local: true do
-      = text_field_tag :q, params[:q], placeholder: 'Search venue or equipment'
-      = submit_tag 'Search'
+    .search-area
+      = form_with url: search_path, method: :get, local: true, class: 'search-form' do
+        = text_field_tag :q, params[:q], placeholder: 'Search venue or equipment...'
+        = submit_tag 'Search', class: 'search-btn'
 
-  .topbar-right
-    - if logged_in?
-      %span= current_user.name
-      = link_to 'Change Password', password_edit_path
-      = button_to 'Log out', logout_path, method: :delete
-    - else
-      = link_to 'Log in', login_path
-      = link_to 'Sign up', signup_path
+    .user-controls
+      - if logged_in?
+        %span.user-name= current_user.name
+        = link_to 'Change Password', password_edit_path, class: 'nav-link'
+        = button_to 'Log out', logout_path, method: :delete, class: 'logout-btn'
+      - else
+        = link_to 'Log in', login_path, class: 'nav-link'
+        = link_to 'Sign up', signup_path, class: 'nav-link'

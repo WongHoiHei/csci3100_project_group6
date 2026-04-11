@@ -20,37 +20,131 @@
     z-index: 1;
   }
 
+  /* Increased width to 380px to keep title on one line */
   .map-overlay-header {
     position: absolute;
     top: 20px;
     left: 20px;
-    z-index: 10;
+    z-index: 99;
     background: white;
-    padding: 15px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 380px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .overlay-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 12px;
+    white-space: nowrap; /* Prevents title from breaking into 2 lines */
+    color: #333;
+  }
+
+  .search-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  #venue-search {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  #search-btn {
+    padding: 8px 16px;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  #search-btn:hover {
+    background: #e5e5e5;
+  }
+
+  /* User Info Row: Name on Left, Logout on Right */
+  .user-info-row {
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .user-display-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #222;
+  }
+
+  .logout-link {
+    color: #4285F4;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .logout-link:hover {
+    text-decoration: underline;
+  }
+
+  .back-to-main {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 99;
+    background: #4285F4; 
+    padding: 10px 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    width: 250px;
-    font-family: sans-serif; /* Add font-family since application CSS is gone */
+    transition: background 0.2s;
+  }
+
+  .back-to-main a {
+    color: white !important;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+  }
+  
+  .back-to-main:hover {
+    background: #3367d6; 
   }
 </style>
 
 <div class="full-screen-map-page">
   <div class="map-overlay-header">
-    <div style="font-weight: bold; margin-bottom: 5px;">equipment/venue booking system</div>
-    <input type="text" id="venue-search" placeholder="Search venue..."> 
-    <button id="search-btn">Search</button>
-
-    <div style="margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px;">
-      <% if current_user %>
-        <%# This displays the 'name' column from your Users table %>
-        <strong><%= current_user.name %></strong><br>
-        
-        <%# Use logout_path and :delete method to trigger your sessions#destroy action %>
-        <%= link_to "Log out", root_path, data: { turbo_method: :delete }, style: "color: blue; font-size: 12px;" %>
-      <% end %>
+    <div class="overlay-title">Equipment / Venue Booking System</div>
+    
+    <div class="search-container">
+      <input type="text" id="venue-search" placeholder="Search venue..."> 
+      <button id="search-btn">Search</button>
     </div>
+
+    <% if current_user %>
+      <div class="user-info-row">
+        <span class="user-display-name"><%= current_user.name %></span>
+        <%= link_to "Log out", root_path, data: { turbo_method: :delete }, class: "logout-link" %>
+      </div>
+    <% end %>
   </div>
-<div id="map"></div>
+
+  <div class="back-to-main">
+    <%= link_to "← Back to Main", main_path %>
+  </div>
+
+  <div id="map"></div>
+</div>
+
 <script>
   function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -58,7 +152,7 @@
       zoom: 14,
       minZoom: 14,
       gestureHandling: "greedy",
-      keyboardShortcuts: false,
+      disableDefaultUI: false, // Allows zoom buttons to show
       restriction: {
         latLngBounds: {
           north: 22.426270185242515,
@@ -70,98 +164,49 @@
       },
     });
 
-    // Define your pins here
     const locations = [
-      {
-        lat: 22.420089834513423,
-        lng: 114.2072099614738,
-        title: "Sir Run Run Shaw Hall",
-        url: "/buildings/sirrunrunshawhall",
-        image_url: "<%= asset_path('sir_run_run.jpg') %>"
-      },
-      {
-        lat: 22.42090899131629, 
-        lng: 114.20930435032216,
-        title: "NA Gym",
-        url: "/buildings/nagym",
-        image_url: "<%= asset_path('na_gym.jpg') %>"
-      },
-      {
-        lat: 22.420960312540984, 
-        lng: 114.20567848673426,
-        title: "UC Gym",
-        url: "/buildings/ucgym",
-        image_url: "<%= asset_path('uc_gym.jpg') %>"
-      },
-      {
-        lat: 22.41493476795026, 
-        lng: 114.20880499854452,
-        title: "Lingnan Stadium",
-        url: "/buildings/lingnanstadium",
-        image_url: "<%= asset_path('lingnan_stadium.jpg') %>"
-      },
-      {
-        lat: 22.418781207707248,
-        lng: 114.21198997917793,
-        title: "University Sports Centre",
-        url: "/buildings/usportscentre",
-        image_url: "<%= asset_path('u_sports_centre.jpg') %>"
-      },
-      {
-        lat: 22.422362888628257,
-        lng: 114.2016351058803,
-        title: "Shaw College lecture Theatre",
-        url: "/buildings/shawtheatre",
-        image_url: "<%= asset_path('shaw_theatre.jpg') %>"
-      },
+      { lat: 22.420089834513423, lng: 114.2072099614738, title: "Sir Run Run Shaw Hall", url: "/buildings/sirrunrunshawhall", image_url: "<%= asset_path('sir_run_run.jpg') %>" },
+      { lat: 22.42090899131629,  lng: 114.20930435032216, title: "NA Gym", url: "/buildings/nagym", image_url: "<%= asset_path('na_gym.jpg') %>" },
+      { lat: 22.420960312540984, lng: 114.20567848673426, title: "UC Gym", url: "/buildings/ucgym", image_url: "<%= asset_path('uc_gym.jpg') %>" },
+      { lat: 22.41493476795026,  lng: 114.20880499854452, title: "Lingnan Stadium", url: "/buildings/lingnanstadium", image_url: "<%= asset_path('lingnan_stadium.jpg') %>" },
+      { lat: 22.418781207707248, lng: 114.21198997917793, title: "University Sports Centre", url: "/buildings/usportscentre", image_url: "<%= asset_path('u_sports_centre.jpg') %>" },
+      { lat: 22.422362888628257, lng: 114.2016351058803, title: "Shaw College lecture Theatre", url: "/buildings/shawtheatre", image_url: "<%= asset_path('shaw_theatre.jpg') %>" }
     ];
 
-    // Create an info window (shared across all markers)
     const infoWindow = new google.maps.InfoWindow();
     const markers = [];
 
-    // Loop through and create markers
-locations.forEach(location => {
+    locations.forEach(location => {
       const marker = new google.maps.Marker({
         position: { lat: location.lat, lng: location.lng },
         map: map,
         title: location.title,
       });
-
-      // Attach the location data to the marker for easy retrieval
       marker.customData = location;
       markers.push(marker);
-
-      marker.addListener("click", () => {
-        openInfoWindow(marker);
-      });
+      marker.addListener("click", () => openInfoWindow(marker));
     });
 
-    // Helper function to open window (used by click and search)
     function openInfoWindow(marker) {
       const data = marker.customData;
       const contentString = `
         <div style="padding: 5px; width: 200px;">
           ${data.image_url ? `<img src="${data.image_url}" style="width:100%; height:auto; border-radius:8px; margin-bottom:8px;">` : ''}
           <div style="font-weight: bold; font-size: 14px;">${data.title}</div>
-          <a href="${data.url}" style="color: #4285F4; text-decoration: none; font-size: 12px;">Go to page →</a>
+          <a href="${data.url}" style="color: #4285F4; text-decoration: none; font-size: 12px; font-weight: bold;">Go to page →</a>
         </div>
       `;
       infoWindow.setContent(contentString);
       infoWindow.open(map, marker);
     }
 
-    // --- SEARCH LOGIC ---
     const searchInput = document.getElementById("venue-search");
     const searchBtn = document.getElementById("search-btn");
 
     function performSearch() {
       const query = searchInput.value.toLowerCase().trim();
       if (!query) return;
-
-      // Look for a marker that contains the search string
       const match = markers.find(m => m.title.toLowerCase().includes(query));
-
       if (match) {
         map.setZoom(17);
         map.panTo(match.getPosition());
@@ -172,13 +217,8 @@ locations.forEach(location => {
     }
 
     searchBtn.addEventListener("click", performSearch);
-    searchInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") performSearch();
-    });
+    searchInput.addEventListener("keypress", (e) => { if (e.key === "Enter") performSearch(); });
   }
 </script>
 
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_maps_api_key %>&callback=initMap"
-  defer>
-</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_maps_api_key %>&callback=initMap" defer></script>
