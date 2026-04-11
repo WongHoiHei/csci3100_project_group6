@@ -32,8 +32,18 @@
 
           .booking-card-footer
             = button_to 'Cancel Booking', "/bookings/#{booking.id}", method: :delete, class: 'cancel-booking-button', data: { turbo_confirm: 'Are you sure you want to cancel this booking?' }
+    
+    -# Button after the list
+    .text-center.mt-6
+      = link_to "Back to Main", "/main", class: "btn-back-flat"
+
   - else
-    - if @search_query.present?
-      %p No bookings found for "#{@search_query}".
-    - else
-      %p You have no bookings yet.
+    .text-center.py-10
+      - if @search_query.present?
+        %p.text-slate-600 No bookings found for "#{@search_query}".
+      - else
+        %p.text-slate-600 You have no bookings yet.
+      
+      -# Button under the "no booking" line
+      .text-center.mt-10
+        = link_to "Back to Main", "/main", class: "btn-back-flat"
