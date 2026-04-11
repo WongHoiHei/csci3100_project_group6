@@ -1,0 +1,43 @@
+.booking-container
+  .booking-header
+    %h1.booking-title
+      %span.icon-badge 📋
+      New Booking
+    %p.booking-subtitle Reserve your resource with ease
+
+  .booking-card
+    .booking-details
+      .booking-detail-row
+        .detail-label Resource Type
+        .detail-value= @bookable_type
+
+      .booking-detail-row
+        .detail-label Resource ID
+        .detail-value= @bookable_id
+
+      - if @time_slot.present?
+        .booking-detail-row
+          .detail-label Time Slot
+          .detail-value
+            %span.time-icon 🕐
+            = "#{@time_slot.start_time.strftime('%H:%M')} - #{@time_slot.end_time.strftime('%H:%M')}"
+
+      - if @booking_date.present?
+        .booking-detail-row
+          .detail-label Booking Date
+          .detail-value
+            %span.date-icon 📅
+            = @booking_date
+
+      - else
+        .booking-detail-row.warning
+          .detail-label Time Slot
+          .detail-value.text-warning Please select a time slot
+
+    .booking-actions
+      = form_with model: @booking do |f|
+        = f.hidden_field :bookable_id, value: @bookable_id
+        = f.hidden_field :bookable_type, value: @bookable_type
+        = f.hidden_field :time_slot_id, value: @time_slot_id
+        = f.hidden_field :booking_date, value: @booking_date
+        = link_to 'Continue to Confirmation', booking_confirmation_path(bookable_id: @bookable_id, bookable_type: @bookable_type, time_slot_id: @time_slot_id, booking_date: @booking_date), class: 'btn btn-primary btn-large'

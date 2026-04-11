@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Booking Cancellation</h1>
+    <p>Dear <%= @user.name %>,</p>
+    <p>Your booking has been cancelled.</p>
+    <p><strong>Booking Details:</strong></p>
+    <ul>
+      <li>Bookable: <%= @booking.bookable.name %></li>
+      <li>Type: <%= @booking.bookable_type %></li>
+      <li>Start Time: <%= @display_start_time %></li>
+      <li>End Time: <%= @display_end_time %></li>
+      <li>Status: <%= @booking.status %></li>
+    </ul>
+    <p>If this was not intended, please contact support.</p>
+    <p>Thank you!</p>
+  </body>
+</html>

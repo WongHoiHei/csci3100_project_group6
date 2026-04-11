@@ -1,11 +1,28 @@
 class SessionsController < ApplicationController
-  def new; end
+  skip_before_action :require_login, only: [:new, :create]
+
+  def new
+    @hide_header = true 
+  end
 
   def create
-    redirect_to main_path
+    @user = User.find_by(email: params[:email])
+    
+    if @user&.authenticate(params[:password])
+      session[:user_id] = @user.id
+      flash[:notice] = 'Logged in successfully!'
+      redirect_to main_path
+    else
+      flash.now[:alert] = 'Incorrect password / email not registered'
+      @hide_header = true
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    redirect_to welcome_path
+    session[:user_id] = nil
+    @current_user = nil
+    flash[:notice] = 'Logged out successfully!'
+    redirect_to root_path
   end
 end

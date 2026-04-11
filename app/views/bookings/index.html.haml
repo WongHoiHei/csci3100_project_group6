@@ -1,0 +1,39 @@
+.booking-history
+  .history-header
+    %h1 Booking History
+    = form_with url: bookings_path, method: :get, local: true, class: 'history-search-form' do
+      = text_field_tag :q, params[:q], placeholder: 'Search booking...'
+      = submit_tag 'Search'
+
+  - if @search_query.present?
+    %p.search-info
+      Showing results for: 
+      %strong= @search_query
+
+  - if @bookings.any?
+    .booking-history-list
+      - @bookings.each do |booking|
+        .booking-card
+          .booking-card-header
+            %h2= booking.bookable&.name || "N/A"
+            - display_status = booking.status == "pending" ? "success" : booking.status
+            %span.booking-status= display_status
+
+          .booking-card-body
+            %p
+              %strong Booking ID:
+              = booking.id
+            %p
+              %strong Type:
+              = booking.bookable_type
+            %p
+              %strong Booking Time:
+              = "#{booking.start_time&.strftime('%Y-%m-%d %H:%M') || booking.time_slot&.start_time&.strftime('%H:%M') || 'N/A'} - #{booking.end_time&.strftime('%Y-%m-%d %H:%M') || booking.time_slot&.end_time&.strftime('%H:%M') || 'N/A'}"
+
+          .booking-card-footer
+            = button_to 'Cancel Booking', "/bookings/#{booking.id}", method: :delete, class: 'cancel-booking-button', data: { turbo_confirm: 'Are you sure you want to cancel this booking?' }
+  - else
+    - if @search_query.present?
+      %p No bookings found for "#{@search_query}".
+    - else
+      %p You have no bookings yet.

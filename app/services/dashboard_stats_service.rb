@@ -4,9 +4,11 @@ class DashboardStatsService
   end
 
   def resource_usage_data
+    equipments_scope = @tenant.present? ? @tenant.equipments : Equipment.all
+
     {
-      venues: @tenant.venues.map { |v| { name: v.name, usage_count: v.booking_count || 0 } },
-      equipments: @tenant.equipments.map { |e| { name: e.name, usage_count: e.usage_count || 0 } }
+      venues: Venue.all.map { |v| { name: v.name, usage_count: v.number_of_past_booking || 0 } },
+      equipments: equipments_scope.map { |e| { name: e.name, usage_count: e.number_of_past_booking || 0 } }
     }
   end
 end

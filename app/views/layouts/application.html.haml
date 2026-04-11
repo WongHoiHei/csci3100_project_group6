@@ -15,11 +15,7 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
 
-
     = yield :head
-
-    -# Enable PWA manifest for installable apps
-    -# = tag.link rel: "manifest", href: pwa_manifest_path(format: :json)
 
     %link{rel: "icon", href: "/icon.png", type: "image/png"}
     %link{rel: "icon", href: "/icon.svg", type: "image/svg+xml"}
@@ -30,4 +26,14 @@
 
   %body
     = render 'shared/header'
+    
+    .flash-messages
+      - if flash[:alert]
+        .alert-warning{ data: { flash_message: true } }
+          = flash[:alert]
+
+      - if flash[:notice]
+        .alert-notice{ data: { flash_message: true } }
+          = flash[:notice]
+
     = yield

@@ -33,6 +33,7 @@
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 
+/tmp
 
 /app/assets/builds/*
 !/app/assets/builds/.keep

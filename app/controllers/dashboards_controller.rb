@@ -1,8 +1,8 @@
 class DashboardsController < ApplicationController
   def index
     @tenants = Tenant.all
-    # Fallback to the first tenant if none is selected
-    @selected_tenant = params[:tenant_id] ? Tenant.find(params[:tenant_id]) : Tenant.first
+    selected_tenant_id = params[:tenant_id].presence
+    @selected_tenant = selected_tenant_id ? Tenant.find_by(id: selected_tenant_id) : Tenant.first
     
     @stats = DashboardStatsService.new(@selected_tenant).resource_usage_data
 
