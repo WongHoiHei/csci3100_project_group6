@@ -22,7 +22,7 @@ admin.save!
 
 ].each do |item|
   equip = Equipment.find_or_create_by!(name: item[:name]) do |e|
-    # e.tenant = engineering
+    e.tenant = engineering
     e.total_count = item[:total_count]
     e.available_count = item[:available_count]
   end
