@@ -76,7 +76,7 @@ class BookingsController < ApplicationController
     elsif @booking.save
       BookingMailer.confirmation(@booking).deliver_now
       sender_link = view_context.mail_to("venueandequipmentbooking@gmail.com", "venueandequipmentbooking@gmail.com")
-      success_notice = "Booking request submitted. Email sent from #{sender_link}".html_safe
+      success_notice = "Booking request submitted. Email sent from venueandequipmentbooking@gmail.com".html_safe
 
       if @booking.bookable_type == "Venue"
         redirect_to bookings_path, notice: success_notice
@@ -119,7 +119,7 @@ class BookingsController < ApplicationController
       if @booking.destroy
         BookingMailer.deletion(@booking).deliver_now
         sender_link = view_context.mail_to("venueandequipmentbooking@gmail.com", "venueandequipmentbooking@gmail.com")
-        redirect_to bookings_path, notice: "Booking deleted. Email sent from #{sender_link}".html_safe
+        redirect_to bookings_path, notice: "Booking deleted. Email sent from venueandequipmentbooking@gmail.com".html_safe
       else
         redirect_to bookings_path, alert: "Unable to cancel booking."
       end
