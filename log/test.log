@@ -1006,3 +1006,38 @@ Processing by DashboardsController#index as JSON
   [1m[36mEquipment Load (0.0ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" WHERE "equipment"."tenant_id" = ?[0m  [["tenant_id", 2]]
 Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.1ms (3 queries, 0 cached) | GC: 0.0ms)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.6ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-11 15:20:36.618346"], ["name", "Engineering"], ["updated_at", "2026-04-11 15:20:36.618346"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.7ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-11 15:20:36.643557"], ["name", "Engineering"], ["updated_at", "2026-04-11 15:20:36.643557"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (1.0ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-11 15:20:36.652855"], ["name", "Engineering"], ["updated_at", "2026-04-11 15:20:36.652855"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.5ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-11 15:22:39.126837"], ["name", "Engineering"], ["updated_at", "2026-04-11 15:22:39.126837"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-11 15:22:39.143221"], ["name", "Engineering"], ["updated_at", "2026-04-11 15:22:39.143221"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-11 15:22:39.145294"], ["name", "Engineering"], ["updated_at", "2026-04-11 15:22:39.145294"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-11 15:22:39.147184"], ["name", "Engineering"], ["updated_at", "2026-04-11 15:22:39.147184"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

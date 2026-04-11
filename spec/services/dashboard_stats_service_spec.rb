@@ -1,38 +1,58 @@
 require 'rails_helper'
 
-RSpec.describe DashboardStatsService do
-  let(:engineering) { Tenant.create!(name: "Engineering") }
+RSpec.describe DashboardStatsService, type: :service do
+  let(:tenant) { Tenant.create!(name: "Engineering") }
+  let(:other_tenant) { Tenant.create!(name: "Marketing") }
   
-  # Update: We now set the counts directly because the Service reads from columns
-  let!(:venue) { engineering.venues.create!(name: "SHB301", location: "Building A", booking_count: 2) }
-  let!(:equipment) { engineering.equipments.create!(name: "Projector", usage_count: 15) }
-  
-  subject { DashboardStatsService.new(engineering) }
+  # Setup venues (Note: Venue belongs to Location in your setup)
+  let(:location) { Location.create!(name: "Main Campus", tenant: tenant) }
+  let!(:venue) { Venue.create!(name: "Lab A", location: location, number_of_past_booking: 10) }
+  let!(:other_venue) { Venue.create!(name: "Conference Room", location: Location.create!(tenant: other_tenant), number_of_past_booking: 5) }
+
+  # Setup equipment
+  let!(:equipment) { Equipment.create!(name: "Oscilloscope", tenant: tenant, number_of_past_booking: 25) }
+  let!(:other_equipment) { Equipment.create!(name: "Projector", tenant: other_tenant, number_of_past_booking: 2) }
+
+  subject { DashboardStatsService.new(tenant) }
 
   describe "#resource_usage_data" do
-    let(:results) { subject.resource_usage_data }
+    let(:data) { subject.resource_usage_data }
 
-    it "retrieves the cached booking_count for venues" do
-      shb_stat = results[:venues].find { |v| v[:name] == "SHB301" }
+    it "returns the cached booking counts for venues (currently global)" do
+      # Since your service currently uses Venue.all, it should see both
+      venue_names = data[:venues].map { |v| v[:name] }
+      expect(venue_names).to include("Lab A", "Conference Room")
       
-      # The service should now simply return the value stored in the column
-      expect(shb_stat[:usage_count]).to eq(2)
+      lab_a = data[:venues].find { |v| v[:name] == "Lab A" }
+      expect(lab_a[:usage_count]).to eq(10)
     end
 
-    it "retrieves the cached usage_count for equipment" do
-      projector_stat = results[:equipments].find { |e| e[:name] == "Projector" }
+    it "returns only equipment belonging to the selected tenant" do
+      equipment_names = data[:equipments].map { |e| e[:name] }
       
-      expect(projector_stat[:usage_count]).to eq(15)
+      expect(equipment_names).to include("Oscilloscope")
+      expect(equipment_names).not_to include("Projector")
+      
+      oscilloscope = data[:equipments].find { |e| e[:name] == "Oscilloscope" }
+      expect(oscilloscope[:usage_count]).to eq(25)
     end
 
-    it "defaults to 0 when no booking_count is provided" do
-      # We don't pass booking_count at all; the database default (0) should kick in
-      new_venue = engineering.venues.create!(name: "Empty Room", location: "Building B")
-      
-      updated_results = subject.resource_usage_data
-      empty_stat = updated_results[:venues].find { |v| v[:name] == "Empty Room" }
-      
-      expect(empty_stat[:usage_count]).to eq(0)
+    context "when a resource has no bookings (nil count)" do
+      let!(:new_venue) { Venue.create!(name: "Empty Lab", location: location, number_of_past_booking: nil) }
+
+      it "defaults the usage_count to 0" do
+        empty_lab = data[:venues].find { |v| v[:name] == "Empty Lab" }
+        expect(empty_lab[:usage_count]).to eq(0)
+      end
+    end
+
+    context "when no tenant is provided" do
+      subject { DashboardStatsService.new(nil) }
+
+      it "returns all equipment but uses the default scope logic" do
+        # Based on your service: equipments_scope = @tenant.present? ? ... : Equipment.all
+        expect(data[:equipments].count).to eq(Equipment.count)
+      end
     end
   end
 end
