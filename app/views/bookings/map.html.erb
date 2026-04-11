@@ -44,6 +44,7 @@
     font-weight: 700;
     text-align: center;
     transition: background 0.2s ease;
+    box-sizing: border-box;
   }
 
   .back-to-main-btn:hover {
@@ -120,13 +121,6 @@
   }
 </style>
 
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossorigin=""
-/>
-
 <div class="full-screen-map-page">
   <div class="map-overlay-header">
     <%= link_to "← Back to Main", main_path, class: "back-to-main-btn" %>
@@ -146,42 +140,52 @@
       </div>
     <% end %>
   </div>
+
   <div id="map"></div>
 </div>
 
-<script
-  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-  crossorigin=""
-></script>
-
 <script>
   function initMap() {
-    const map = L.map("map", {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 22.4198, lng: 114.2068 },
+      zoom: 17,
       minZoom: 10,
-      zoomControl: true
-    }).setView([22.4198, 114.2068], 17);
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "&copy; OpenStreetMap contributors"
-    }).addTo(map);
+      gestureHandling: "greedy",
+      keyboardShortcuts: false,
+      restriction: {
+        latLngBounds: {
+          north: 22.426270185242515,
+          south: 22.378103347356834,
+          west: 114.19634845851412,
+          east: 114.21840119825353
+        },
+        strictBounds: false,
+      },
+    });
 
     const locations = <%= raw(@map_locations.to_json) %>;
+
+    const infoWindow = new google.maps.InfoWindow();
     const markers = [];
 
     locations.forEach(location => {
-      const marker = L.marker([location.lat, location.lng]).addTo(map);
-      marker.customData = location;
-      marker.bindPopup(buildPopupContent(location));
+      const marker = new google.maps.Marker({
+        position: { lat: location.lat, lng: location.lng },
+        map: map,
+        title: location.title,
+      });
 
-      markers.push({
-        marker: marker,
-        title: location.title.toLowerCase()
+      marker.customData = location;
+      markers.push(marker);
+
+      marker.addListener("click", () => {
+        openInfoWindow(marker);
       });
     });
 
-    function buildPopupContent(data) {
-      return `
+    function openInfoWindow(marker) {
+      const data = marker.customData;
+      const contentString = `
         <div style="padding: 5px; width: 200px;">
           ${data.image_url ? `<img src="${data.image_url}" style="width:100%; height:auto; border-radius:8px; margin-bottom:8px;">` : ''}
           <div style="font-weight: bold; font-size: 14px;">${data.title}</div>
@@ -189,6 +193,8 @@
           <a href="/buildings/${data.slug}" style="color: #4285F4; text-decoration: none; font-size: 12px; font-weight: bold;">Go to page →</a>
         </div>
       `;
+      infoWindow.setContent(contentString);
+      infoWindow.open(map, marker);
     }
 
     const searchInput = document.getElementById("venue-search");
@@ -198,11 +204,12 @@
       const query = searchInput.value.toLowerCase().trim();
       if (!query) return;
 
-      const match = markers.find(m => m.title.includes(query));
+      const match = markers.find(m => m.title.toLowerCase().includes(query));
 
       if (match) {
-        map.setView(match.marker.getLatLng(), 17, { animate: true });
-        match.marker.openPopup();
+        map.setZoom(17);
+        map.panTo(match.getPosition());
+        openInfoWindow(match);
       } else {
         alert("Venue not found.");
       }
@@ -213,6 +220,9 @@
       if (e.key === "Enter") performSearch();
     });
   }
+</script>
 
-  document.addEventListener("DOMContentLoaded", initMap);
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_maps_api_key %>&callback=initMap"
+  defer>
 </script>
