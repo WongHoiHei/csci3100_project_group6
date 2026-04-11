@@ -1,38 +1,82 @@
 require 'rails_helper'
 
-RSpec.describe DashboardStatsService do
-  let(:engineering) { Tenant.create!(name: "Engineering") }
+RSpec.describe DashboardStatsService, type: :service do
+  let!(:tenant) { Tenant.create!(name: "General Department") }
+  let!(:location) { Location.create!(name: "Main Campus") } 
   
-  # Update: We now set the counts directly because the Service reads from columns
-  let!(:venue) { engineering.venues.create!(name: "SHB301", location: "Building A", booking_count: 2) }
-  let!(:equipment) { engineering.equipments.create!(name: "Projector", usage_count: 15) }
-  
-  subject { DashboardStatsService.new(engineering) }
+  let!(:user) do 
+    User.create!(
+      name: "Test User",
+      email: "test@example.com", 
+      password: "password123",
+      password_confirmation: "password123"
+    )
+  end
+
+  let!(:venue_a) { Venue.create!(name: "Lab A", location: location) }
+  let!(:venue_b) { Venue.create!(name: "Lab B", location: location) }
+  let!(:equipment_a) { Equipment.create!(name: "Oscilloscope", tenant: tenant) }
+
+  let!(:time_slot) do
+    TimeSlot.create!(
+      venue: venue_a,
+      start_time: Time.now,
+      end_time: 2.hours.from_now
+    )
+  end
 
   describe "#resource_usage_data" do
-    let(:results) { subject.resource_usage_data }
+    before do
+      2.times do 
+        Booking.create!(
+          bookable: venue_a, 
+          user: user, 
+          time_slot: time_slot,
+          status: "approved", 
+          start_time: Time.now, 
+          end_time: 1.hour.from_now
+        )
+      end
 
-    it "retrieves the cached booking_count for venues" do
-      shb_stat = results[:venues].find { |v| v[:name] == "SHB301" }
-      
-      # The service should now simply return the value stored in the column
-      expect(shb_stat[:usage_count]).to eq(2)
+      Booking.create!(
+        bookable: venue_a, 
+        user: user, 
+        time_slot: time_slot,
+        status: "rejected", 
+        start_time: Time.now, 
+        end_time: 1.hour.from_now
+      )
+
+      Booking.create!(
+        bookable: equipment_a, 
+        user: user, 
+        time_slot: time_slot,
+        status: "pending", 
+        start_time: Time.now, 
+        end_time: 1.hour.from_now
+      )
     end
 
-    it "retrieves the cached usage_count for equipment" do
-      projector_stat = results[:equipments].find { |e| e[:name] == "Projector" }
-      
-      expect(projector_stat[:usage_count]).to eq(15)
+    subject { DashboardStatsService.new.resource_usage_data }
+
+    it "counts only non-rejected bookings for venues" do
+      venue_data = subject[:venues].find { |v| v[:name] == "Lab A" }
+      expect(venue_data[:usage_count]).to eq(2)
     end
 
-    it "defaults to 0 when no booking_count is provided" do
-      # We don't pass booking_count at all; the database default (0) should kick in
-      new_venue = engineering.venues.create!(name: "Empty Room", location: "Building B")
-      
-      updated_results = subject.resource_usage_data
-      empty_stat = updated_results[:venues].find { |v| v[:name] == "Empty Room" }
-      
-      expect(empty_stat[:usage_count]).to eq(0)
+    it "returns 0 for resources with no bookings" do
+      venue_data = subject[:venues].find { |v| v[:name] == "Lab B" }
+      expect(venue_data[:usage_count]).to eq(0)
+    end
+
+    it "counts only non-rejected bookings for equipment" do
+      equip_data = subject[:equipments].find { |e| e[:name] == "Oscilloscope" }
+      expect(equip_data[:usage_count]).to eq(1)
+    end
+
+    it "orders results by name alphabetically" do
+      venue_names = subject[:venues].map { |v| v[:name] }
+      expect(venue_names).to eq(venue_names.sort)
     end
   end
 end
