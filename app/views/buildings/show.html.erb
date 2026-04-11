@@ -1,34 +1,70 @@
-<div style="padding: 50px; text-align: center; font-family: sans-serif;">
-  <p style="color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0;">Building Details</p>
-  
-  <h1 style="font-size: 2.5rem; margin-top: 10px;"><%= @official_name %></h1>
-  
-  <hr style="width: 50px; border: 2px solid #4285F4; margin: 30px auto;">
+<div style="max-width: 800px; margin: 0 auto; padding: 30px; font-family: sans-serif;">
+  <p style="color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0;">Venue Booking</p>
+  <h1 style="font-size: 2rem; margin-top: 8px; margin-bottom: 4px;"><%= @official_name %></h1>
+  <hr style="width: 50px; border: 2px solid #4285F4; margin: 16px 0 24px 0;">
 
-  <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+  <%# --- Date picker --- %>
+  <%= form_with url: request.path, method: :get, local: true, style: "display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;" do %>
+    <label style="font-weight: bold;">Select Date:</label>
+    <%= date_field_tag :booking_date, @selected_date, min: Date.current.to_s,
+          style: "padding: 7px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px;" %>
+    <%= submit_tag "Show Availability",
+          style: "padding: 7px 16px; background: #4285F4; color: white; border: none;
+                  border-radius: 6px; cursor: pointer; font-size: 14px;" %>
+  <% end %>
 
+  <p style="color: #555; margin-bottom: 20px; font-size: 14px;">
+    Showing availability for: <strong><%= @selected_date.strftime('%A, %B %-d, %Y') %></strong>
+  </p>
 
-    <!--read Available timeslots from time_slots-->
-    <h3 style="margin-top: 30px;">Available Timeslots</h3>
+  <%# --- Venue list --- %>
+  <% if @venues.any? %>
     <% @venues.each do |venue| %>
-      <h4> <%=venue.name %></h4>
-      <ul>
-        <% TimeSlot.all.each do |slot| %>
-          <li>
-            <%= slot.start_time.strftime("%H:%M") %> - <%= slot.end_time.strftime("%H:%M")%>
-            <%= link_to 'Book', "/bookings/new?bookable_id=#{venue.id}&bookable_type=Venue&time_slot_id=#{slot.id}",  style: "margin-top: 10px;" %>
-          </li>
-        <% end %>
-      </ul>
+      <details style="margin-bottom: 14px; border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden;" open>
+        <summary style="cursor: pointer; font-weight: bold; padding: 14px 18px;
+                        background: #f7f7f7; list-style: none;
+                        display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 15px;"><%= venue.name %></span>
+          <span style="font-weight: normal; color: #666; font-size: 13px;">
+            Capacity: <%= venue.capacity %> seats
+          </span>
+        </summary>
+
+        <div style="padding: 14px 18px;">
+          <% slots = venue.time_slots.order(:start_time) %>
+          <% if slots.any? %>
+            <div style="display: grid; gap: 8px;">
+              <% slots.each do |slot| %>
+                <% booked = @booked_slots.include?([venue.id, slot.id]) %>
+                <div style="display: flex; align-items: center; justify-content: space-between;
+                            padding: 10px 14px; border-radius: 6px;
+                            background: <%= booked ? '#fff5f5' : '#f0fdf4' %>;
+                            border: 1px solid <%= booked ? '#fca5a5' : '#86efac' %>;">
+                  <span style="font-size: 14px;">
+                    <%= slot.start_time.strftime("%H:%M") %> &ndash; <%= slot.end_time.strftime("%H:%M") %>
+                  </span>
+                  <% if booked %>
+                    <span style="color: #dc2626; font-size: 13px; font-weight: 500;">Fully Booked</span>
+                  <% else %>
+                    <%= link_to "Book →",
+                          "/bookings/new?bookable_id=#{venue.id}&bookable_type=Venue&time_slot_id=#{slot.id}&booking_date=#{@selected_date}",
+                          style: "color: white; background: #4285F4; padding: 5px 16px;
+                                  border-radius: 5px; text-decoration: none; font-size: 13px;" %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          <% else %>
+            <p style="color: #888; font-size: 14px; margin: 0;">No time slots configured for this venue.</p>
+          <% end %>
+        </div>
+      </details>
     <% end %>
+  <% else %>
+    <p style="color: #666;">No venues found for this location.</p>
+  <% end %>
 
-    <div style="margin-top: 30px; text-align: center;">
-      <%= link_to 'Continue to Confirmation', booking_confirmation_path, class: 'btn', 
-          style: "background: #4285F4; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;" %>
-    </div>
-  </div>
-
-  <div style="margin-top: 40px;">
-    <%= link_to "← Back to Map", "/map", style: "color: #666; text-decoration: none;" %>
+  <div style="margin-top: 32px;">
+    <%= link_to "← Back to Map", "/map", style: "color: #666; text-decoration: none; font-size: 14px;" %>
   </div>
 </div>

@@ -702,3 +702,262 @@ body {
     width: calc(100% - 2rem);
   }
 }
+
+/* Booking Pages - Decorated Styles */
+.booking-container,
+.confirmation-container {
+  min-height: calc(100vh - 78px);
+  background: linear-gradient(135deg, #f0f9ec 0%, #e8f5e1 100%);
+  padding: 3rem 1.5rem;
+}
+
+.booking-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.confirmation-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking-header,
+.confirmation-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.booking-title,
+.confirmation-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #14532d;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.icon-badge {
+  font-size: 2.8rem;
+  display: inline-block;
+}
+
+.booking-subtitle,
+.confirmation-subtitle {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin: 0;
+  font-weight: 500;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(20, 83, 45, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  animation: slideUp 0.5s ease-out;
+}
+
+.confirmation-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(20, 83, 45, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.error-card {
+  background: #fef2f2;
+  border: 2px solid #fecaca;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.error-message {
+  color: #b91c1c;
+  font-weight: 600;
+  margin: 0;
+}
+
+.booking-details,
+.confirmation-details {
+  margin-bottom: 2rem;
+}
+
+.booking-detail-row,
+.confirmation-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e5f0e0;
+  gap: 1rem;
+}
+
+.booking-detail-row:last-child,
+.confirmation-detail-row:last-child {
+  border-bottom: none;
+}
+
+.booking-detail-row.warning {
+  background: #fffbeb;
+  border-radius: 0.6rem;
+  border-bottom: 1px solid #fde68a;
+}
+
+.detail-label {
+  font-weight: 700;
+  color: #4b5563;
+  min-width: 150px;
+  font-size: 0.95rem;
+}
+
+.detail-value {
+  font-weight: 600;
+  color: #14532d;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resource-type {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #166534;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.text-warning {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.time-icon,
+.date-icon {
+  font-size: 1.1rem;
+}
+
+.detail-section {
+  margin-bottom: 1.5rem;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #14532d;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #c2e0b8;
+}
+
+.confirmation-checkbox {
+  background: #f0f9ec;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #166534;
+}
+
+.checkbox-label {
+  font-weight: 600;
+  color: #14532d;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label span {
+  display: flex;
+  align-items: center;
+}
+
+.booking-actions,
+.confirmation-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.confirmation-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.7rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #166534 0%, #14532d 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(22, 101, 52, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #14532d 0%, #0d3b20 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(22, 101, 52, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
