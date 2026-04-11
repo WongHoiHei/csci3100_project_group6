@@ -32,6 +32,27 @@
     width: 250px;
     font-family: sans-serif; /* Add font-family since application CSS is gone */
   }
+
+  .back-to-main-btn {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 8px 14px;
+    background: #166534;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background 0.2s ease;
+  }
+
+  .back-to-main-btn:hover {
+    background: #14532d;
+  }
 </style>
 
 <link
@@ -43,6 +64,7 @@
 
 <div class="full-screen-map-page">
   <div class="map-overlay-header">
+    <%= link_to "← Back to Main", main_path, class: "back-to-main-btn" %>
     <div style="font-weight: bold; margin-bottom: 5px;">equipment/venue booking system</div>
     <input type="text" id="venue-search" placeholder="Search venue..."> 
     <button id="search-btn">Search</button>
@@ -71,7 +93,7 @@
     const map = L.map("map", {
       minZoom: 10,
       zoomControl: true
-    }).setView([22.4198, 114.2068], 14);
+    }).setView([22.4198, 114.2068], 17);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors"

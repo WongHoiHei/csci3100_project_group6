@@ -14,7 +14,9 @@ class BookingsController < ApplicationController
       @equipments = @equipments.where("LOWER(name) LIKE ?", "%#{@search_query.downcase}%")
     end
     
-    @time_slots = TimeSlot.order(:start_time)
+    @time_slots = TimeSlot.select("MIN(id) as id, start_time, end_time")
+                          .group(:start_time, :end_time)
+                          .order(:start_time)
     @remaining_quantity_by_equipment_and_slot = build_remaining_quantity_map(@selected_date)
   end
 
@@ -176,7 +178,7 @@ class BookingsController < ApplicationController
   end
 
   def build_remaining_quantity_map(selected_date)
-    counts = Booking.where(bookable_type: "Equipment", time_slot_id: @time_slots.pluck(:id))
+    counts = Booking.where(bookable_type: "Equipment", time_slot_id: @time_slots.map(&:id))
                     .where(start_time: selected_date.beginning_of_day..selected_date.end_of_day)
                     .where.not(status: "rejected")
                     .group(:bookable_id, :time_slot_id)
