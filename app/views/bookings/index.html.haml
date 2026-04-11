@@ -16,7 +16,8 @@
         .booking-card
           .booking-card-header
             %h2= booking.bookable&.name || "N/A"
-            %span.booking-status= booking.status
+            - display_status = booking.status == "pending" ? "success" : booking.status
+            %span.booking-status= display_status
 
           .booking-card-body
             %p
