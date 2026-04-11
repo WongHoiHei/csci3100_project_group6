@@ -34,6 +34,13 @@
   }
 </style>
 
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+
 <div class="full-screen-map-page">
   <div class="map-overlay-header">
     <div style="font-weight: bold; margin-bottom: 5px;">equipment/venue booking system</div>
@@ -50,108 +57,63 @@
       <% end %>
     </div>
   </div>
-<div id="map"></div>
+  <div id="map"></div>
+</div>
+
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+></script>
+
 <script>
   function initMap() {
-    const map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: 22.4198, lng: 114.2068 },
-      zoom: 14,
+    const bounds = {
+      north: 22.426270185242515,
+      south: 22.4126197157093,
+      west: 114.19634845851412,
+      east: 114.21840119825353
+    };
+
+    const map = L.map("map", {
       minZoom: 14,
-      gestureHandling: "greedy",
-      keyboardShortcuts: false,
-      restriction: {
-        latLngBounds: {
-          north: 22.426270185242515,
-          south: 22.4126197157093,
-          west: 114.19634845851412,
-          east: 114.21840119825353 
-        },
-        strictBounds: true,
-      },
-    });
+      maxBounds: [
+        [bounds.south, bounds.west],
+        [bounds.north, bounds.east]
+      ],
+      maxBoundsViscosity: 1.0,
+      zoomControl: true
+    }).setView([22.4198, 114.2068], 14);
 
-    // Define your pins here
-    const locations = [
-      {
-        lat: 22.420089834513423,
-        lng: 114.2072099614738,
-        title: "Sir Run Run Shaw Hall",
-        url: "/buildings/sirrunrunshawhall",
-        image_url: "<%= asset_path('sir_run_run.jpg') %>"
-      },
-      {
-        lat: 22.42090899131629, 
-        lng: 114.20930435032216,
-        title: "NA Gym",
-        url: "/buildings/nagym",
-        image_url: "<%= asset_path('na_gym.jpg') %>"
-      },
-      {
-        lat: 22.420960312540984, 
-        lng: 114.20567848673426,
-        title: "UC Gym",
-        url: "/buildings/ucgym",
-        image_url: "<%= asset_path('uc_gym.jpg') %>"
-      },
-      {
-        lat: 22.41493476795026, 
-        lng: 114.20880499854452,
-        title: "Lingnan Stadium",
-        url: "/buildings/lingnanstadium",
-        image_url: "<%= asset_path('lingnan_stadium.jpg') %>"
-      },
-      {
-        lat: 22.418781207707248,
-        lng: 114.21198997917793,
-        title: "University Sports Centre",
-        url: "/buildings/usportscentre",
-        image_url: "<%= asset_path('u_sports_centre.jpg') %>"
-      },
-      {
-        lat: 22.422362888628257,
-        lng: 114.2016351058803,
-        title: "Shaw College lecture Theatre",
-        url: "/buildings/shawtheatre",
-        image_url: "<%= asset_path('shaw_theatre.jpg') %>"
-      },
-    ];
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors"
+    }).addTo(map);
 
-    // Create an info window (shared across all markers)
-    const infoWindow = new google.maps.InfoWindow();
+    const locations = <%= raw(@map_locations.to_json) %>;
     const markers = [];
 
-    // Loop through and create markers
-locations.forEach(location => {
-      const marker = new google.maps.Marker({
-        position: { lat: location.lat, lng: location.lng },
-        map: map,
-        title: location.title,
-      });
-
-      // Attach the location data to the marker for easy retrieval
+    locations.forEach(location => {
+      const marker = L.marker([location.lat, location.lng]).addTo(map);
       marker.customData = location;
-      markers.push(marker);
+      marker.bindPopup(buildPopupContent(location));
 
-      marker.addListener("click", () => {
-        openInfoWindow(marker);
+      markers.push({
+        marker: marker,
+        title: location.title.toLowerCase()
       });
     });
 
-    // Helper function to open window (used by click and search)
-    function openInfoWindow(marker) {
-      const data = marker.customData;
-      const contentString = `
+    function buildPopupContent(data) {
+      return `
         <div style="padding: 5px; width: 200px;">
           ${data.image_url ? `<img src="${data.image_url}" style="width:100%; height:auto; border-radius:8px; margin-bottom:8px;">` : ''}
           <div style="font-weight: bold; font-size: 14px;">${data.title}</div>
-          <a href="${data.url}" style="color: #4285F4; text-decoration: none; font-size: 12px;">Go to page →</a>
+          <div style="font-size: 12px; margin: 4px 0 8px; color: #374151;">Venues: ${data.venue_count}</div>
+          <a href="/buildings/${data.slug}" style="color: #4285F4; text-decoration: none; font-size: 12px;">Go to page →</a>
         </div>
       `;
-      infoWindow.setContent(contentString);
-      infoWindow.open(map, marker);
     }
 
-    // --- SEARCH LOGIC ---
     const searchInput = document.getElementById("venue-search");
     const searchBtn = document.getElementById("search-btn");
 
@@ -159,13 +121,11 @@ locations.forEach(location => {
       const query = searchInput.value.toLowerCase().trim();
       if (!query) return;
 
-      // Look for a marker that contains the search string
-      const match = markers.find(m => m.title.toLowerCase().includes(query));
+      const match = markers.find(m => m.title.includes(query));
 
       if (match) {
-        map.setZoom(17);
-        map.panTo(match.getPosition());
-        openInfoWindow(match);
+        map.setView(match.marker.getLatLng(), 17, { animate: true });
+        match.marker.openPopup();
       } else {
         alert("Venue not found.");
       }
@@ -176,9 +136,6 @@ locations.forEach(location => {
       if (e.key === "Enter") performSearch();
     });
   }
-</script>
 
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_maps_api_key %>&callback=initMap"
-  defer>
+  document.addEventListener("DOMContentLoaded", initMap);
 </script>

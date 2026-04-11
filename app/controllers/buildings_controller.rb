@@ -1,28 +1,20 @@
 class BuildingsController < ApplicationController
   def show
-    # Get the slug from the URL
-    @slug = params[:slug]
+    slug = params[:slug].to_s
+    @location = Location.all.find { |loc| slugify_location_name(loc.name) == slug }
 
-    # Create a mapping of slugs to official names
-    building_names = {
-      "sirrunrunshawhall" => "Sir Run Run Shaw Hall",
-      "nagym"             => "New Asia College Gymnasium",
-      "ucgym"            => "United College Gymnasium",
-      "lingnanstadium"    => "Lingnan Stadium",
-      "usportscentre"     => "University Sports Centre",
-      "shawtheatre"       => "Shaw College Lecture Theatre"
-    }
+    if @location.blank?
+      redirect_to map_path, alert: "Location not found."
+      return
+    end
 
-    # Find the official name based on the slug
-    # If the slug isn't found, default to "Unknown Building"
-    @official_name = building_names[@slug] || "Unknown Building"
-
-    #find the venue under this building
-    @venues=Venue.joins(:location).where(locations: {name: @official_name})
-    puts "DEBUG: @official_name = #{@official_name}"
-    puts "DEBUG: @venues count = #{@venues.count}"
-    
-    @timeslots = (1..12).map { |i| "Period #{i}" }
+    @official_name = @location.name
+    @venues = @location.venues.includes(:time_slots).order(:name)
   end
-  
+
+  private
+
+  def slugify_location_name(name)
+    name.to_s.downcase.gsub(/[^a-z0-9]+/, "")
+  end
 end

@@ -15,4 +15,4 @@
   = f.hidden_field :bookable_type, value: @bookable_type
   = f.hidden_field :time_slot_id, value: @time_slot_id
   = f.hidden_field :booking_date, value: @booking_date
-  = f.submit 'Confirm Booking'
+  = link_to 'Continue to Confirmation', booking_confirmation_path(bookable_id: @bookable_id, bookable_type: @bookable_type, time_slot_id: @time_slot_id, booking_date: @booking_date), class: 'btn'

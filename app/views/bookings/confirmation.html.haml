@@ -1,22 +1,43 @@
 %h1 Confirmation
 %p Review your selected booking details.
 
+- if @bookable_id.present? && @bookable_type.present? && @time_slot_id.present?
+  %p
+    %strong Type:
+    = @bookable_type
+  %p
+    %strong Resource ID:
+    = @bookable_id
+  - if @time_slot.present?
+    %p
+      %strong Time Slot:
+      = "#{@time_slot.start_time.strftime('%H:%M')} - #{@time_slot.end_time.strftime('%H:%M')}"
+  - if @booking_date.present?
+    %p
+      %strong Booking Date:
+      = @booking_date
+
 .field
   %label{:for => "confirm_checkbox"}
     %input{:type => "checkbox", :id => "confirm_checkbox", :required => true}
     |  I confirm the booking details are correct
 
 .btn-container
-  %a{:id => "confirm-btn", 
-     :href => booking_final_path, 
-     :class => "btn", 
-     :style => "opacity: 0.5; cursor: not-allowed; pointer-events: none;"} 
-    Please tick to confirm first
+  - if @bookable_id.present? && @bookable_type.present? && @time_slot_id.present?
+    = form_with url: '/bookings', method: :post, local: true do |f|
+      = hidden_field_tag 'booking[bookable_id]', @bookable_id
+      = hidden_field_tag 'booking[bookable_type]', @bookable_type
+      = hidden_field_tag 'booking[time_slot_id]', @time_slot_id
+      = hidden_field_tag 'booking[booking_date]', @booking_date
+      = f.submit 'Please tick to confirm first', id: 'confirm-btn', class: 'btn', disabled: true, style: 'opacity: 0.5; cursor: not-allowed; pointer-events: none;'
+  - else
+    %p Please choose a valid resource and time slot first.
 
 :javascript
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('turbo:load', function() {
     const checkbox = document.getElementById('confirm_checkbox');
     const button = document.getElementById('confirm-btn');
+    if (!checkbox || !button) return;
     
     checkbox.addEventListener('change', function() {
       if (this.checked) {
@@ -24,11 +45,13 @@
         button.style.cursor = 'pointer';
         button.style.pointerEvents = 'auto';
         button.textContent = 'Final Confirm ✓';
+        button.disabled = false;
       } else {
         button.style.opacity = '0.5';
         button.style.cursor = 'not-allowed';
         button.style.pointerEvents = 'none';
         button.textContent = 'Please tick to confirm first';
+        button.disabled = true;
       }
     });
   });

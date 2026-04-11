@@ -18,7 +18,13 @@ class BookingsController < ApplicationController
     @remaining_quantity_by_equipment_and_slot = build_remaining_quantity_map(@selected_date)
   end
 
-  def confirmation; end
+  def confirmation
+    @bookable_id = params[:bookable_id]
+    @bookable_type = params[:bookable_type]
+    @time_slot_id = params[:time_slot_id]
+    @booking_date = params[:booking_date]
+    @time_slot = TimeSlot.find_by(id: @time_slot_id)
+  end
 
   def finalize
     redirect_to "/booking/final"
@@ -27,6 +33,17 @@ class BookingsController < ApplicationController
   def final; end
 
   def map
+    @map_locations = Location.order(:name).map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude,
+        title: location.name,
+        slug: slugify_location_name(location.name),
+        venue_count: location.venues.count,
+        image_url: nil
+      }
+    end
+
     render layout: false
   end
 
@@ -57,7 +74,13 @@ class BookingsController < ApplicationController
     elsif @booking.save
       BookingMailer.confirmation(@booking).deliver_now
       sender_link = view_context.mail_to("venueandequipmentbooking@gmail.com", "venueandequipmentbooking@gmail.com")
-      redirect_to equipment_booking_path, notice: "Booking request submitted. Email sent from #{sender_link}".html_safe
+      success_notice = "Booking request submitted. Email sent from #{sender_link}".html_safe
+
+      if @booking.bookable_type == "Venue"
+        redirect_to bookings_path, notice: success_notice
+      else
+        redirect_to equipment_booking_path, notice: success_notice
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -202,5 +225,9 @@ class BookingsController < ApplicationController
     Date.parse(value.to_s)
   rescue ArgumentError
     nil
+  end
+
+  def slugify_location_name(name)
+    name.to_s.downcase.gsub(/[^a-z0-9]+/, "")
   end
 end
