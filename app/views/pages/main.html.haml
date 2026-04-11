@@ -1,5 +1,6 @@
 %h1 Main Page
-= link_to 'Venue Booking', venue_booking_path, class: 'btn'
-= link_to 'Equipment Booking', equipment_booking_path, class: 'btn'
-= link_to "Dashboard", dashboards_path, class: 'btn'
-= link_to 'History', bookings_path, class: 'btn'
+.main-menu-container
+  = link_to 'Venue Booking', venue_booking_path, class: 'btn btn-menu'
+  = link_to 'Equipment Booking', equipment_booking_path, class: 'btn btn-menu'
+  = link_to "Dashboard", dashboards_path, class: 'btn btn-menu'
+  = link_to 'Booking History', bookings_path, class: 'btn btn-menu'
