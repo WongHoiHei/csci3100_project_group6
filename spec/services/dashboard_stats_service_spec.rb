@@ -1,58 +1,87 @@
 require 'rails_helper'
 
 RSpec.describe DashboardStatsService, type: :service do
-  let(:tenant) { Tenant.create!(name: "Engineering") }
-  let(:other_tenant) { Tenant.create!(name: "Marketing") }
+  let!(:tenant) { Tenant.create!(name: "General Department") }
+  let!(:location) { Location.create!(name: "Main Campus") } 
   
-  # Setup venues (Note: Venue belongs to Location in your setup)
-  let(:location) { Location.create!(name: "Main Campus", tenant: tenant) }
-  let!(:venue) { Venue.create!(name: "Lab A", location: location, number_of_past_booking: 10) }
-  let!(:other_venue) { Venue.create!(name: "Conference Room", location: Location.create!(tenant: other_tenant), number_of_past_booking: 5) }
+  let!(:user) do 
+    User.create!(
+      name: "Test User",
+      email: "test@example.com", 
+      password: "password123",
+      password_confirmation: "password123"
+    )
+  end
 
-  # Setup equipment
-  let!(:equipment) { Equipment.create!(name: "Oscilloscope", tenant: tenant, number_of_past_booking: 25) }
-  let!(:other_equipment) { Equipment.create!(name: "Projector", tenant: other_tenant, number_of_past_booking: 2) }
+  # Order matters: Create the Venue first...
+  let!(:venue_a) { Venue.create!(name: "Lab A", location: location) }
+  let!(:venue_b) { Venue.create!(name: "Lab B", location: location) }
+  let!(:equipment_a) { Equipment.create!(name: "Oscilloscope", tenant: tenant) }
 
-  subject { DashboardStatsService.new(tenant) }
+  # ...then create the TimeSlot linked to that Venue
+  let!(:time_slot) do
+    TimeSlot.create!(
+      venue: venue_a,
+      start_time: Time.now,
+      end_time: 2.hours.from_now
+    )
+  end
 
   describe "#resource_usage_data" do
-    let(:data) { subject.resource_usage_data }
-
-    it "returns the cached booking counts for venues (currently global)" do
-      # Since your service currently uses Venue.all, it should see both
-      venue_names = data[:venues].map { |v| v[:name] }
-      expect(venue_names).to include("Lab A", "Conference Room")
-      
-      lab_a = data[:venues].find { |v| v[:name] == "Lab A" }
-      expect(lab_a[:usage_count]).to eq(10)
-    end
-
-    it "returns only equipment belonging to the selected tenant" do
-      equipment_names = data[:equipments].map { |e| e[:name] }
-      
-      expect(equipment_names).to include("Oscilloscope")
-      expect(equipment_names).not_to include("Projector")
-      
-      oscilloscope = data[:equipments].find { |e| e[:name] == "Oscilloscope" }
-      expect(oscilloscope[:usage_count]).to eq(25)
-    end
-
-    context "when a resource has no bookings (nil count)" do
-      let!(:new_venue) { Venue.create!(name: "Empty Lab", location: location, number_of_past_booking: nil) }
-
-      it "defaults the usage_count to 0" do
-        empty_lab = data[:venues].find { |v| v[:name] == "Empty Lab" }
-        expect(empty_lab[:usage_count]).to eq(0)
+    before do
+      # 2 Valid Bookings
+      2.times do 
+        Booking.create!(
+          bookable: venue_a, 
+          user: user, 
+          time_slot: time_slot,
+          status: "approved", 
+          start_time: Time.now, 
+          end_time: 1.hour.from_now
+        )
       end
+
+      # 1 Rejected Booking (Ignored)
+      Booking.create!(
+        bookable: venue_a, 
+        user: user, 
+        time_slot: time_slot,
+        status: "rejected", 
+        start_time: Time.now, 
+        end_time: 1.hour.from_now
+      )
+
+      # 1 Valid Equipment Booking
+      Booking.create!(
+        bookable: equipment_a, 
+        user: user, 
+        time_slot: time_slot,
+        status: "pending", 
+        start_time: Time.now, 
+        end_time: 1.hour.from_now
+      )
     end
 
-    context "when no tenant is provided" do
-      subject { DashboardStatsService.new(nil) }
+    subject { DashboardStatsService.new.resource_usage_data }
 
-      it "returns all equipment but uses the default scope logic" do
-        # Based on your service: equipments_scope = @tenant.present? ? ... : Equipment.all
-        expect(data[:equipments].count).to eq(Equipment.count)
-      end
+    it "counts only non-rejected bookings for venues" do
+      venue_data = subject[:venues].find { |v| v[:name] == "Lab A" }
+      expect(venue_data[:usage_count]).to eq(2)
+    end
+
+    it "returns 0 for resources with no bookings" do
+      venue_data = subject[:venues].find { |v| v[:name] == "Lab B" }
+      expect(venue_data[:usage_count]).to eq(0)
+    end
+
+    it "counts only non-rejected bookings for equipment" do
+      equip_data = subject[:equipments].find { |e| e[:name] == "Oscilloscope" }
+      expect(equip_data[:usage_count]).to eq(1)
+    end
+
+    it "orders results by name alphabetically" do
+      venue_names = subject[:venues].map { |v| v[:name] }
+      expect(venue_names).to eq(venue_names.sort)
     end
   end
 end

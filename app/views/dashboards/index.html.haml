@@ -1,13 +1,12 @@
 - content_for :head do
-  -# This is the "Nuclear Option" to stop the Tailwind leak on undo/back
   %meta{ name: "turbo-cache-control", content: "no-cache" }
 
 .min-h-screen.bg-slate-50.p-8{ data: { controller: "dashboard", dashboard_url_value: dashboards_path } }
   .max-w-7xl.mx-auto
     
-    -# Back Button pointing directly to the /main string
+    -# Navigation
     .mb-8
-      = link_to "/main",data: { turbo: false }, class: "group inline-flex items-center text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors" do
+      = link_to "/main", data: { turbo: false }, class: "group inline-flex items-center text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors" do
         %svg.w-5.h-5.mr-2.transition-transform.group-hover:-translate-x-1{ fill: "none", stroke: "currentColor", viewBox: "0 0 24 24" }
           %path{ d: "M10 19l-7-7m0 0l7-7m-7 7h18", "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": "2" }
         Back to Main Page
@@ -41,8 +40,8 @@
         %h2.text-lg.font-bold.mb-4 Equipment (Total Usage)
         %canvas{ data: { dashboard_target: "equipmentChart" } }
 
-    -# Tables Row
-    .grid.grid-cols-1.lg:grid-cols-2.gap-8
+    -# Tables Row - The #resource-stats ID is required for the Cucumber steps
+    .grid.grid-cols-1.lg:grid-cols-2.gap-8#resource-stats
       -# Venues Table
       .bg-white.rounded-2xl.shadow-sm.border.overflow-hidden
         %table.w-full
@@ -51,6 +50,10 @@
               %th.p-4.text-left.text-xs.font-bold.uppercase.tracking-wider.text-slate-500 Venue
               %th.p-4.text-right.text-xs.font-bold.uppercase.tracking-wider.text-slate-500 Bookings
           %tbody.divide-y.divide-slate-100{ data: { dashboard_target: "venueList" } }
+            - @stats[:venues].each do |venue|
+              %tr
+                %td.p-4.text-sm.text-slate-700= venue[:name]
+                %td.p-4.text-right.text-sm.font-semibold.text-slate-900= venue[:usage_count]
       
       -# Equipment Table
       .bg-white.rounded-2xl.shadow-sm.border.overflow-hidden
@@ -60,3 +63,7 @@
               %th.p-4.text-left.text-xs.font-bold.uppercase.tracking-wider.text-slate-500 Equipment
               %th.p-4.text-right.text-xs.font-bold.uppercase.tracking-wider.text-slate-500 Usage
           %tbody.divide-y.divide-slate-100{ data: { dashboard_target: "equipmentList" } }
+            - @stats[:equipments].each do |equip|
+              %tr
+                %td.p-4.text-sm.text-slate-700= equip[:name]
+                %td.p-4.text-right.text-sm.font-semibold.text-slate-900= equip[:usage_count]
