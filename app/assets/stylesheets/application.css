@@ -1021,3 +1021,23 @@ body {
     transform: translateY(0);
   }
 }
+
+/*history back to main button*/
+.btn-back-flat {
+  display: inline-block;
+  padding: 0.65rem 1.2rem;
+  background-color: #166534; 
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-back-flat:hover {
+  background-color: #14532d; 
+  color: #ffffff;
+}
