@@ -1,13 +1,50 @@
-%h1 Equipment Booking
+.equipment-page-header
+  = link_to '< Back to Main Page', main_path, class: 'equipment-back-link'
+  %h1 Equipment Booking
 
-%ul
-  - @equipments.each do |item|
-    %h3= item.name
-    -item.time_slots.each do |slot|
-      %li
-        = "#{slot.start_time.strftime("%H:%M")} - #{slot.end_time.strftime("%H:%M")}"
+= form_with url: equipment_booking_path, method: :get, local: true, class: 'equipment-date-form' do
+  = label_tag :booking_date, 'Booking Date'
+  = date_field_tag :booking_date, @selected_date, min: Date.current.to_s
+  = submit_tag 'Show All'
 
-        =  link_to 'Book',"/bookings/new?bookable_id=#{item.id}&bookable_type=Equipment&time_slot_id=#{slot.id}"
-    
+= form_with url: equipment_booking_path, method: :get, local: true, class: 'equipment-search-form' do
+  = text_field_tag :q, params[:q], placeholder: 'Search equipment...'
+  = hidden_field_tag :booking_date, @selected_date
+  = submit_tag 'Search'
 
-= link_to 'Continue', booking_confirmation_path, class: 'btn'
+.selected-booking-date
+  %strong Selected Date:
+  = @selected_date.strftime('%Y-%m-%d')
+
+- if @search_query.present?
+  %p.search-info
+    Showing results for:
+    %strong= @search_query
+
+%ul.equipment-list
+  - if @equipments.any?
+    - @equipments.each do |item|
+      %li.equipment-item
+        %h3= item.name
+        %p
+          %strong Description:
+          = item.description || "No description"
+        - if @time_slots.any?
+          %ul.equipment-slot-list
+            - @time_slots.each do |slot|
+              - remaining_quantity = @remaining_quantity_by_equipment_and_slot.fetch([item.id, slot.id], 0)
+              %li.equipment-slot-item
+                %span
+                  = "#{slot.start_time.strftime("%H:%M")} - #{slot.end_time.strftime("%H:%M")}" 
+                %span.remaining-quantity= "Remaining: #{remaining_quantity}"
+                - if remaining_quantity > 0
+                  = link_to 'Book', "/bookings/new?bookable_id=#{item.id}&bookable_type=Equipment&time_slot_id=#{slot.id}&booking_date=#{@selected_date}", class: 'time-slot-book-btn'
+                - else
+                  %span.time-slot-book-btn.disabled Full
+        - else
+          %p No time slots available.
+  - else
+    - if @search_query.present?
+      %p No equipment found matching "#{@search_query}".
+    - else
+      %p No equipment available.

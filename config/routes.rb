@@ -13,18 +13,20 @@ Rails.application.routes.draw do
   get '/password/edit', to: 'passwords#edit'
   patch '/password', to: 'passwords#update'
 
-  get '/main', to: 'pages#main'
+  get '/main', to: 'pages#main' 
 
   get '/venue-booking', to: 'bookings#map'
   get '/equipment-booking', to: 'bookings#equipment'
 
-  get 'buildings/:slug', to: 'buildings#show', as: :building
+  get 'buildings/:slug', to: 'buildings#show'
 
   get '/booking/confirmation', to: 'bookings#confirmation'
-  get '/booking/final', to: 'bookings#final', as: :booking_final
+  get '/booking/final', to: 'bookings#final'
 
   get '/search', to: 'search#index'
 
+  resources :dashboards, only: [:index]
+  
   get '/bookings/new', to: 'bookings#new'
   post '/bookings', to: 'bookings#create'
   get '/bookings/:id', to: 'bookings#show' #show id booking

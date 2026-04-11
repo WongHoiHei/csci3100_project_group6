@@ -1,32 +1,27 @@
-%h1 Sign Up
+.signup-page
+  .signup-card
+    %h1 Sign Up
 
-- if @user.errors.any?
-  #error_explanation
-    %h2= "#{pluralize(@user.errors.count, 'error')} prohibited this user from being saved:"
-    %ul
-      - @user.errors.full_messages.each do |message|
-        %li= message
+    = form_with model: @user, url: signup_path, local: true do |form|
+      .field
+        = form.label :email
+        = form.email_field :email, placeholder: 'Email'
+      
+      .field
+        = form.label :name
+        = form.text_field :name, placeholder: 'Full Name'
+      
+      .field
+        = form.label :password
+        = form.password_field :password, placeholder: 'Password'
+      
+      .field
+        = form.label :password_confirmation
+        = form.password_field :password_confirmation, placeholder: 'Confirm Password'
+      
+      .actions
+        = form.submit 'Sign up'
 
-= form_with model: @user, url: signup_path, local: true do |form|
-  .field
-    = form.label :email
-    = form.email_field :email, placeholder: 'Email'
-  
-  .field
-    = form.label :name
-    = form.text_field :name, placeholder: 'Full Name'
-  
-  .field
-    = form.label :password
-    = form.password_field :password, placeholder: 'Password'
-  
-  .field
-    = form.label :password_confirmation
-    = form.password_field :password_confirmation, placeholder: 'Confirm Password'
-  
-  .actions
-    = form.submit 'Sign up'
-
-%p
-  Already have an account?
-  = link_to 'Log in', login_path
+    %p
+      Already have an account?
+      = link_to 'Log in', login_path

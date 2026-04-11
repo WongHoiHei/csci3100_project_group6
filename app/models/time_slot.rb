@@ -1,4 +1,4 @@
 class TimeSlot < ApplicationRecord
-  belongs_to :bookable, polymorphic: true
-  has_many :bookings  
+  belongs_to :venue
+  has_many :bookings
 end
