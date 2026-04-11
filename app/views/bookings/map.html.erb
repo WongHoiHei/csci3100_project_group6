@@ -68,20 +68,8 @@
 
 <script>
   function initMap() {
-    const bounds = {
-      north: 22.426270185242515,
-      south: 22.4126197157093,
-      west: 114.19634845851412,
-      east: 114.21840119825353
-    };
-
     const map = L.map("map", {
-      minZoom: 14,
-      maxBounds: [
-        [bounds.south, bounds.west],
-        [bounds.north, bounds.east]
-      ],
-      maxBoundsViscosity: 1.0,
+      minZoom: 10,
       zoomControl: true
     }).setView([22.4198, 114.2068], 14);
 

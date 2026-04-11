@@ -1,37 +1,58 @@
-%h1 Confirmation
-%p Review your selected booking details.
+.confirmation-container
+  .confirmation-header
+    %h1.confirmation-title
+      %span.icon-badge 📝
+      Confirmation
+    %p.confirmation-subtitle Please review your booking details below
 
-- if @bookable_id.present? && @bookable_type.present? && @time_slot_id.present?
-  %p
-    %strong Type:
-    = @bookable_type
-  %p
-    %strong Resource ID:
-    = @bookable_id
-  - if @time_slot.present?
-    %p
-      %strong Time Slot:
-      = "#{@time_slot.start_time.strftime('%H:%M')} - #{@time_slot.end_time.strftime('%H:%M')}"
-  - if @booking_date.present?
-    %p
-      %strong Booking Date:
-      = @booking_date
-
-.field
-  %label{:for => "confirm_checkbox"}
-    %input{:type => "checkbox", :id => "confirm_checkbox", :required => true}
-    |  I confirm the booking details are correct
-
-.btn-container
   - if @bookable_id.present? && @bookable_type.present? && @time_slot_id.present?
-    = form_with url: '/bookings', method: :post, local: true do |f|
-      = hidden_field_tag 'booking[bookable_id]', @bookable_id
-      = hidden_field_tag 'booking[bookable_type]', @bookable_type
-      = hidden_field_tag 'booking[time_slot_id]', @time_slot_id
-      = hidden_field_tag 'booking[booking_date]', @booking_date
-      = f.submit 'Please tick to confirm first', id: 'confirm-btn', class: 'btn', disabled: true, style: 'opacity: 0.5; cursor: not-allowed; pointer-events: none;'
+    .confirmation-card
+      .confirmation-details
+        .detail-section
+          %h3.section-title Resource Information
+          .confirmation-detail-row
+            .detail-label Resource Type
+            .detail-value.resource-type= @bookable_type
+
+          .confirmation-detail-row
+            .detail-label Resource ID
+            .detail-value= @bookable_id
+
+        .detail-section
+          %h3.section-title Time & Date
+          - if @time_slot.present?
+            .confirmation-detail-row
+              .detail-label Time Slot
+              .detail-value
+                %span.time-icon 🕐
+                = "#{@time_slot.start_time.strftime('%H:%M')} - #{@time_slot.end_time.strftime('%H:%M')}"
+
+          - if @booking_date.present?
+            .confirmation-detail-row
+              .detail-label Booking Date
+              .detail-value
+                %span.date-icon 📅
+                = @booking_date
+
+      .confirmation-checkbox
+        .checkbox-wrapper
+          %input{:type => "checkbox", :id => "confirm_checkbox", :required => true, :class => "checkbox-input"}
+          %label.checkbox-label{:for => "confirm_checkbox"}
+            %span
+              I confirm the booking details are correct
+
+      .confirmation-actions
+        = form_with url: '/bookings', method: :post, local: true, class: 'confirmation-form' do |f|
+          = hidden_field_tag 'booking[bookable_id]', @bookable_id
+          = hidden_field_tag 'booking[bookable_type]', @bookable_type
+          = hidden_field_tag 'booking[time_slot_id]', @time_slot_id
+          = hidden_field_tag 'booking[booking_date]', @booking_date
+          %div
+            = f.submit 'Please tick to confirm first', id: 'confirm-btn', class: 'btn btn-primary btn-large btn-disabled', disabled: true
+
   - else
-    %p Please choose a valid resource and time slot first.
+    .error-card
+      %p.error-message Please choose a valid resource and time slot first.
 
 :javascript
   document.addEventListener('turbo:load', function() {
@@ -41,15 +62,11 @@
     
     checkbox.addEventListener('change', function() {
       if (this.checked) {
-        button.style.opacity = '1';
-        button.style.cursor = 'pointer';
-        button.style.pointerEvents = 'auto';
+        button.classList.remove('btn-disabled');
         button.textContent = 'Final Confirm ✓';
         button.disabled = false;
       } else {
-        button.style.opacity = '0.5';
-        button.style.cursor = 'not-allowed';
-        button.style.pointerEvents = 'none';
+        button.classList.add('btn-disabled');
         button.textContent = 'Please tick to confirm first';
         button.disabled = true;
       }
