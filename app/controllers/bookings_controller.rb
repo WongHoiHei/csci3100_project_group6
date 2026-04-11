@@ -47,7 +47,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.status = "pending"
+    @booking.status = "success"
     assign_booking_times_from_time_slot(@booking)
 
     if equipment_unavailable_for_selected_slot?(@booking)
