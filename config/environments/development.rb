@@ -39,16 +39,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
 
-  # Configure mail delivery in development using Gmail SMTP.
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "gmail.com",
-    user_name: "venueandequipmentbooking@gmail.com",
-    password: "rufkadzhmxctyfdr",
-    authentication: :plain,
-    enable_starttls_auto: true
+  # Configure mail delivery in development using the SendGrid Web API.
+  config.action_mailer.delivery_method = :sendgrid_actionmailer
+  config.action_mailer.sendgrid_actionmailer_settings = {
+    api_key: ENV["SENDGRID_API_KEY"],
+    raise_delivery_errors: true
   }
 
   # Make template changes take effect immediately.
