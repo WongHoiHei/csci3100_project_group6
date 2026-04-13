@@ -14,7 +14,6 @@ RSpec.describe BuildingsController, type: :controller do
       venues: double('venues', order: [])
     )
   end
-
   before do
     allow(controller).to receive(:require_login).and_return(true)
     allow(controller).to receive(:current_user).and_return(
