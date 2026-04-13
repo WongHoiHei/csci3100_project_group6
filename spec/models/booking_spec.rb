@@ -1,12 +1,5 @@
 require 'rails_helper'
 
-def test_time_slot
-  @test_time_slot ||= TimeSlot.first || TimeSlot.create!(
-    venue: test_venue,
-    start_time: "09:00",
-    end_time: "12:00"
-  )
-end
 
 def test_user
     @test_user ||= User.first || User.create!(
@@ -26,7 +19,10 @@ def test_venue
 end
 
 def test_time_slot
-  @test_time_slot ||= TimeSlot.first || TimeSlot.create!(start_time: "09:00", end_time: "10:00")
+  @test_time_slot ||= TimeSlot.first || TimeSlot.create!(
+    start_time: "09:00",
+    end_time: "12:00"
+  )
 end
 
 #test booking(model)
@@ -45,12 +41,6 @@ describe Booking, type: :model do
 
         context 'when there is a approved booking at conflict time slot' do
             before do
-                #create approved booking
-                test_time_slot = TimeSlot.create!(
-                    venue: test_venue,
-                    start_time: "09:00", 
-                    end_time: "12:00"
-                )
                 Booking.create!(
                     user: test_user, bookable: test_venue, time_slot: test_time_slot, start_time: Time.now + 1.day,
                     end_time: Time.now + 1.day + 3.hours, status: "approved"
@@ -66,12 +56,7 @@ describe Booking, type: :model do
 
         context 'when there is a pending booking in conflict time slot' do
             before do
-                #create pending booking
-               test_time_slot = TimeSlot.create!(
-                    venue: test_venue,
-                    start_time: "09:00", 
-                    end_time: "12:00"
-                )
+
                 Booking.create!(
                     user: test_user, bookable: test_venue, time_slot: test_time_slot, start_time: Time.now + 1.day,
                     end_time: Time.now + 1.day + 3.hours, status: "pending"
@@ -87,12 +72,6 @@ describe Booking, type: :model do
 
         context 'when there is a rejected booking in conflict time slot' do
             before do
-                #create rejected booking
-                test_time_slot = TimeSlot.create!(
-                    venue: test_venue,
-                    start_time: "09:00", 
-                    end_time: "12:00"
-                )
                 Booking.create!(
                     user: test_user, bookable: test_venue, time_slot: test_time_slot, start_time: Time.now + 1.day,
                     end_time: Time.now + 1.day + 3.hours, status: "rejected"
@@ -110,11 +89,6 @@ describe Booking, type: :model do
 
     describe '#approved!' do
         before do
-            test_time_slot = TimeSlot.create!(
-                venue: test_venue,
-                start_time: "09:00", 
-                end_time: "12:00"
-            )
             @booking = Booking.create!(
                     user: test_user, bookable: test_venue, time_slot: test_time_slot, start_time: Time.now + 1.day,
                     end_time: Time.now + 1.day + 3.hours, status: "pending"
@@ -130,11 +104,7 @@ describe Booking, type: :model do
 
     describe '#rejected!' do
         before do
-            test_time_slot = TimeSlot.create!(
-                venue: test_venue,
-                start_time: "09:00", 
-                end_time: "12:00"
-            )
+
             @booking = Booking.create!(
                     user: test_user, bookable: test_venue, time_slot: test_time_slot, start_time: Time.now + 1.day,
                     end_time: Time.now + 1.day + 3.hours, status: "pending"

@@ -73,13 +73,10 @@ end
 
 #Venue of University Sports Centre
 university_sports_entre = Location.find_by(name: "University Sports Centre")
-basketball_court = Venue.find_or_create_by!(name: "Basketball Court", location: university_sports_entre) do |v|
+football_court = Venue.find_or_create_by!(name: "Football Court", location: university_sports_entre) do |v|
   v.capacity = 100
 end
 
-badminton_court = Venue.find_or_create_by!(name: "Badminton Court", location: university_sports_entre) do |v|
-  v.capacity = 50
-end
 
 
 # Venue of University Library
