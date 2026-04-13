@@ -10,8 +10,7 @@ class BuildingsController < ApplicationController
     end
 
     @official_name = @location.name
-    @venues = @location.venues.includes(:time_slots).order(:name)
-
+    @venues = @location.venues.order(:name)
     @selected_date = begin
       params[:booking_date].present? ? Date.parse(params[:booking_date].to_s) : Date.current
     rescue ArgumentError

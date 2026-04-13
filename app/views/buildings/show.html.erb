@@ -31,7 +31,7 @@
         </summary>
 
         <div style="padding: 14px 18px;">
-          <% slots = venue.time_slots.order(:start_time) %>
+          <% slots =TimeSlot.all.order(:start_time) %>
           <% if slots.any? %>
             <div style="display: grid; gap: 8px;">
               <% slots.each do |slot| %>

@@ -1,9 +1,6 @@
 # This file should ensure the existence of records required to run the application in every environment.
 # Keep it idempotent so running `bin/rails db:seed` repeatedly is safe.
 
-# Departments / owners for equipment
-engineering = Tenant.find_or_create_by!(name: "Engineering Department")
-
 # Users
 admin = User.find_or_initialize_by(email: "admin@link.cuhk.edu.hk")
 admin.assign_attributes(name: "Admin", role: "admin")
@@ -22,20 +19,18 @@ admin.save!
 
 ].each do |item|
   equip = Equipment.find_or_create_by!(name: item[:name]) do |e|
-    e.tenant = engineering
     e.total_count = item[:total_count]
     e.available_count = item[:available_count]
   end
 end
 
 
-#Location （test)
-Location.find_or_create_by!(name: "Sir Run Run Shaw Hall", latitude: 22.420089834513423, longitude: 114.2072099614738)
+# Location.find_or_create_by!(name: "Sir Run Run Shaw Hall", latitude: 22.420089834513423, longitude: 114.2072099614738)
 Location.find_or_create_by!(name: "NA Gym", latitude: 22.42090899131629, longitude: 114.20930435032216)
 Location.find_or_create_by!(name: "UC Gym", latitude: 22.420960312540984, longitude: 114.20567848673426)
 Location.find_or_create_by!(name: "Lingnan Stadium", latitude: 22.41493476795026, longitude: 114.20880499854452)
 Location.find_or_create_by!(name: "University Sports Centre", latitude: 22.418781207707248, longitude: 114.21198997917793)
-Location.find_or_create_by!(name: "Shaw College lecture Theatre", latitude: 22.422362888628257, longitude: 114.2016351058803)
+#Location.find_or_create_by!(name: "Shaw College lecture Theatre", latitude: 22.422362888628257, longitude: 114.2016351058803)
 Location.find_or_create_by!(name: "University Library", latitude: 22.419483798848937, longitude: 114.20480400323868)
 Location.find_or_create_by!(name: "Chung Chi College Library", latitude: 22.41653566823139, longitude: 114.20866370201111)
 Location.find_or_create_by!(name: "New Asia College Library", latitude: 22.42143017542914, longitude: 114.20852690935135)
@@ -44,6 +39,7 @@ Location.find_or_create_by!(name: "Architecture Library", latitude: 22.416245562
 Location.find_or_create_by!(name: "Medical Library", latitude: 22.3831, longitude: 114.2054)
 Location.find_or_create_by!(name: "Law Library", latitude: 22.419483798848937, longitude: 114.2045545578003)
 Location.find_or_create_by!(name: "Learning Common (Wu Ho Man Yuen Building)", latitude: 22.41658525883494, longitude: 114.21148538589478)
+
 
 #Venue of UC Gym
 uc_gym = Location.find_by(name: "UC Gym")
@@ -54,6 +50,37 @@ end
 badminton_court = Venue.find_or_create_by!(name: "Badminton Court", location: uc_gym) do |v|
   v.capacity = 50
 end
+
+#Venue of NA Gym
+na_gym = Location.find_by(name: "NA Gym")
+basketball_court = Venue.find_or_create_by!(name: "Basketball Court", location: na_gym) do |v|
+  v.capacity = 100
+end
+
+badminton_court = Venue.find_or_create_by!(name: "Badminton Court", location: na_gym) do |v|
+  v.capacity = 50
+end
+
+#Venue of Lingnan Stadium
+lingnan_stadium = Location.find_by(name: "Lingnan Stadium")
+basketball_court = Venue.find_or_create_by!(name: "Basketball Court", location: lingnan_stadium) do |v|
+  v.capacity = 100
+end
+
+badminton_court = Venue.find_or_create_by!(name: "Badminton Court", location: lingnan_stadium) do |v|
+  v.capacity = 50
+end
+
+#Venue of University Sports Centre
+university_sports_entre = Location.find_by(name: "University Sports Centre")
+basketball_court = Venue.find_or_create_by!(name: "Basketball Court", location: university_sports_entre) do |v|
+  v.capacity = 100
+end
+
+badminton_court = Venue.find_or_create_by!(name: "Badminton Court", location: university_sports_entre) do |v|
+  v.capacity = 50
+end
+
 
 # Venue of University Library
 u_lib = Location.find_by(name: "University Library")
@@ -200,12 +227,10 @@ learning_common_venues = lc_venues.map do |room|
 end
 
 
-[basketball_court, badminton_court, *library_venues, *cc_library_venues, *na_library_venues, *arch_lib_venue, *med_library_venues, *law_library_venues, *learning_common_venues].each do |venue|
-  next if venue.time_slots.exists?
-
+if TimeSlot.count == 0
   ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"].each do |start|
     hour = start.split(":").first.to_i
-    venue.time_slots.create!(start_time: start, end_time: "#{hour + 1}:00")
+    TimeSlot.create!(start_time: start, end_time: "#{hour + 1}:00")
   end
 end
 
