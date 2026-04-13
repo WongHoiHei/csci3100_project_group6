@@ -148,6 +148,7 @@ GEM
     erubi (1.13.1)
     et-orbi (1.4.0)
       tzinfo
+    ffi (1.17.3-x64-mingw-ucrt)
     ffi (1.17.3-x86_64-linux-gnu)
     fugit (1.12.1)
       et-orbi (~> 1.4)
@@ -230,6 +231,8 @@ GEM
       net-protocol
     net-ssh (7.3.0)
     nio4r (2.7.5)
+    nokogiri (1.19.1-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.19.1-x86_64-linux-gnu)
       racc (~> 1.4)
     ostruct (0.6.3)
@@ -237,6 +240,7 @@ GEM
     parser (3.3.10.2)
       ast (~> 2.4.1)
       racc
+    pg (1.6.3-x64-mingw-ucrt)
     pg (1.6.3-x86_64-linux)
     pp (0.6.3)
       prettyprint
@@ -355,6 +359,7 @@ GEM
     ruby-vips (2.3.0)
       ffi (~> 1.12)
       logger
+    ruby_http_client (3.6.0)
     rubyzip (3.2.2)
     securerandom (0.4.1)
     selenium-webdriver (4.41.0)
@@ -363,6 +368,11 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
+    sendgrid-actionmailer (3.2.0)
+      mail (~> 2.7)
+      sendgrid-ruby (~> 6.4)
+    sendgrid-ruby (6.7.0)
+      ruby_http_client (~> 3.4)
     solid_cable (3.0.12)
       actioncable (>= 7.2)
       activejob (>= 7.2)
@@ -379,6 +389,7 @@ GEM
       fugit (~> 1.11)
       railties (>= 7.1)
       thor (>= 1.3.1)
+    sqlite3 (2.9.2-x64-mingw-ucrt)
     sqlite3 (2.9.2-x86_64-linux-gnu)
     sshkit (1.25.0)
       base64
@@ -393,6 +404,10 @@ GEM
     sys-uname (1.5.1)
       ffi (~> 1.1)
       memoist3 (~> 1.0.0)
+    sys-uname (1.5.1-universal-mingw32)
+      ffi (~> 1.1)
+      memoist3 (~> 1.0.0)
+      win32ole
     temple (0.10.4)
     thor (1.5.0)
     thruster (0.1.20)
@@ -405,6 +420,8 @@ GEM
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2026.1)
+      tzinfo (>= 1.0.0)
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.2.0)
@@ -420,11 +437,13 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    win32ole (1.9.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.7.5)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
@@ -449,6 +468,7 @@ DEPENDENCIES
   rspec-rails
   rubocop-rails-omakase
   selenium-webdriver
+  sendgrid-actionmailer
   solid_cable
   solid_cache
   solid_queue
