@@ -51,7 +51,6 @@ Given('a venue booking is ready for mailer testing') do
   @location = Location.create!(name: location_name, latitude: 22.3, longitude: 114.2)
   @venue = Venue.create!(name: 'Mailer Venue', location: @location)
   @time_slot = TimeSlot.create!(
-    venue: @venue,
     start_time: Time.zone.parse('09:00'),
     end_time: Time.zone.parse('11:00')
   )
@@ -64,15 +63,12 @@ Given('an equipment booking is ready for mailer testing') do
   location_name = "Mailer Equipment Hall #{SecureRandom.hex(3)}"
   @location = Location.create!(name: location_name, latitude: 22.3, longitude: 114.2)
   @venue = Venue.create!(name: 'Equipment Support Venue', location: @location)
-  @tenant = Tenant.create!(name: "Tenant #{SecureRandom.hex(3)}")
   @equipment = Equipment.create!(
     name: 'Mailer Projector',
-    tenant: @tenant,
     total_count: 3,
     available_count: 3
   )
   @time_slot = TimeSlot.create!(
-    venue: @venue,
     start_time: Time.zone.parse('09:00'),
     end_time: Time.zone.parse('11:00')
   )

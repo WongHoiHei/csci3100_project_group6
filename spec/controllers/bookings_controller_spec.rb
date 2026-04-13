@@ -36,4 +36,27 @@ RSpec.describe BookingsController,  type: :controller do
             }.to change(Booking, :count).by(1) #expect booked number +1
         end
     end
+
+    describe "GET confirmation" do
+        it "assigns booking context values" do
+            get :confirmation, params: {
+                bookable_id: venue.id,
+                bookable_type: "Venue",
+                time_slot_id: time_slot.id,
+                booking_date: "2026-04-14"
+            }
+
+            expect(response).to have_http_status(:success)
+            expect(assigns(:bookable_id)).to eq(venue.id.to_s)
+            expect(assigns(:bookable_type)).to eq("Venue")
+            expect(assigns(:time_slot)).to eq(time_slot)
+        end
+    end
+
+    describe "GET final" do
+        it "renders successfully" do
+            get :final
+            expect(response).to have_http_status(:success)
+        end
+    end
 end

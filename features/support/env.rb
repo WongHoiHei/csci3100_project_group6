@@ -4,6 +4,10 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+require 'simplecov'
+SimpleCov.start 'rails' do
+  enable_coverage :branch
+end
 
 require 'cucumber/rails'
 require 'capybara/cucumber'
