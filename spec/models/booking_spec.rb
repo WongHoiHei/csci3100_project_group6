@@ -1,10 +1,16 @@
 require 'rails_helper'
 
-
+def test_time_slot
+  @test_time_slot ||= TimeSlot.first || TimeSlot.create!(
+    venue: test_venue,
+    start_time: "09:00",
+    end_time: "12:00"
+  )
+end
 
 def test_user
     @test_user ||= User.first || User.create!(
-        email: "test@gmail.com", name: "test user", role:"student", password:"123456", password_confirmation:"123456"
+        email: "test@gmail.com", name: "test user", role:"student", password: "123456", password_confirmation: "123456"
     )
 end
 
