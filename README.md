@@ -1,4 +1,18 @@
 # csci3100_project_group6
+## Set up Guide
+
+Install gems and set up the database:
+
+```sh
+bundle install
+bin/rails db:create db:migrate db:seed
+```
+
+Run the app:
+
+```sh
+bin/rails server
+```
 
 
 ## Ownership of each implemented feature
@@ -6,7 +20,10 @@
 | -------- | -------- | -------- | -------- |
 | Backend: Database | Lam Tsz Yi | Ho Chi Tung | Schema design, CRUD, Seed Data|
 | External API: SendGrid | Ho Chi Tung |  | Integrated external API SendGrid to send the emails |
-| External API: Google Map |  |  | Integrated external API of Google Map |
-| Interactive Dashboard |  |  | interactive dashboard for reviewing the usage of facilities |
-| Searching Engine |  |  | performed with fuzzy search |
-| UI design and routing |  |  |  |
+| External API: Google Map | Huang Chun Kin |  | Integrated external API of Google Map |
+| Interactive Dashboard | Chee Chun Lok |  | interactive dashboard for reviewing the usage of facilities |
+| Searching Engine | Wong Hoi Hei |  | performed with fuzzy search |
+| UI design and routing | Wong Hoi Hei |  | Basic operation |
+
+
+## Screenshot of the SimpleCov report:
