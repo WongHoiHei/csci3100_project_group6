@@ -27,3 +27,5 @@ bin/rails server
 
 
 ## Screenshot of the SimpleCov report:
+![alt text](image.png)
+![alt text](image-1.png)

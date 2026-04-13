@@ -898,7 +898,7 @@
         "branches": {}
       }
     },
-    "timestamp": 1776099256
+    "timestamp": 1776099610
   },
   "Cucumber Features": {
     "coverage": {
@@ -977,15 +977,15 @@
           1,
           null,
           1,
-          115,
+          112,
           null,
           null,
           1,
-          75,
+          73,
           null,
           null,
           1,
-          37,
+          36,
           0,
           0,
           null,
@@ -994,7 +994,7 @@
         ],
         "branches": {
           "[:unless, 0, 19, 4, 22, 7]": {
-            "[:else, 1, 19, 4, 22, 7]": 37,
+            "[:else, 1, 19, 4, 22, 7]": 36,
             "[:then, 2, 20, 6, 21, 28]": 0
           }
         }
@@ -1601,42 +1601,6 @@
         ],
         "branches": {}
       },
-      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/dashboards_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ],
-        "branches": {}
-      },
-      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/services/dashboard_stats_service.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          3,
-          1,
-          null,
-          null
-        ],
-        "branches": {}
-      },
       "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/passwords_controller.rb": {
         "lines": [
           1,
@@ -1696,6 +1660,21 @@
           null,
           null,
           null
+        ],
+        "branches": {}
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/dashboards_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
         ],
         "branches": {}
       },
@@ -1789,8 +1768,31 @@
           0
         ],
         "branches": {}
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/services/dashboard_stats_service.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {}
       }
     },
-    "timestamp": 1776099308
+    "timestamp": 1776099639
   }
 }

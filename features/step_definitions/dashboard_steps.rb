@@ -42,15 +42,8 @@ Given("an equipment exists named {string} for tenant {string}") do |equip_name, 
 end
 
 Given("a booking exists for {string} with status {string}") do |resource_name, status|
-<<<<<<< HEAD
-  resource = Venue.find_by(name: resource_name) || Equipment.find_or_create_by!(name: resource_name) do |equipment|
-    equipment.total_count = 1
-    equipment.available_count = 1
-  end
-=======
   @resources ||= {}
   resource = @resources[resource_name] || Venue.find_by(name: resource_name) || Equipment.find_by(name: resource_name)
->>>>>>> main
   
   raise "Could not find resource: #{resource_name}" if resource.nil?
 
