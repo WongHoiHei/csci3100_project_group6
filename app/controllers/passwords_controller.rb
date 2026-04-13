@@ -14,11 +14,11 @@ class PasswordsController < ApplicationController
         begin
           UserMailer.password_changed(@user, params[:password]).deliver_now
           flash[:notice] = 'Password changed successfully! A confirmation email has been sent.'
-        rescue Net::SMTPAuthenticationError, Net::SMTPServerBusy, Net::SMTPUnknownError, SocketError => e
+        rescue StandardError => e
           Rails.logger.error("Password changed, but confirmation email failed for user #{
             @user.id
           }: #{e.class} - #{e.message}")
-          flash[:alert] = 'Password changed successfully, but confirmation email failed to send. Please check SMTP settings.'
+          flash[:alert] = 'Password changed successfully, but confirmation email failed to send. Please check email delivery settings.'
         end
         redirect_to main_path
       else
