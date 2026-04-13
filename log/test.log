@@ -7132,3 +7132,420 @@ Processing by DashboardsController#index as HTML
   Rendered layout layouts/application.html.haml (Duration: 24.6ms | GC: 0.0ms)
 Completed 200 OK in 30ms (Views: 25.5ms | ActiveRecord: 0.5ms (5 queries, 0 cached) | GC: 0.0ms)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "newasiacollegegymnasium"}
+  Rendering buildings/show.html.erb
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered buildings/show.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "sirrunrunshawhall"}
+  Rendering buildings/show.html.erb
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered buildings/show.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "newasiacollegegymnasium"}
+  Rendering buildings/show.html.erb
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered buildings/show.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by BuildingsController#show as HTML
+  Parameters: {"slug" => "invalid-building"}
+Redirected to http://test.host/map
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mBooking Load (1.8ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" ORDER BY "locations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (2.7ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.661975"], ["latitude", 0.0], ["longitude", 0.0], ["name", "Test Location"], ["updated_at", "2026-04-13 09:19:50.661975"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (1.5ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.693347"], ["location_id", 1], ["name", "test venue"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.693347"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBooking Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."bookable_id" = ? AND "bookings"."bookable_type" = ? AND "bookings"."status" = ? AND (start_time <? AND end_time >?) LIMIT ?[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["status", "approved"], [nil, "2026-04-14 12:19:50.696996"], [nil, "2026-04-14 09:19:50.696893"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mBooking Load (0.0ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" ORDER BY "locations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.3ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.710367"], ["latitude", 0.0], ["longitude", 0.0], ["name", "Test Location"], ["updated_at", "2026-04-13 09:19:50.710367"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.713852"], ["location_id", 1], ["name", "test venue"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.713852"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTimeSlot Create (0.4ms)[0m  [1m[32mINSERT INTO "time_slots" ("created_at", "end_time", "start_time", "updated_at", "venue_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.718591"], ["end_time", "2000-01-01 12:00:00"], ["start_time", "2000-01-01 09:00:00"], ["updated_at", "2026-04-13 09:19:50.718591"], ["venue_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.724077"], ["email", "[FILTERED]"], ["name", "test user"], ["password_digest", "[FILTERED]"], ["role", "student"], ["updated_at", "2026-04-13 09:19:50.724077"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.726145"], ["end_time", "2026-04-14 12:19:50.725048"], ["start_time", "2026-04-14 09:19:50.725003"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.726145"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBooking Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."bookable_id" = ? AND "bookings"."bookable_type" = ? AND "bookings"."status" = ? AND (start_time <? AND end_time >?) LIMIT ?[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["status", "approved"], [nil, "2026-04-14 12:19:50.727348"], [nil, "2026-04-14 09:19:50.727312"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mBooking Load (0.1ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" ORDER BY "locations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.3ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.731108"], ["latitude", 0.0], ["longitude", 0.0], ["name", "Test Location"], ["updated_at", "2026-04-13 09:19:50.731108"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.732339"], ["location_id", 1], ["name", "test venue"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.732339"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTimeSlot Create (0.2ms)[0m  [1m[32mINSERT INTO "time_slots" ("created_at", "end_time", "start_time", "updated_at", "venue_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.733558"], ["end_time", "2000-01-01 12:00:00"], ["start_time", "2000-01-01 09:00:00"], ["updated_at", "2026-04-13 09:19:50.733558"], ["venue_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.737209"], ["email", "[FILTERED]"], ["name", "test user"], ["password_digest", "[FILTERED]"], ["role", "student"], ["updated_at", "2026-04-13 09:19:50.737209"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.738576"], ["end_time", "2026-04-14 12:19:50.738123"], ["start_time", "2026-04-14 09:19:50.738088"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.738576"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBooking Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."bookable_id" = ? AND "bookings"."bookable_type" = ? AND "bookings"."status" = ? AND (start_time <? AND end_time >?) LIMIT ?[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["status", "approved"], [nil, "2026-04-14 12:19:50.739795"], [nil, "2026-04-14 09:19:50.739760"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mBooking Load (0.1ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings"[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" ORDER BY "locations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.3ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.743230"], ["latitude", 0.0], ["longitude", 0.0], ["name", "Test Location"], ["updated_at", "2026-04-13 09:19:50.743230"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.744433"], ["location_id", 1], ["name", "test venue"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.744433"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTimeSlot Create (0.3ms)[0m  [1m[32mINSERT INTO "time_slots" ("created_at", "end_time", "start_time", "updated_at", "venue_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.745647"], ["end_time", "2000-01-01 12:00:00"], ["start_time", "2000-01-01 09:00:00"], ["updated_at", "2026-04-13 09:19:50.745647"], ["venue_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.749372"], ["email", "[FILTERED]"], ["name", "test user"], ["password_digest", "[FILTERED]"], ["role", "student"], ["updated_at", "2026-04-13 09:19:50.749372"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.751177"], ["end_time", "2026-04-14 12:19:50.750286"], ["start_time", "2026-04-14 09:19:50.750249"], ["status", "rejected"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.751177"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBooking Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "bookings" WHERE "bookings"."bookable_id" = ? AND "bookings"."bookable_type" = ? AND "bookings"."status" = ? AND (start_time <? AND end_time >?) LIMIT ?[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["status", "approved"], [nil, "2026-04-14 12:19:50.752398"], [nil, "2026-04-14 09:19:50.752363"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" ORDER BY "locations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.3ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.754956"], ["latitude", 0.0], ["longitude", 0.0], ["name", "Test Location"], ["updated_at", "2026-04-13 09:19:50.754956"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.756179"], ["location_id", 1], ["name", "test venue"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.756179"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTimeSlot Create (0.3ms)[0m  [1m[32mINSERT INTO "time_slots" ("created_at", "end_time", "start_time", "updated_at", "venue_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.757418"], ["end_time", "2000-01-01 12:00:00"], ["start_time", "2000-01-01 09:00:00"], ["updated_at", "2026-04-13 09:19:50.757418"], ["venue_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.762270"], ["email", "[FILTERED]"], ["name", "test user"], ["password_digest", "[FILTERED]"], ["role", "student"], ["updated_at", "2026-04-13 09:19:50.762270"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.763580"], ["end_time", "2026-04-14 12:19:50.763170"], ["start_time", "2026-04-14 09:19:50.763135"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.763580"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Update (0.3ms)[0m  [1m[33mUPDATE "bookings" SET "status" = ?, "updated_at" = ? WHERE "bookings"."id" = ?[0m  [["status", "approved"], ["updated_at", "2026-04-13 09:19:50.765063"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" ORDER BY "locations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.2ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.768176"], ["latitude", 0.0], ["longitude", 0.0], ["name", "Test Location"], ["updated_at", "2026-04-13 09:19:50.768176"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.769333"], ["location_id", 1], ["name", "test venue"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.769333"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTimeSlot Create (0.3ms)[0m  [1m[32mINSERT INTO "time_slots" ("created_at", "end_time", "start_time", "updated_at", "venue_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.771032"], ["end_time", "2000-01-01 12:00:00"], ["start_time", "2000-01-01 09:00:00"], ["updated_at", "2026-04-13 09:19:50.771032"], ["venue_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.774410"], ["email", "[FILTERED]"], ["name", "test user"], ["password_digest", "[FILTERED]"], ["role", "student"], ["updated_at", "2026-04-13 09:19:50.774410"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.2ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.775721"], ["end_time", "2026-04-14 12:19:50.775311"], ["start_time", "2026-04-14 09:19:50.775275"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.775721"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Update (0.2ms)[0m  [1m[33mUPDATE "bookings" SET "status" = ?, "updated_at" = ? WHERE "bookings"."id" = ?[0m  [["status", "rejected"], ["updated_at", "2026-04-13 09:19:50.777019"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.784878"], ["name", "Engineering Department"], ["updated_at", "2026-04-13 09:19:50.784878"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.4ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.786686"], ["latitude", nil], ["longitude", nil], ["name", "Main Campus"], ["updated_at", "2026-04-13 09:19:50.786686"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.4ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.788409"], ["location_id", 1], ["name", "SHB301"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.788409"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.4ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "number_of_past_booking", "tenant_id", "total_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-13 09:19:50.798166"], ["description", nil], ["name", "Projector"], ["number_of_past_booking", 0], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-13 09:19:50.798166"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.802274"], ["email", "[FILTERED]"], ["name", "Test Admin"], ["password_digest", "[FILTERED]"], ["role", nil], ["updated_at", "2026-04-13 09:19:50.802274"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTimeSlot Create (0.4ms)[0m  [1m[32mINSERT INTO "time_slots" ("created_at", "end_time", "start_time", "updated_at", "venue_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.804011"], ["end_time", "2000-01-01 11:19:50.803566"], ["start_time", "2000-01-01 09:19:50.803547"], ["updated_at", "2026-04-13 09:19:50.804011"], ["venue_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2026-04-13 09:19:50 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"email" => "[FILTERED]", "password" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://www.example.com/main
+Completed 302 Found in 6ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/main" for 127.0.0.1 at 2026-04-13 09:19:50 +0000
+Processing by PagesController#main as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering pages/main.html.haml within layouts/application
+  Rendered pages/main.html.haml within layouts/application (Duration: 9.3ms | GC: 0.0ms)
+  Rendered shared/_header.html.haml (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 48.3ms | GC: 0.0ms)
+Completed 200 OK in 55ms (Views: 49.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.6ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.883430"], ["end_time", "2026-04-13 10:19:50.882611"], ["start_time", "2026-04-13 09:19:50.882595"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.883430"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.886147"], ["end_time", "2026-04-13 10:19:50.885602"], ["start_time", "2026-04-13 09:19:50.885592"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.886147"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.888303"], ["end_time", "2026-04-13 10:19:50.887816"], ["start_time", "2026-04-13 09:19:50.887807"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.888303"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.890309"], ["end_time", "2026-04-13 10:19:50.889895"], ["start_time", "2026-04-13 09:19:50.889887"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.890309"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.891900"], ["end_time", "2026-04-13 10:19:50.891542"], ["start_time", "2026-04-13 09:19:50.891536"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.891900"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.894199"], ["end_time", "2026-04-13 10:19:50.893709"], ["start_time", "2026-04-13 09:19:50.893701"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.894199"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.896196"], ["end_time", "2026-04-13 10:19:50.895746"], ["start_time", "2026-04-13 09:19:50.895739"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.896196"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.898175"], ["end_time", "2026-04-13 10:19:50.897688"], ["start_time", "2026-04-13 09:19:50.897681"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.898175"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.5ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.900176"], ["end_time", "2026-04-13 10:19:50.899745"], ["start_time", "2026-04-13 09:19:50.899737"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.900176"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.902195"], ["end_time", "2026-04-13 10:19:50.901742"], ["start_time", "2026-04-13 09:19:50.901735"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.902195"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.904209"], ["end_time", "2026-04-13 10:19:50.903669"], ["start_time", "2026-04-13 09:19:50.903663"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.904209"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.906226"], ["end_time", "2026-04-13 10:19:50.905797"], ["start_time", "2026-04-13 09:19:50.905791"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.906226"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.907950"], ["end_time", "2026-04-13 10:19:50.907598"], ["start_time", "2026-04-13 09:19:50.907592"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.907950"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.910090"], ["end_time", "2026-04-13 10:19:50.909599"], ["start_time", "2026-04-13 09:19:50.909593"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.910090"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.911906"], ["end_time", "2026-04-13 10:19:50.911505"], ["start_time", "2026-04-13 09:19:50.911499"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.911906"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.914379"], ["end_time", "2026-04-13 10:19:50.913909"], ["start_time", "2026-04-13 09:19:50.913903"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.914379"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.916315"], ["end_time", "2026-04-13 10:19:50.915882"], ["start_time", "2026-04-13 09:19:50.915876"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.916315"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (1.1ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.918445"], ["end_time", "2026-04-13 10:19:50.917914"], ["start_time", "2026-04-13 09:19:50.917906"], ["status", "rejected"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.918445"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dashboards.json" for 127.0.0.1 at 2026-04-13 09:19:50 +0000
+Processing by DashboardsController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBooking Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "bookings"."bookable_id" AS "bookings_bookable_id" FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."status" != ? GROUP BY "bookings"."bookable_id"[0m  [["bookable_type", "Venue"], ["status", "rejected"]]
+  [1m[36mBooking Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "bookings"."bookable_id" AS "bookings_bookable_id" FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."status" != ? GROUP BY "bookings"."bookable_id"[0m  [["bookable_type", "Equipment"], ["status", "rejected"]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."name" ASC[0m
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" ORDER BY "equipment"."name" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.931241"], ["name", "General Department"], ["updated_at", "2026-04-13 09:19:50.931241"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.4ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.932631"], ["latitude", nil], ["longitude", nil], ["name", "Main Campus"], ["updated_at", "2026-04-13 09:19:50.932631"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.936674"], ["email", "[FILTERED]"], ["name", "Test User"], ["password_digest", "[FILTERED]"], ["role", nil], ["updated_at", "2026-04-13 09:19:50.936674"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.4ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.938143"], ["location_id", 1], ["name", "Lab A"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.938143"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.939691"], ["location_id", 1], ["name", "Lab B"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.939691"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.3ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "number_of_past_booking", "tenant_id", "total_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-13 09:19:50.941188"], ["description", nil], ["name", "Oscilloscope"], ["number_of_past_booking", 0], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-13 09:19:50.941188"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTimeSlot Create (0.3ms)[0m  [1m[32mINSERT INTO "time_slots" ("created_at", "end_time", "start_time", "updated_at", "venue_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.942712"], ["end_time", "2000-01-01 11:19:50.942400"], ["start_time", "2000-01-01 09:19:50.942390"], ["updated_at", "2026-04-13 09:19:50.942712"], ["venue_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.944640"], ["end_time", "2026-04-13 10:19:50.944226"], ["start_time", "2026-04-13 09:19:50.944218"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.944640"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.946411"], ["end_time", "2026-04-13 10:19:50.945995"], ["start_time", "2026-04-13 09:19:50.945988"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.946411"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.948113"], ["end_time", "2026-04-13 10:19:50.947675"], ["start_time", "2026-04-13 09:19:50.947669"], ["status", "rejected"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.948113"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.949720"], ["end_time", "2026-04-13 10:19:50.949380"], ["start_time", "2026-04-13 09:19:50.949373"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.949720"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBooking Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "bookings"."bookable_id" AS "bookings_bookable_id" FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."status" != ? GROUP BY "bookings"."bookable_id"[0m  [["bookable_type", "Venue"], ["status", "rejected"]]
+  [1m[36mBooking Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "bookings"."bookable_id" AS "bookings_bookable_id" FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."status" != ? GROUP BY "bookings"."bookable_id"[0m  [["bookable_type", "Equipment"], ["status", "rejected"]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."name" ASC[0m
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" ORDER BY "equipment"."name" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.3ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.954611"], ["name", "General Department"], ["updated_at", "2026-04-13 09:19:50.954611"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.3ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.955680"], ["latitude", nil], ["longitude", nil], ["name", "Main Campus"], ["updated_at", "2026-04-13 09:19:50.955680"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.958587"], ["email", "[FILTERED]"], ["name", "Test User"], ["password_digest", "[FILTERED]"], ["role", nil], ["updated_at", "2026-04-13 09:19:50.958587"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.7ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.959801"], ["location_id", 1], ["name", "Lab A"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.959801"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (1.1ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.961534"], ["location_id", 1], ["name", "Lab B"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.961534"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.3ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "number_of_past_booking", "tenant_id", "total_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-13 09:19:50.963726"], ["description", nil], ["name", "Oscilloscope"], ["number_of_past_booking", 0], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-13 09:19:50.963726"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTimeSlot Create (0.3ms)[0m  [1m[32mINSERT INTO "time_slots" ("created_at", "end_time", "start_time", "updated_at", "venue_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.965097"], ["end_time", "2000-01-01 11:19:50.964794"], ["start_time", "2000-01-01 09:19:50.964787"], ["updated_at", "2026-04-13 09:19:50.965097"], ["venue_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.4ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.966501"], ["end_time", "2026-04-13 10:19:50.966156"], ["start_time", "2026-04-13 09:19:50.966149"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.966501"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.2ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.968113"], ["end_time", "2026-04-13 10:19:50.967799"], ["start_time", "2026-04-13 09:19:50.967793"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.968113"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.2ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.969304"], ["end_time", "2026-04-13 10:19:50.969005"], ["start_time", "2026-04-13 09:19:50.968999"], ["status", "rejected"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.969304"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.2ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.970505"], ["end_time", "2026-04-13 10:19:50.970188"], ["start_time", "2026-04-13 09:19:50.970182"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.970505"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBooking Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "bookings"."bookable_id" AS "bookings_bookable_id" FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."status" != ? GROUP BY "bookings"."bookable_id"[0m  [["bookable_type", "Venue"], ["status", "rejected"]]
+  [1m[36mBooking Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "bookings"."bookable_id" AS "bookings_bookable_id" FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."status" != ? GROUP BY "bookings"."bookable_id"[0m  [["bookable_type", "Equipment"], ["status", "rejected"]]
+  [1m[36mVenue Load (0.0ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."name" ASC[0m
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" ORDER BY "equipment"."name" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.974079"], ["name", "General Department"], ["updated_at", "2026-04-13 09:19:50.974079"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.2ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.975032"], ["latitude", nil], ["longitude", nil], ["name", "Main Campus"], ["updated_at", "2026-04-13 09:19:50.975032"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.977645"], ["email", "[FILTERED]"], ["name", "Test User"], ["password_digest", "[FILTERED]"], ["role", nil], ["updated_at", "2026-04-13 09:19:50.977645"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.978624"], ["location_id", 1], ["name", "Lab A"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.978624"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.979790"], ["location_id", 1], ["name", "Lab B"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.979790"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.2ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "number_of_past_booking", "tenant_id", "total_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-13 09:19:50.981483"], ["description", nil], ["name", "Oscilloscope"], ["number_of_past_booking", 0], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-13 09:19:50.981483"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTimeSlot Create (0.2ms)[0m  [1m[32mINSERT INTO "time_slots" ("created_at", "end_time", "start_time", "updated_at", "venue_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.982731"], ["end_time", "2000-01-01 11:19:50.982484"], ["start_time", "2000-01-01 09:19:50.982478"], ["updated_at", "2026-04-13 09:19:50.982731"], ["venue_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.2ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.984071"], ["end_time", "2026-04-13 10:19:50.983701"], ["start_time", "2026-04-13 09:19:50.983694"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.984071"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.985358"], ["end_time", "2026-04-13 10:19:50.984985"], ["start_time", "2026-04-13 09:19:50.984978"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.985358"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.2ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:50.986743"], ["end_time", "2026-04-13 10:19:50.986372"], ["start_time", "2026-04-13 09:19:50.986366"], ["status", "rejected"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.986743"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.3ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:50.988384"], ["end_time", "2026-04-13 10:19:50.987859"], ["start_time", "2026-04-13 09:19:50.987853"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:50.988384"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBooking Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "bookings"."bookable_id" AS "bookings_bookable_id" FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."status" != ? GROUP BY "bookings"."bookable_id"[0m  [["bookable_type", "Venue"], ["status", "rejected"]]
+  [1m[36mBooking Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "bookings"."bookable_id" AS "bookings_bookable_id" FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."status" != ? GROUP BY "bookings"."bookable_id"[0m  [["bookable_type", "Equipment"], ["status", "rejected"]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."name" ASC[0m
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" ORDER BY "equipment"."name" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTenant Create (0.2ms)[0m  [1m[32mINSERT INTO "tenants" ("created_at", "name", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.992794"], ["name", "General Department"], ["updated_at", "2026-04-13 09:19:50.992794"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.2ms)[0m  [1m[32mINSERT INTO "locations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.993814"], ["latitude", nil], ["longitude", nil], ["name", "Main Campus"], ["updated_at", "2026-04-13 09:19:50.993814"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "role", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:50.996452"], ["email", "[FILTERED]"], ["name", "Test User"], ["password_digest", "[FILTERED]"], ["role", nil], ["updated_at", "2026-04-13 09:19:50.996452"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.2ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.997396"], ["location_id", 1], ["name", "Lab A"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.997396"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVenue Create (0.4ms)[0m  [1m[32mINSERT INTO "venues" ("capacity", "created_at", "location_id", "name", "number_of_past_booking", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["capacity", nil], ["created_at", "2026-04-13 09:19:50.998551"], ["location_id", 1], ["name", "Lab B"], ["number_of_past_booking", 0], ["updated_at", "2026-04-13 09:19:50.998551"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEquipment Create (0.2ms)[0m  [1m[32mINSERT INTO "equipment" ("available_count", "created_at", "description", "name", "number_of_past_booking", "tenant_id", "total_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["available_count", nil], ["created_at", "2026-04-13 09:19:51.000381"], ["description", nil], ["name", "Oscilloscope"], ["number_of_past_booking", 0], ["tenant_id", 1], ["total_count", nil], ["updated_at", "2026-04-13 09:19:51.000381"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTimeSlot Create (0.2ms)[0m  [1m[32mINSERT INTO "time_slots" ("created_at", "end_time", "start_time", "updated_at", "venue_id") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-04-13 09:19:51.001598"], ["end_time", "2000-01-01 11:19:51.001348"], ["start_time", "2000-01-01 09:19:51.001336"], ["updated_at", "2026-04-13 09:19:51.001598"], ["venue_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.2ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:51.002870"], ["end_time", "2026-04-13 10:19:51.002546"], ["start_time", "2026-04-13 09:19:51.002539"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:51.002870"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.2ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:51.004111"], ["end_time", "2026-04-13 10:19:51.003774"], ["start_time", "2026-04-13 09:19:51.003768"], ["status", "approved"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:51.004111"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.2ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Venue"], ["created_at", "2026-04-13 09:19:51.005391"], ["end_time", "2026-04-13 10:19:51.005081"], ["start_time", "2026-04-13 09:19:51.005075"], ["status", "rejected"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:51.005391"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBooking Create (0.2ms)[0m  [1m[32mINSERT INTO "bookings" ("bookable_id", "bookable_type", "created_at", "end_time", "start_time", "status", "time_slot_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["bookable_id", 1], ["bookable_type", "Equipment"], ["created_at", "2026-04-13 09:19:51.006606"], ["end_time", "2026-04-13 10:19:51.006297"], ["start_time", "2026-04-13 09:19:51.006290"], ["status", "pending"], ["time_slot_id", 1], ["updated_at", "2026-04-13 09:19:51.006606"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBooking Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "bookings"."bookable_id" AS "bookings_bookable_id" FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."status" != ? GROUP BY "bookings"."bookable_id"[0m  [["bookable_type", "Venue"], ["status", "rejected"]]
+  [1m[36mBooking Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "bookings"."bookable_id" AS "bookings_bookable_id" FROM "bookings" WHERE "bookings"."bookable_type" = ? AND "bookings"."status" != ? GROUP BY "bookings"."bookable_id"[0m  [["bookable_type", "Equipment"], ["status", "rejected"]]
+  [1m[36mVenue Load (0.0ms)[0m  [1m[34mSELECT "venues".* FROM "venues" ORDER BY "venues"."name" ASC[0m
+  [1m[36mEquipment Load (0.1ms)[0m  [1m[34mSELECT "equipment".* FROM "equipment" ORDER BY "equipment"."name" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
