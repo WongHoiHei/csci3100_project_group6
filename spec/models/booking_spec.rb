@@ -19,6 +19,10 @@ def test_venue
     )
 end
 
+def test_time_slot
+  @test_time_slot ||= TimeSlot.first || TimeSlot.create!(start_time: "09:00", end_time: "10:00")
+end
+
 #test booking(model)
 describe Booking, type: :model do 
     describe '.new_conflict?' do
