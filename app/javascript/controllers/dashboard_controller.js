@@ -9,14 +9,12 @@ export default class extends Controller {
   rawData = { venues: [], equipments: [] }
 
   connect() {
-    // 1. Inject Tailwind as soon as we arrive
     this.injectTailwind()
     this.update()
   }
 
   disconnect() {
     this.removeTailwind()
-    // Destroy charts to prevent memory bloat
     Object.values(this.charts).forEach(chart => chart.destroy())
   }
 
@@ -33,15 +31,13 @@ export default class extends Controller {
     const script = document.getElementById("tailwind-cdn")
     if (script) script.remove()
 
-    // Find and remove the style blocks Tailwind creates
     document.querySelectorAll('style').forEach(style => {
-      // Tailwind CDN usually leaves markers like --tw- or identifies as 'tailwind'
       if (style.textContent.includes('--tw-') || style.textContent.includes('tailwind')) {
         style.remove()
       }
     })
 
-    // Delete the tailwind object from the window
+
     if (window.tailwind) delete window.tailwind
   }
 
@@ -49,7 +45,6 @@ export default class extends Controller {
     const response = await fetch(`${this.urlValue}.json`)
     this.rawData = await response.json()
     
-    // Once data is fetched, apply whatever filters (search/sort) are currently set
     this.applyFilters()
   }
 
