@@ -20,10 +20,10 @@ bin/rails server
 | -------- | -------- | -------- | -------- |
 | Backend: Database | Lam Tsz Yi | Ho Chi Tung | Schema design, CRUD, Seed Data|
 | External API: SendGrid | Ho Chi Tung |  | Integrated external API SendGrid to send the emails |
-| External API: Google Map | Huang Chun Kin |  | Integrated external API of Google Map |
-| Interactive Dashboard | Chee Chun Lok |  | interactive dashboard for reviewing the usage of facilities |
-| Searching Engine | Wong Hoi Hei |  | performed with fuzzy search |
-| UI design and routing | Wong Hoi Hei |  | Basic operation |
+| External API: Google Map | Huang Chun Kin | Chee Chun Lok Wong Hoi Hei | Integrated external API of Google Map |
+| Interactive Dashboard | Chee Chun Lok | Wong Hoi Hei Huang Chun Kin | interactive dashboard for reviewing the usage of facilities |
+| Searching Engine | Wong Hoi Hei | Chee Chun Lok Huang Chun Kin | performed with Autocomplete |
+| UI design and routing | Wong Hoi Hei | Chee Chun Lok Huang Chun Kin  | Basic operation |
 
 
 ## Screenshot of the SimpleCov report:
