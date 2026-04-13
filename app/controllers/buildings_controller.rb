@@ -1,4 +1,5 @@
 class BuildingsController < ApplicationController
+  layout false
   def show
     slug = params[:slug].to_s
     @location = Location.all.find { |loc| slugify_location_name(loc.name) == slug }
