@@ -47,11 +47,11 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -370,11 +370,11 @@
           null,
           null,
           1,
-          10,
+          12,
           null,
           null,
           1,
-          7,
+          9,
           1,
           1,
           null,
@@ -383,7 +383,7 @@
         ],
         "branches": {
           "[:unless, 0, 19, 4, 22, 7]": {
-            "[:else, 1, 19, 4, 22, 7]": 6,
+            "[:else, 1, 19, 4, 22, 7]": 8,
             "[:then, 2, 20, 6, 21, 28]": 1
           }
         }
@@ -404,20 +404,20 @@
           3,
           3,
           null,
-          0,
+          3,
           null,
           0,
           null,
           null,
           null,
-          0,
-          0,
+          3,
+          3,
           null,
           null,
           null,
           null,
           null,
-          0,
+          3,
           null,
           null,
           1,
@@ -433,9 +433,141 @@
           },
           "[:if, 3, 15, 6, 15, 92]": {
             "[:then, 4, 15, 39, 15, 77]": 0,
-            "[:else, 5, 15, 80, 15, 92]": 0
+            "[:else, 5, 15, 80, 15, 92]": 3
           }
         }
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/passwords_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          4,
+          null,
+          4,
+          3,
+          null,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          2,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 12, 4, 31, 7]": {
+            "[:then, 1, 13, 6, 27, 9]": 3,
+            "[:else, 2, 29, 6, 30, 18]": 1
+          },
+          "[:if, 3, 13, 6, 27, 9]": {
+            "[:then, 4, 14, 8, 23, 29]": 2,
+            "[:else, 5, 25, 8, 26, 20]": 1
+          }
+        }
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/registrations_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 12, 4, 18, 7]": {
+            "[:then, 1, 13, 6, 14, 28]": 1,
+            "[:else, 2, 16, 6, 17, 48]": 1
+          }
+        }
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/search_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          null,
+          2,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 6, 4, 28, 7]": {
+            "[:then, 1, 7, 6, 8, 80]": 1,
+            "[:else, 2, 26, 6, 27, 25]": 1
+          }
+        }
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/jobs/application_job.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "branches": {}
       },
       "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/mailers/booking_mailer.rb": {
         "lines": [
@@ -543,7 +675,7 @@
           null,
           null,
           1,
-          0,
+          3,
           null,
           null,
           null,
@@ -556,7 +688,7 @@
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
@@ -565,15 +697,15 @@
           null,
           null,
           1,
-          0,
+          3,
           null,
           null,
           1,
-          0,
+          3,
           null,
           null,
           1,
-          0,
+          3,
           null,
           null,
           null,
@@ -619,8 +751,8 @@
           1,
           null,
           1,
-          45,
-          23,
+          61,
+          31,
           1,
           null
         ],
@@ -752,110 +884,6 @@
           }
         }
       },
-      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/passwords_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/registrations_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {}
-      },
-      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/search_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {}
-      },
       "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/welcome_controller.rb": {
         "lines": [
           0,
@@ -868,21 +896,9 @@
           0
         ],
         "branches": {}
-      },
-      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {}
       }
     },
-    "timestamp": 1776097460
+    "timestamp": 1776099256
   },
   "Cucumber Features": {
     "coverage": {
@@ -961,15 +977,15 @@
           1,
           null,
           1,
-          98,
+          115,
           null,
           null,
           1,
-          66,
+          75,
           null,
           null,
           1,
-          29,
+          37,
           0,
           0,
           null,
@@ -978,7 +994,7 @@
         ],
         "branches": {
           "[:unless, 0, 19, 4, 22, 7]": {
-            "[:else, 1, 19, 4, 22, 7]": 29,
+            "[:else, 1, 19, 4, 22, 7]": 37,
             "[:then, 2, 20, 6, 21, 28]": 0
           }
         }
@@ -1130,7 +1146,7 @@
           null,
           null,
           1,
-          1,
+          5,
           null,
           null,
           null,
@@ -1246,64 +1262,24 @@
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
+          5,
+          5,
+          5,
+          5,
           null,
-          1,
+          5,
           0,
-          1,
+          5,
           0,
-          1,
-          1,
-          1,
-          1,
+          5,
+          5,
+          5,
+          5,
           null,
-          1,
-          1,
+          5,
+          3,
           null,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
+          2,
           null,
           null,
           0,
@@ -1311,6 +1287,46 @@
           null,
           null,
           1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          null,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
           null,
           1,
           1,
@@ -1323,77 +1339,77 @@
           null,
           null,
           1,
-          1,
+          5,
           null,
           null,
           1,
-          1,
+          5,
           null,
-          1,
-          1,
+          5,
+          5,
           null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
+          5,
+          5,
+          5,
+          5,
           null,
           0,
           0,
           null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          0,
           null,
           null,
           1,
-          0,
+          5,
+          null,
+          2,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
           null,
           null,
           null,
           null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
+          2,
           null,
           null,
           1,
           0,
-          0,
+          null,
+          null,
+          null,
+          null,
           null,
           0,
           0,
-          null,
-          null,
-          1,
           0,
+          0,
+          0,
+          0,
+          null,
+          null,
           null,
           0,
           null,
           null,
           1,
           2,
+          2,
+          null,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          0,
+          null,
+          null,
+          1,
+          10,
           null,
           null,
           null,
@@ -1404,9 +1420,9 @@
           null,
           null,
           1,
-          1,
+          5,
           null,
-          1,
+          5,
           null,
           0,
           null,
@@ -1430,19 +1446,19 @@
           },
           "[:if, 9, 72, 4, 88, 7]": {
             "[:then, 10, 73, 6, 73, 166]": 0,
-            "[:else, 11, 74, 4, 88, 7]": 1
+            "[:else, 11, 74, 4, 88, 7]": 5
           },
           "[:if, 12, 74, 4, 88, 7]": {
             "[:then, 13, 75, 6, 75, 65]": 0,
-            "[:else, 14, 76, 4, 88, 7]": 1
+            "[:else, 14, 76, 4, 88, 7]": 5
           },
           "[:if, 15, 76, 4, 88, 7]": {
-            "[:then, 16, 77, 6, 85, 9]": 1,
+            "[:then, 16, 77, 6, 85, 9]": 5,
             "[:else, 17, 87, 6, 87, 48]": 0
           },
           "[:if, 18, 81, 6, 85, 9]": {
-            "[:then, 19, 82, 8, 82, 57]": 1,
-            "[:else, 20, 84, 8, 84, 66]": 0
+            "[:then, 19, 82, 8, 82, 57]": 3,
+            "[:else, 20, 84, 8, 84, 66]": 2
           },
           "[:if, 21, 99, 4, 113, 7]": {
             "[:then, 22, 100, 6, 112, 9]": 0,
@@ -1453,11 +1469,11 @@
             "[:else, 26, 111, 8, 111, 44]": 0
           },
           "[:if, 27, 118, 4, 128, 7]": {
-            "[:then, 28, 119, 6, 125, 9]": 0,
+            "[:then, 28, 119, 6, 125, 9]": 3,
             "[:else, 29, 127, 6, 127, 54]": 0
           },
           "[:if, 30, 119, 6, 125, 9]": {
-            "[:then, 31, 120, 8, 122, 102]": 0,
+            "[:then, 31, 120, 8, 122, 102]": 3,
             "[:else, 32, 124, 8, 124, 69]": 0
           },
           "[:if, 33, 138, 4, 138, 65]": {
@@ -1466,47 +1482,47 @@
           },
           "[:if, 36, 148, 4, 148, 41]": {
             "[:then, 37, 148, 4, 148, 10]": 0,
-            "[:else, 38, 148, 4, 148, 41]": 1
+            "[:else, 38, 148, 4, 148, 41]": 5
           },
           "[:if, 39, 151, 4, 151, 30]": {
             "[:then, 40, 151, 4, 151, 10]": 0,
-            "[:else, 41, 151, 4, 151, 30]": 1
+            "[:else, 41, 151, 4, 151, 30]": 5
           },
           "[:if, 42, 154, 4, 160, 7]": {
-            "[:then, 43, 155, 6, 156, 80]": 1,
+            "[:then, 43, 155, 6, 156, 80]": 5,
             "[:else, 44, 158, 6, 159, 43]": 0
           },
           "[:unless, 45, 164, 4, 164, 60]": {
-            "[:else, 46, 164, 4, 164, 60]": 0,
-            "[:then, 47, 164, 4, 164, 16]": 1
+            "[:else, 46, 164, 4, 164, 60]": 2,
+            "[:then, 47, 164, 4, 164, 16]": 3
           },
           "[:if, 48, 167, 4, 167, 39]": {
             "[:then, 49, 167, 4, 167, 16]": 0,
-            "[:else, 50, 167, 4, 167, 39]": 0
+            "[:else, 50, 167, 4, 167, 39]": 2
           },
           "[:if, 51, 170, 4, 170, 32]": {
             "[:then, 52, 170, 4, 170, 15]": 0,
-            "[:else, 53, 170, 4, 170, 32]": 0
+            "[:else, 53, 170, 4, 170, 32]": 2
           },
           "[:if, 54, 200, 16, 200, 107]": {
             "[:then, 55, 200, 51, 200, 66]": 0,
-            "[:else, 56, 200, 69, 200, 107]": 0
+            "[:else, 56, 200, 69, 200, 107]": 2
           },
           "[:if, 57, 201, 4, 201, 32]": {
             "[:then, 58, 201, 4, 201, 12]": 0,
-            "[:else, 59, 201, 4, 201, 32]": 0
+            "[:else, 59, 201, 4, 201, 32]": 2
           },
           "[:if, 60, 203, 15, 203, 97]": {
             "[:then, 61, 203, 48, 203, 69]": 0,
-            "[:else, 62, 203, 72, 203, 97]": 0
+            "[:else, 62, 203, 72, 203, 97]": 2
           },
           "[:if, 63, 208, 4, 208, 68]": {
-            "[:then, 64, 208, 4, 208, 37]": 0,
+            "[:then, 64, 208, 4, 208, 37]": 2,
             "[:else, 65, 208, 4, 208, 68]": 0
           },
           "[:if, 66, 225, 4, 225, 26]": {
             "[:then, 67, 225, 4, 225, 10]": 0,
-            "[:else, 68, 225, 4, 225, 26]": 1
+            "[:else, 68, 225, 4, 225, 26]": 5
           }
         }
       },
@@ -1524,33 +1540,33 @@
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
+          5,
+          5,
+          5,
+          5,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          3,
+          3,
+          3,
+          3,
           null,
           null,
           1,
           null,
           1,
-          1,
-          1,
+          8,
+          8,
+          null,
+          8,
+          8,
+          null,
           null,
           1,
-          1,
+          16,
           null,
-          null,
-          1,
-          2,
-          null,
-          2,
+          16,
           null
         ],
         "branches": {
@@ -1564,7 +1580,7 @@
           },
           "[:if, 6, 37, 4, 37, 32]": {
             "[:then, 7, 37, 4, 37, 16]": 0,
-            "[:else, 8, 37, 4, 37, 32]": 2
+            "[:else, 8, 37, 4, 37, 32]": 16
           }
         }
       },
@@ -1573,6 +1589,50 @@
           1,
           1,
           1,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/models/equipment.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/dashboards_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/services/dashboard_stats_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          3,
+          1,
+          null,
           null
         ],
         "branches": {}
@@ -1636,29 +1696,6 @@
           null,
           null,
           null
-        ],
-        "branches": {}
-      },
-      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/models/equipment.rb": {
-        "lines": [
-          1,
-          null,
-          null
-        ],
-        "branches": {}
-      },
-      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/controllers/dashboards_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
         ],
         "branches": {}
       },
@@ -1752,31 +1789,8 @@
           0
         ],
         "branches": {}
-      },
-      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/branch_testing/csci3100_project_group6/app/services/dashboard_stats_service.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {}
       }
     },
-    "timestamp": 1776097485
+    "timestamp": 1776099308
   }
 }

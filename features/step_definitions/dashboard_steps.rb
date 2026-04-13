@@ -24,16 +24,17 @@ end
 # --- Booking Steps ---
 
 Given("a time slot exists for {string} from {string} to {string}") do |venue_name, start_t, end_t|
-  venue = Venue.find_by(name: venue_name)
   @time_slot = TimeSlot.create!(
-    venue: venue,
     start_time: DateTime.parse(start_t),
     end_time: DateTime.parse(end_t)
   )
 end
 
 Given("a booking exists for {string} with status {string}") do |resource_name, status|
-  resource = Venue.find_by(name: resource_name) || Equipment.find_by(name: resource_name)
+  resource = Venue.find_by(name: resource_name) || Equipment.find_or_create_by!(name: resource_name) do |equipment|
+    equipment.total_count = 1
+    equipment.available_count = 1
+  end
   
   Booking.create!(
     bookable: resource,

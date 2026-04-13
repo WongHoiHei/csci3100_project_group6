@@ -4,14 +4,14 @@ RSpec.describe BuildingsController, type: :controller do
   let(:shaw_hall) do
     instance_double('Location',
       name: 'Sir Run Run Shaw Hall',
-      venues: double('venues', includes: double('scoped', order: []))
+      venues: double('venues', order: [])
     )
   end
 
   let(:na_gym) do
     instance_double('Location',
       name: 'New Asia College Gymnasium',
-      venues: double('venues', includes: double('scoped', order: []))
+      venues: double('venues', order: [])
     )
   end
 

@@ -103,7 +103,6 @@ Given('a venue and time slot exist for sendgrid cucumber testing') do
                                   latitude: 22.3, longitude: 114.2)
   @sg_venue     = Venue.create!(name: 'SG Cucumber Venue', location: location)
   @sg_time_slot = TimeSlot.create!(
-    venue:      @sg_venue,
     start_time: Time.zone.parse('09:00'),
     end_time:   Time.zone.parse('11:00')
   )
@@ -120,15 +119,12 @@ Given('equipment and a time slot exist for sendgrid cucumber testing') do
   location      = Location.create!(name: "SG Equip Hall #{SecureRandom.hex(3)}",
                                    latitude: 22.3, longitude: 114.2)
   support_venue = Venue.create!(name: 'SG Equip Support Venue', location: location)
-  tenant        = Tenant.create!(name: "SG Tenant #{SecureRandom.hex(3)}")
   @sg_equipment = Equipment.create!(
     name:            'SG Cucumber Projector',
-    tenant:          tenant,
     total_count:     3,
     available_count: 3
   )
   @sg_time_slot = TimeSlot.create!(
-    venue:      support_venue,
     start_time: Time.zone.parse('09:00'),
     end_time:   Time.zone.parse('11:00')
   )
