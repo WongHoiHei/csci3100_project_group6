@@ -1041,3 +1041,25 @@ body {
   background-color: #14532d; 
   color: #ffffff;
 }
+
+/*Auto Complete*/
+.relative { position: relative; }
+.absolute { position: absolute; }
+.z-50 { z-index: 50; }
+.hidden { display: none; }
+
+[data-autocomplete-target="suggestions"] {
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+[data-autocomplete-target="suggestions"] div {
+  padding: 10px 15px;
+  color: #14532d;
+  transition: background 0.15s ease;
+}
+
+[data-autocomplete-target="suggestions"] div:hover {
+  background-color: #f0fdf4; 
+}

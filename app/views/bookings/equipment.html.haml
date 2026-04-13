@@ -2,15 +2,19 @@
   = link_to '< Back to Main Page', main_path, class: 'equipment-back-link'
   %h1 Equipment Booking
 
-= form_with url: equipment_booking_path, method: :get, local: true, class: 'equipment-date-form' do
-  = label_tag :booking_date, 'Booking Date'
-  = date_field_tag :booking_date, @selected_date, min: Date.current.to_s
-  = submit_tag 'Show All'
-
-= form_with url: equipment_booking_path, method: :get, local: true, class: 'equipment-search-form' do
-  = text_field_tag :q, params[:q], placeholder: 'Search equipment...'
-  = hidden_field_tag :booking_date, @selected_date
-  = submit_tag 'Search'
+.relative{ data: { controller: "autocomplete", autocomplete_type_value: "equipment" } }
+  = form_with url: equipment_booking_path, method: :get, local: true, class: 'equipment-search-form' do
+    = text_field_tag :q, params[:q], 
+      placeholder: 'Search equipment...', 
+      data: { autocomplete_target: "input", action: "input->autocomplete#search" },
+      autocomplete: "off"
+    = hidden_field_tag :booking_date, @selected_date
+    = submit_tag 'Search'
+  
+  %div.absolute.z-50.w-full.bg-white.border.rounded-lg.shadow-lg.hidden{ |
+    data: { autocomplete_target: "suggestions" },                      |
+    style: "top: 100%; margin-top: 4px; border-color: #b9d6af;"        |
+  }
 
 .selected-booking-date
   %strong Selected Date:
