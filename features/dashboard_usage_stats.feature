@@ -4,11 +4,9 @@ Feature: Dashboard Usage Statistics
   So that I can manage resource allocation effectively
 
   Background:
-    Given a tenant exists named "Engineering Department"
-    And a location exists named "Main Campus"
+    Given a location exists named "Main Campus"
     And a venue exists named "Lab A" in "Main Campus"
     And a venue exists named "Lab B" in "Main Campus"
-    And an equipment exists named "Oscilloscope" for tenant "Engineering Department"
     And I am logged in as a "Test User"
 
   Scenario: Viewing resource usage counts

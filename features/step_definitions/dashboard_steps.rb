@@ -1,7 +1,3 @@
-Given("a tenant exists named {string}") do |name|
-  @tenant = Tenant.create!(name: name)
-end
-
 Given("a location exists named {string}") do |name|
   @location = Location.create!(name: name)
 end
@@ -9,11 +5,6 @@ end
 Given("a venue exists named {string} in {string}") do |venue_name, location_name|
   loc = Location.find_by(name: location_name)
   Venue.create!(name: venue_name, location: loc)
-end
-
-Given("an equipment exists named {string} for tenant {string}") do |equip_name, tenant_name|
-  t = Tenant.find_by(name: tenant_name)
-  Equipment.create!(name: equip_name, tenant: t)
 end
 
 Given("I am logged in as a {string}") do |name|

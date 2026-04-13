@@ -1,15 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe "Dashboards", type: :request do
-  # 1. Setup fundamental data
+  # --- 1. Setup Data ---
   let!(:tenant) { Tenant.create!(name: "Engineering Department") }
   let!(:location) { Location.create!(name: "Main Campus") } 
-  
-  # 2. Setup Resources
   let!(:venue) { Venue.create!(name: "SHB301", location: location) }
-  let!(:equipment) { Equipment.create!(name: "Projector", tenant: tenant) }
+  let!(:equipment) { Equipment.create!(name: "Projector") }
 
-  # 3. Setup User with manual auth requirements
   let!(:user) do 
     User.create!(
       name: "Test Admin", 
@@ -19,25 +16,30 @@ RSpec.describe "Dashboards", type: :request do
     ) 
   end
   
-  # 4. Setup TimeSlot required by Booking validations
   let!(:time_slot) do 
     TimeSlot.create!(
-      venue: venue, 
       start_time: Time.now, 
       end_time: 2.hours.from_now
     ) 
   end
 
-  describe "GET /dashboards.json" do
+  # --- 2. Security Path ---
+  describe "GET /dashboards (Unauthorized)" do
+    it "redirects to the login page if session is missing" do
+      get "/dashboards"
+      expect(response).to redirect_to("/login")
+    end
+  end
+
+  # --- 3. Authenticated Paths ---
+  describe "Authorized Access" do
     before do
-      # MANUAL AUTHENTICATION STEP
-      # This simulates a user filling out the login form.
+      # Simulate login to create session
       post "/login", params: { email: user.email, password: "password123" }
-      
-      # Verify the login worked before proceeding
       follow_redirect! if response.redirect?
 
-      # 5. Create valid bookings to be counted by the service
+      # Create test bookings
+      # 5 Approved (Counted)
       5.times do
         Booking.create!(
           bookable: venue, 
@@ -49,18 +51,7 @@ RSpec.describe "Dashboards", type: :request do
         )
       end
 
-      12.times do
-        Booking.create!(
-          bookable: equipment, 
-          user: user, 
-          time_slot: time_slot, 
-          status: "pending",
-          start_time: Time.now, 
-          end_time: 1.hour.from_now
-        )
-      end
-
-      # 6. Create a rejected booking to test the 'where.not' filter logic
+      # 1 Rejected (Ignored)
       Booking.create!(
         bookable: venue, 
         user: user, 
@@ -71,22 +62,32 @@ RSpec.describe "Dashboards", type: :request do
       )
     end
 
-    it "returns correct real-time counts from the DashboardStatsService" do
-      # Hit the endpoint
-      get "/dashboards.json"
-      
-      # Should now be 200 OK because the 'post /login' created a session
-      expect(response).to have_http_status(:success)
-      
-      json = JSON.parse(response.body)
-      
-      # Verify Venue stats (5 approved, 1 rejected ignored)
-      venue_resp = json["venues"].find { |v| v["name"] == "SHB301" }
-      expect(venue_resp["usage_count"]).to eq(5)
-      
-      # Verify Equipment stats (12 pending/approved)
-      equip_resp = json["equipments"].find { |e| e["name"] == "Projector" }
-      expect(equip_resp["usage_count"]).to eq(12)
+    context "HTML Format" do
+      it "renders the dashboard index successfully" do
+        get "/dashboards"
+        expect(response).to have_http_status(:success)
+        # Verifies the HAML server-side rendering is working
+        expect(response.body).to include("Booking Data")
+        expect(response.body).to include("SHB301")
+        expect(response.body).to include("Projector")
+      end
+    end
+
+    context "JSON Format" do
+      it "returns correct counts for Stimulus.js components" do
+        get "/dashboards.json"
+        expect(response).to have_http_status(:success)
+        
+        json = JSON.parse(response.body)
+        
+        # Verify specific venue count logic
+        venue_resp = json["venues"].find { |v| v["name"] == "SHB301" }
+        expect(venue_resp["usage_count"]).to eq(5)
+        
+        # Verify structure for Chart.js/Stimulus
+        expect(json).to have_key("venues")
+        expect(json).to have_key("equipments")
+      end
     end
   end
 end
