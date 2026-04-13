@@ -5,7 +5,7 @@ RSpec.describe "Dashboards", type: :request do
   let!(:tenant) { Tenant.create!(name: "Engineering Department") }
   let!(:location) { Location.create!(name: "Main Campus") } 
   let!(:venue) { Venue.create!(name: "SHB301", location: location) }
-  let!(:equipment) { Equipment.create!(name: "Projector", tenant: tenant) }
+  let!(:equipment) { Equipment.create!(name: "Projector") }
 
   let!(:user) do 
     User.create!(
@@ -18,7 +18,6 @@ RSpec.describe "Dashboards", type: :request do
   
   let!(:time_slot) do 
     TimeSlot.create!(
-      venue: venue, 
       start_time: Time.now, 
       end_time: 2.hours.from_now
     ) 

@@ -15,11 +15,10 @@ RSpec.describe DashboardStatsService, type: :service do
 
   let!(:venue_a) { Venue.create!(name: "Lab A", location: location) }
   let!(:venue_b) { Venue.create!(name: "Lab B", location: location) }
-  let!(:equipment_a) { Equipment.create!(name: "Oscilloscope", tenant: tenant) }
+  let!(:equipment_a) { Equipment.create!(name: "Oscilloscope") }
 
   let!(:time_slot) do
     TimeSlot.create!(
-      venue: venue_a,
       start_time: Time.now,
       end_time: 2.hours.from_now
     )
