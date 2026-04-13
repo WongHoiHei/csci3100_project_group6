@@ -13,7 +13,7 @@ end
 
 Given("an equipment exists named {string} for tenant {string}") do |equip_name, tenant_name|
   t = Tenant.find_by(name: tenant_name)
-  Equipment.create!(name: equip_name, tenant: t)
+  Equipment.create!(name: equip_name)
 end
 
 Given("I am logged in as a {string}") do |name|
@@ -35,7 +35,6 @@ end
 Given("a time slot exists for {string} from {string} to {string}") do |venue_name, start_t, end_t|
   venue = Venue.find_by(name: venue_name)
   @time_slot = TimeSlot.create!(
-    venue: venue,
     start_time: DateTime.parse(start_t),
     end_time: DateTime.parse(end_t)
   )

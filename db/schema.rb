@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_11_145138) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_12_085703) do
   create_table "bookings", force: :cascade do |t|
     t.integer "bookable_id", null: false
     t.string "bookable_type", null: false
@@ -32,10 +32,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_11_145138) do
     t.text "description"
     t.string "name"
     t.integer "number_of_past_booking", default: 0, null: false
-    t.integer "tenant_id", null: false
     t.integer "total_count"
     t.datetime "updated_at", null: false
-    t.index ["tenant_id"], name: "index_equipment_on_tenant_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -57,8 +55,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_11_145138) do
     t.time "end_time"
     t.time "start_time"
     t.datetime "updated_at", null: false
-    t.integer "venue_id", null: false
-    t.index ["venue_id"], name: "index_time_slots_on_venue_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,7 +78,5 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_11_145138) do
 
   add_foreign_key "bookings", "time_slots"
   add_foreign_key "bookings", "users"
-  add_foreign_key "equipment", "tenants"
-  add_foreign_key "time_slots", "venues"
   add_foreign_key "venues", "locations"
 end

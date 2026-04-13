@@ -24,7 +24,7 @@ When('I navigate to venue booking') do
   @user     = User.first
   @location = Location.create!(name: 'Sir Run Run Shaw Hall', latitude: 22.4198, longitude: 114.2068)
   @venue    = Venue.create!(name: 'Lecture Theatre', capacity: 100, location: @location)
-  @slot     = TimeSlot.create!(venue: @venue, start_time: Time.zone.parse('09:00'), end_time: Time.zone.parse('11:00'))
+  @slot     = TimeSlot.create!(start_time: Time.zone.parse('09:00'), end_time: Time.zone.parse('11:00'))
 
   slug = 'sirrunrunshawhall'
   visit "/buildings/#{slug}"
