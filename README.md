@@ -30,3 +30,10 @@ bin/rails server
 ## Screenshot of the SimpleCov report:
 ![alt text](image.png)
 ![alt text](image-1.png)
+<<<<<<< HEAD
+
+
+## 
+If you encount any issues on sending the emails to users while using the local server, please contact Ho Chi Tung via 1155213294@link.cuhk.edu.hk. An .env file, containing the SendGrid API Key and the sender email, can be provided.
+=======
+>>>>>>> origin/main
