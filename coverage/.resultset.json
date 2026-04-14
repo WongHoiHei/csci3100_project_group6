@@ -574,7 +574,7 @@
           1,
           null,
           null,
-          null,
+          1,
           null,
           null,
           null,
@@ -897,7 +897,7 @@
         "branches": {}
       }
     },
-    "timestamp": 1776159199
+    "timestamp": 1776163114
   },
   "Cucumber Features": {
     "coverage": {
@@ -1529,7 +1529,7 @@
           1,
           null,
           null,
-          null,
+          1,
           null,
           null,
           null,
@@ -1791,6 +1791,6 @@
         "branches": {}
       }
     },
-    "timestamp": 1776159214
+    "timestamp": 1776163138
   }
 }

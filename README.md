@@ -18,7 +18,7 @@ bin/rails server
 ## Ownership of each implemented feature
 | Feature Name | Primary Developer (Name) | Secondary Developer | Notes |
 | -------- | -------- | -------- | -------- |
-| Backend: Database | Lam Tsz Yi | Ho Chi Tung | Schema design, CRUD, Seed Data|
+| Backend: Database & Booking System | Lam Tsz Yi | Ho Chi Tung | Schema design, CRUD, Seed Data, Conflict Detection, Status Management |
 | External API: SendGrid | Ho Chi Tung |  | Integrated external API SendGrid to send the emails |
 | External API: Google Map | Huang Chun Kin | Chee Chun Lok Wong Hoi Hei | Integrated external API of Google Map |
 | Interactive Dashboard | Chee Chun Lok | Wong Hoi Hei Huang Chun Kin | interactive dashboard for reviewing the usage of facilities |
@@ -29,3 +29,7 @@ bin/rails server
 ## Screenshot of the SimpleCov report:
 ![alt text](image.png)
 ![alt text](image-1.png)
+
+
+## 
+If you encount any issues on sending the emails to users while using the local server, please contact Ho Chi Tung via 1155213294@link.cuhk.edu.hk. An .env file, containing the SendGrid API Key and the sender email, can be provided.
