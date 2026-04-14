@@ -3,19 +3,39 @@
   %h1 Equipment Booking
 
 .relative{ data: { controller: "autocomplete", autocomplete_type_value: "equipment" } }
-  = form_with url: equipment_booking_path, method: :get, local: true, class: 'equipment-search-form' do
-    = text_field_tag :q, params[:q], 
-      placeholder: 'Search equipment...', 
-      data: { autocomplete_target: "input", action: "input->autocomplete#search" },
-      autocomplete: "off"
-    = hidden_field_tag :booking_date, @selected_date
-    = submit_tag 'Search'
-  
-  %div.absolute.z-50.w-full.bg-white.border.rounded-lg.shadow-lg.hidden{ |
-    data: { autocomplete_target: "suggestions" },                      |
-    style: "top: 100%; margin-top: 4px; border-color: #b9d6af;"        |
-  }
+  .booking-controls.mb-6
+    .date-selector
+      %strong Select Date:
+      = form_with url: equipment_booking_path, method: :get, local: true, class: 'date-form' do
+        = date_field_tag :booking_date, 
+                         @selected_date || Date.current, 
+                         min: Date.current.to_s,
+                         class: 'date-input'
 
+        = submit_tag "Show Availability", 
+                     class: 'show-btn'
+
+    .search-box.mt-4
+      = form_with url: equipment_booking_path, method: :get, local: true, class: 'search-form' do
+        = hidden_field_tag :booking_date, @selected_date   
+
+        = text_field_tag :q, 
+                         params[:q], 
+                         placeholder: 'Search equipment...',
+                         data: { autocomplete_target: "input", action: "input->autocomplete#search" },
+                         autocomplete: "off",
+                         class: 'search-input'
+
+        = submit_tag "Search", class: 'search-btn'
+
+  %p.selected-date-info
+    Showing availability for: 
+    %strong= @selected_date.strftime("%A, %B %d, %Y")
+
+  %div.absolute.z-50.w-full.bg-white.border.rounded-lg.shadow-lg.hidden{ 
+    data: { autocomplete_target: "suggestions" } 
+  }
+  
 .selected-booking-date
   %strong Selected Date:
   = @selected_date.strftime('%Y-%m-%d')
