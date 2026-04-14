@@ -40,11 +40,29 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   # Configure mail delivery in development using the SendGrid Web API.
-  config.action_mailer.delivery_method = :sendgrid_actionmailer
-  config.action_mailer.sendgrid_actionmailer_settings = {
-    api_key: ENV["SENDGRID_API_KEY"],
-    raise_delivery_errors: true
+  #config.action_mailer.delivery_method = :sendgrid_actionmailer
+  #config.action_mailer.sendgrid_actionmailer_settings = {
+  #  api_key: ENV["SENDGRID_API_KEY"],
+  #  raise_delivery_errors: true
+  #}
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address:              "smtp.sendgrid.net",
+    port:                 587,
+    domain:               "localhost",
+    user_name:            "apikey",
+    password:             ENV.fetch("SENDGRID_API_KEY"),
+    authentication:       :plain,
+    enable_starttls_auto: true
   }
+
+  # Default sender email
+  config.action_mailer.default_options = {
+    from: ENV.fetch("MAIL_FROM", "venueandequipmentbooking@gmail.com")
+  }
+  
+
 
   # Make template changes take effect immediately.
   config.action_mailer.perform_caching = false

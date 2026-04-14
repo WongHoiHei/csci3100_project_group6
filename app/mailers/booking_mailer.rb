@@ -1,7 +1,7 @@
 class BookingMailer < ApplicationMailer
   
   #default from: 'no-reply@cuhkBooking.app'
-
+  default from: ENV.fetch("MAIL_FROM", "venueandequipmentbooking@gmail.com")
   #def password_changed(user, new_password)
   #  @user = user
   #  @new_password = new_password

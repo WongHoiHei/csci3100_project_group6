@@ -67,10 +67,26 @@ Rails.application.configure do
   }
 
   # Configure outgoing mail via SendGrid Web API.
-  config.action_mailer.delivery_method = :sendgrid_actionmailer
-  config.action_mailer.sendgrid_actionmailer_settings = {
-    api_key: ENV["SENDGRID_API_KEY"],
-    raise_delivery_errors: true
+  # config.action_mailer.delivery_method = :sendgrid_actionmailer
+  # config.action_mailer.sendgrid_actionmailer_settings = {
+  #  api_key: ENV["SENDGRID_API_KEY"],
+  #  raise_delivery_errors: true
+  # }
+  
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    user_name:            "apikey",                     # Do NOT change this
+    password:             ENV.fetch("SENDGRID_API_KEY"),
+    address:              "smtp.sendgrid.net",
+    port:                 587,
+    authentication:       :plain,
+    enable_starttls_auto: true,
+    domain:               ENV.fetch("APP_HOST", "herokuapp.com")
+  }
+
+  config.action_mailer.default_options = {
+    from: ENV.fetch("MAIL_FROM", "venueandequipmentbooking@gmail.com")
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
