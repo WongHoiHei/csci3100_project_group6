@@ -228,13 +228,9 @@ learning_common_venues = lc_venues.map do |room|
 end
 
 
-[basketball_court, badminton_court, *library_venues, *uc_library_venues, *cc_library_venues, *na_library_venues, *arch_lib_venue, *med_library_venues, *law_library_venues, *learning_common_venues].each do |venue|
-  next if venue.time_slots.exists?
-
-  ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"].each do |start|
-    hour = start.split(":").first.to_i
-    TimeSlot.create!(start_time: start, end_time: "#{hour + 1}:00")
-  end
+["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"].each do |start|
+  hour = start.split(":").first.to_i
+  TimeSlot.find_or_create_by!(start_time: start, end_time: "#{hour + 1}:00")
 end
 
 
