@@ -761,7 +761,6 @@
       "/workspaces/csci3100_project_group6/app/models/venue.rb": {
         "lines": [
           1,
-          null,
           1,
           1,
           null
@@ -898,7 +897,7 @@
         "branches": {}
       }
     },
-    "timestamp": 1776102489
+    "timestamp": 1776150048
   },
   "Cucumber Features": {
     "coverage": {
@@ -1068,7 +1067,6 @@
       "/workspaces/csci3100_project_group6/app/models/venue.rb": {
         "lines": [
           1,
-          null,
           1,
           1,
           null
@@ -1793,6 +1791,6 @@
         "branches": {}
       }
     },
-    "timestamp": 1776102504
+    "timestamp": 1776150064
   }
 }
