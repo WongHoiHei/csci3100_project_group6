@@ -1,28 +1,28 @@
 {
   "RSpec": {
     "coverage": {
-      "/workspaces/csci3100_project_group6/app/helpers/application_helper.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/helpers/dashboards_helper.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/helpers/dashboards_helper.rb": {
         "lines": [
           1,
           null
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/helpers/welcome_helper.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/bookings_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/bookings_controller.rb": {
         "lines": [
           1,
           1,
@@ -354,7 +354,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/controllers/application_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -388,7 +388,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/controllers/buildings_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/buildings_controller.rb": {
         "lines": [
           1,
           1,
@@ -437,7 +437,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/controllers/passwords_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/passwords_controller.rb": {
         "lines": [
           1,
           1,
@@ -483,7 +483,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/controllers/registrations_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/registrations_controller.rb": {
         "lines": [
           1,
           1,
@@ -518,7 +518,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/controllers/search_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/search_controller.rb": {
         "lines": [
           1,
           1,
@@ -557,7 +557,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/jobs/application_job.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/jobs/application_job.rb": {
         "lines": [
           1,
           null,
@@ -569,7 +569,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/mailers/booking_mailer.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/mailers/booking_mailer.rb": {
         "lines": [
           1,
           null,
@@ -627,7 +627,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/mailers/application_mailer.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/mailers/application_mailer.rb": {
         "lines": [
           1,
           1,
@@ -636,7 +636,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/mailers/user_mailer.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/mailers/user_mailer.rb": {
         "lines": [
           1,
           1,
@@ -652,7 +652,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/booking.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/booking.rb": {
         "lines": [
           1,
           1,
@@ -714,7 +714,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/application_record.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/application_record.rb": {
         "lines": [
           1,
           1,
@@ -722,7 +722,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/services/dashboard_stats_service.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/services/dashboard_stats_service.rb": {
         "lines": [
           1,
           1,
@@ -744,7 +744,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/user.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -758,43 +758,42 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/venue.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/venue.rb": {
         "lines": [
           1,
-          null,
           1,
           1,
           null
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/location.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/location.rb": {
         "lines": [
           1,
           1,
           null,
-          null,
-          null
-        ],
-        "branches": {}
-      },
-      "/workspaces/csci3100_project_group6/app/models/time_slot.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ],
-        "branches": {}
-      },
-      "/workspaces/csci3100_project_group6/app/models/equipment.rb": {
-        "lines": [
-          1,
           null,
           null
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/tenant.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/time_slot.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/equipment.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/tenant.rb": {
         "lines": [
           1,
           1,
@@ -803,7 +802,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/dashboards_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/dashboards_controller.rb": {
         "lines": [
           1,
           1,
@@ -817,7 +816,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/sessions_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -858,7 +857,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/controllers/pages_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/pages_controller.rb": {
         "lines": [
           1,
           1,
@@ -884,7 +883,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/controllers/welcome_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/welcome_controller.rb": {
         "lines": [
           0,
           0,
@@ -898,11 +897,11 @@
         "branches": {}
       }
     },
-    "timestamp": 1776102489
+    "timestamp": 1776156884
   },
   "Cucumber Features": {
     "coverage": {
-      "/workspaces/csci3100_project_group6/app/models/user.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -916,7 +915,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/application_record.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/application_record.rb": {
         "lines": [
           1,
           1,
@@ -924,7 +923,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/sessions_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -965,7 +964,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/controllers/application_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -999,28 +998,28 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/helpers/application_helper.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/helpers/dashboards_helper.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/helpers/dashboards_helper.rb": {
         "lines": [
           1,
           null
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/helpers/welcome_helper.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/pages_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/pages_controller.rb": {
         "lines": [
           1,
           1,
@@ -1046,7 +1045,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/models/tenant.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/tenant.rb": {
         "lines": [
           1,
           1,
@@ -1055,7 +1054,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/location.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/location.rb": {
         "lines": [
           1,
           1,
@@ -1065,17 +1064,16 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/venue.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/venue.rb": {
         "lines": [
           1,
-          null,
           1,
           1,
           null
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/time_slot.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/time_slot.rb": {
         "lines": [
           1,
           1,
@@ -1083,7 +1081,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/buildings_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/buildings_controller.rb": {
         "lines": [
           1,
           1,
@@ -1132,7 +1130,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/models/booking.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/booking.rb": {
         "lines": [
           1,
           1,
@@ -1194,7 +1192,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/bookings_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/bookings_controller.rb": {
         "lines": [
           1,
           1,
@@ -1526,7 +1524,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/mailers/booking_mailer.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/mailers/booking_mailer.rb": {
         "lines": [
           1,
           null,
@@ -1584,7 +1582,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/mailers/application_mailer.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/mailers/application_mailer.rb": {
         "lines": [
           1,
           1,
@@ -1593,7 +1591,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/models/equipment.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/models/equipment.rb": {
         "lines": [
           1,
           null,
@@ -1601,7 +1599,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/passwords_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/passwords_controller.rb": {
         "lines": [
           1,
           1,
@@ -1647,7 +1645,7 @@
           }
         }
       },
-      "/workspaces/csci3100_project_group6/app/mailers/user_mailer.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/mailers/user_mailer.rb": {
         "lines": [
           1,
           1,
@@ -1663,7 +1661,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/dashboards_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/dashboards_controller.rb": {
         "lines": [
           0,
           0,
@@ -1678,7 +1676,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/registrations_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/registrations_controller.rb": {
         "lines": [
           0,
           0,
@@ -1709,7 +1707,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/search_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/search_controller.rb": {
         "lines": [
           0,
           0,
@@ -1744,7 +1742,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/controllers/welcome_controller.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/controllers/welcome_controller.rb": {
         "lines": [
           0,
           0,
@@ -1757,7 +1755,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/jobs/application_job.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/jobs/application_job.rb": {
         "lines": [
           0,
           null,
@@ -1769,7 +1767,7 @@
         ],
         "branches": {}
       },
-      "/workspaces/csci3100_project_group6/app/services/dashboard_stats_service.rb": {
+      "C:/Users/Chloe2005/Downloads/CSCI3100 Project/testing2/csci3100_project_group6/app/services/dashboard_stats_service.rb": {
         "lines": [
           0,
           0,
@@ -1793,6 +1791,6 @@
         "branches": {}
       }
     },
-    "timestamp": 1776102504
+    "timestamp": 1776156904
   }
 }
