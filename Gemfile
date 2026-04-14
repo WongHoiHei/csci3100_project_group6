@@ -81,3 +81,7 @@ group :test do
 end
 
 gem "simplecov", "~> 0.22.0", group: :test
+
+group :development, :test do
+  gem 'dotenv-rails'
+end
