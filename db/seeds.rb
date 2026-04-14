@@ -228,10 +228,50 @@ learning_common_venues = lc_venues.map do |room|
 end
 
 
-["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"].each do |start|
-  hour = start.split(":").first.to_i
-  TimeSlot.find_or_create_by!(start_time: start, end_time: "#{hour + 1}:00")
+# Define the 6 time slots (global, shared)
+time_slot_times = ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"]
+
+# Create the TimeSlot records once (idempotent)
+time_slots = time_slot_times.map do |start_time|
+  hour = start_time.split(":").first.to_i
+  end_time = "#{hour + 1}:00"
+
+  TimeSlot.find_or_create_by!(
+    start_time: start_time,
+    end_time: end_time
+  )
 end
 
+all_venues = [
+  basketball_court, 
+  badminton_court, 
+  *library_venues, 
+  *uc_library_venues, 
+  *cc_library_venues, 
+  *na_library_venues, 
+  arch_lib_venue, 
+  *med_library_venues, 
+  *law_library_venues, 
+  *learning_common_venues
+].compact.uniq
+
+all_venues.each do |venue|
+  time_slots.each do |ts|
+    # This safely associates without duplicating the association
+    venue.time_slots << ts unless venue.time_slots.exists?(ts.id)
+  end
+end
+
+
+# if equipment is added later/ cannot be seeded, we can also associate it with all time slots
+# Please uncomment and run the following code if you want to associate all equipments with all time slots (if needed)
+
+#all_equipments = Equipment.all   # or list them explicitly if you prefer
+
+#all_equipments.each do |equipment|
+#  time_slots.each do |ts|
+#    equipment.time_slots << ts unless equipment.time_slots.exists?(ts.id)
+#  end
+# end
 
 #sample booking data
